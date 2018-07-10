@@ -2,182 +2,187 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>/20180710_vagrant_setup/</loc>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180708_virtualbox_cui/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180707_msys2_path_include/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180706_vim_encoding_setting/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180704_windows10_loupe/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180703_mkdocs_blog_startup/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180702_msys2_install/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180701_linux_charset_exchange/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180622_ubuntuserver_install/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180621_excel2013_time_cumulative/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180620_X98PlusII_windows_factory_recovery/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180619_nutanix_disk_convert/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180618_windows10_share_nopassword/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180617_windows10_startup_registration/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180616_windows_remotedesktop_clipbord_enable/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180615_linux_collective_setting_password/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180614_centos_rpm_architecture_view/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180613_centos_ntfs_hdd_mount/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180612_linx_console_color/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180611_windows10_version_view/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180610_linux_command_chmod_chown/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180609_windows10_windowsupdate_autodisable/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180607_windows10_startup_registration/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180605_windows10_remote_assistant_use/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180603_windows7_linkfile_association_reset/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180601_windows_diskpart_partion_create/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180530_windows10_open_computer_stting/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180529_windows10_autologin_setting/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180528_blackberry_ime_setup/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180527_docker_tutorial/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180526_windows10_photoview_use/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180524_windows10_dpk/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180523_xubuntu18_04LTS_startup/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180522_usbhdd_usbmem_linux_install/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180521_git_githubmemo/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>/20180520_hexo_blog_startup/</loc>
-     <lastmod>2018-07-08</lastmod>
+     <lastmod>2018-07-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
