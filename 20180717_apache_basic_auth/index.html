@@ -36,7 +36,7 @@
     
     
       
-        <title>20180614_centos_rpmコマンドでアーキテクチャ名を表示する - 忘れるための備忘録</title>
+        <title>20180717_ApacheでBasic認証を使ってみる - 忘れるための備忘録</title>
       
     
     
@@ -71,7 +71,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#centos_rpm" tabindex="1" class="md-skip">
+      <a href="#apachebasic" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -97,7 +97,7 @@
                 忘れるための備忘録
               </span>
               <span class="md-header-nav__topic">
-                20180614_centos_rpmコマンドでアーキテクチャ名を表示する
+                20180717_ApacheでBasic認証を使ってみる
               </span>
             
           
@@ -178,11 +178,110 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../20180717_apache_basic_auth/" title="20180717_ApacheでBasic認証を使ってみる" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        20180717_ApacheでBasic認証を使ってみる
+      </label>
+    
+    <a href="./" title="20180717_ApacheでBasic認証を使ってみる" class="md-nav__link md-nav__link--active">
       20180717_ApacheでBasic認証を使ってみる
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="このページで分かること" class="md-nav__link">
+    このページで分かること
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="環境" class="md-nav__link">
+    環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="対応の流れ" class="md-nav__link">
+    対応の流れ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-apache" title="1. apacheのインストール" class="md-nav__link">
+    1. apacheのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-htpasswd" title="2. .htpasswdファイルの作成" class="md-nav__link">
+    2. .htpasswdファイルの作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-apache" title="3. apacheの設定" class="md-nav__link">
+    3. apacheの設定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="備考" class="md-nav__link">
+    備考
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httpdconf" title="編集後のhttpd.confの全内容" class="md-nav__link">
+    編集後のhttpd.confの全内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -406,56 +505,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        20180614_centos_rpmコマンドでアーキテクチャ名を表示する
-      </label>
-    
-    <a href="./" title="20180614_centos_rpmコマンドでアーキテクチャ名を表示する" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../20180614_centos_rpm_architecture_view/" title="20180614_centos_rpmコマンドでアーキテクチャ名を表示する" class="md-nav__link">
       20180614_centos_rpmコマンドでアーキテクチャ名を表示する
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="このページでわかること" class="md-nav__link">
-    このページでわかること
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="参考" class="md-nav__link">
-    参考
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -708,16 +762,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="このページでわかること" class="md-nav__link">
-    このページでわかること
+  <a href="#_1" title="このページで分かること" class="md-nav__link">
+    このページで分かること
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="参考" class="md-nav__link">
-    参考
+  <a href="#_2" title="環境" class="md-nav__link">
+    環境
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="対応の流れ" class="md-nav__link">
+    対応の流れ
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-apache" title="1. apacheのインストール" class="md-nav__link">
+    1. apacheのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-htpasswd" title="2. .htpasswdファイルの作成" class="md-nav__link">
+    2. .htpasswdファイルの作成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-apache" title="3. apacheの設定" class="md-nav__link">
+    3. apacheの設定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="備考" class="md-nav__link">
+    備考
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#httpdconf" title="編集後のhttpd.confの全内容" class="md-nav__link">
+    編集後のhttpd.confの全内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -738,20 +846,125 @@
               
                 
                 
-                <h1 id="centos_rpm">centos_rpmコマンドでアーキテクチャ名を表示する</h1>
-<!-- Tag: Linux centos6 cui rpm architecture -->
-
-<h2 id="_1">このページでわかること</h2>
+                <h1 id="apachebasic">ApacheでBasic認証を使ってみる</h1>
+<h2 id="_1">このページで分かること</h2>
 <ul>
-<li>centosでインストールされているパッケージ確認の際にアーキテクチャ名も合わせて表示する方法</li>
+<li>apacheでbasic認証のかけ方</li>
 </ul>
-<p>自分がLinux触りたての頃にハマったので備忘の為にまとめておきます。
-結論としてはrpmコマンドに<code>--qf</code>オプションで書式を設定表示を追加します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rpm -qa --qf <span class="s1">&#39;%{name}-%{version}-%{release}.%{arch}.rpm\n&#39;</span>
+<p>所用でwebサーバーにbasic認証を掛ける必要があったのでやり方をまとめました。</p>
+<h2 id="_2">環境</h2>
+<ul>
+<li>Centos7</li>
+<li>Apache2.4</li>
+</ul>
+<p>ApacheのDocumentRootはデフォルトの<code>/var/www/html/</code>に設定しています。</p>
+<h2 id="_3">対応の流れ</h2>
+<ol>
+<li>apacheのインストール</li>
+<li>.htpasswdファイルの作成</li>
+<li>apacheの設定</li>
+</ol>
+<h3 id="1-apache">1. apacheのインストール</h3>
+<p>Apacheがインストールされていない場合はインストールします。
+Centosではパッケージ名はhttpdですので注意してください。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c rpmパッケージを検索(httpdがなければapacheは未インストール）
+$c rpm -qa | grep httpd
+
+##c インストール
+$c sudo yum install -y httpd
+
+##c インストールされたか確認
+$c rpm -qa | grep httpd
+httpd-tools-2.4.6-80.el7.centos.1.x86_64
+httpd-2.4.6-80.el7.centos.1.x86_64
 </pre></div>
 </td></tr></table>
 
-<h2 id="_2">参考</h2>
+<h3 id="2-htpasswd">2. .htpasswdファイルの作成</h3>
+<p>.htpasswdファイルは認証時に入力するユーザー名とパスワード情報を記載するファイルです。
+なおCentOSのユーザーとは<strong>関係ない</strong>ので注意してください。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 「Adding password for user hoge」が表示されればOK
+##c 凡例: htpasswd -b -m -c <span class="cp">${</span><span class="n">file_name</span><span class="cp">}</span> <span class="cp">${</span><span class="n">user_name</span><span class="cp">}</span> <span class="cp">${</span><span class="n">password</span><span class="cp">}</span>
+<span class="nv">$c</span> sudo htpasswd -b -m -c /etc/httpd/conf/.htpasswd hoge hogepass
+
+##c 内容の確認 
+<span class="nv">$c</span> cat /etc/httpd/conf/.htpasswd
+hoge:<span class="nv">$apr1$mLUNDdu1$HrlMx.YlmHXNmsqnSSj4o0</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="3-apache">3. apacheの設定</h3>
+<p>ポイントとしては<code>Require all granted</code>は全てのアクセスを許可する設定なので書き換えます。
+diff結果の157,161c156の内容（Basic認証関係）は<strong>必ず<code>&lt;Directory "/var/www/html"&gt;</code>から<code>&lt;/Directory&gt;</code>の範囲内に</strong>加えます。</p>
+<p>分かりづらい場合は<a href="./#httpdconf">備考:編集後のhttpd.confの全内容</a>を確認。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c バックアップをとる
+$c sudo cp -p /etc/httpd/conf/httpd.conf  /etc/httpd/conf/httpd.conf.bak
+
+##c 編集する
+$c sudo vim /etc/httpd/conf/httpd.conf 
+
+##c 編集前後で比較
+$c diff /etc/httpd/conf/httpd.conf  /etc/httpd/conf/httpd.conf.bak
+44d43
+&lt; ServerName testserver:80
+157,161c156
+&lt;     AuthUserFile /etc/httpd/conf/.htpasswd
+&lt;     AuthGroupFile /dev/null
+&lt;     AuthName &quot;input your id and passwd&quot;
+&lt;     AuthType Basic
+&lt;     require valid-user
+---
+&gt;     Require all granted
+
+##c httpdの起動
+$c sudo systemctl start httpd
+</pre></div>
+</td></tr></table>
+
+<p>ブラウザでページにアクセスした際にユーザー、パスワードの入力が求められれば設定完了です。</p>
+<h2 id="_4">備考</h2>
+<h3 id="httpdconf">編集後のhttpd.confの全内容</h3>
+<p>コメント行は省いてます。</p>
+<p>編集行</p>
+<ul>
+<li>サーバー名<strong>追加</strong>: 5行目</li>
+<li>Basic認証<strong>追加</strong>: 33-37行目</li>
+</ul>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -784,39 +997,169 @@
 30
 31
 32
-33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##c rpm -qa でパッケージ一覧を取得し行数を取得します</span>
-<span class="c1">##c 970パッケージインストールされてます</span>
-<span class="c1">#r rpm -qa | wc -l</span>
-<span class="m">970</span>
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ServerRoot &quot;/etc/httpd&quot;
 
-<span class="c1">##c どんなパッケージがあるかサラッと見てみます</span>
-<span class="c1">##c GConf2-2.14.0-9.el5 や ImageMagick-6.2.8.0-15.el5_8 重複しているように見えます</span>
-<span class="c1">#r rpm -qa | sort | head</span>
-Cluster_Administration-ja-JP-5.8-1.el5.centos
-Deployment_Guide-en-US-5.8-1.el5.centos
-Deployment_Guide-ja-JP-5.8-1.el5.centos
-GConf2-2.14.0-9.el5
-GConf2-2.14.0-9.el5
-Global_File_System-ja-JP-5.8-1.el5.centos
-ImageMagick-6.2.8.0-15.el5_8
-ImageMagick-6.2.8.0-15.el5_8
-MAKEDEV-3.23-1.2
+Listen 80
 
-<span class="c1">##c 重複をカウントすると175行も出てきてしまいました……</span>
-<span class="c1">#r rpm -qa | sort | uniq -d | wc -l</span>
-<span class="m">175</span>
+ServerName testserver:80
+Include conf.modules.d/*.conf
 
-<span class="c1">##c --qf(queryformat) オプションを使用し、フォーマット書式を指定します</span>
-<span class="c1">##c %{arch}がアーキテクチャー(i368とかx86_64)</span>
-<span class="c1">#r rpm -qa --qf &#39;%{name}-%{version}-%{release}.%{arch}.rpm\n&#39; |</span>
-grep <span class="s2">&quot;GConf2-2.14.0-9.el5&quot;</span>
-GConf2-2.14.0-9.el5.i386.rpm
-GConf2-2.14.0-9.el5.x86_64.rpm
+User apache
+Group apache
 
-<span class="c1">##c 重複がない事を確認します</span>
-<span class="c1">#r rpm -qa --qf &#39;%{name}-%{version}-%{release}.%{arch}.rpm\n&#39; \</span>
-<span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l
-<span class="m">0</span>
+
+ServerAdmin root@localhost
+
+
+<span class="nt">&lt;Directory</span> <span class="nt">/&gt;</span>
+    AllowOverride none
+    Require all denied
+<span class="nt">&lt;/Directory&gt;</span>
+
+
+DocumentRoot &quot;/var/www/html&quot;
+
+<span class="nt">&lt;Directory</span> <span class="err">&quot;/var/www&quot;</span><span class="nt">&gt;</span>
+    AllowOverride None
+    Require all granted
+<span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;Directory</span> <span class="err">&quot;/var/www/html&quot;</span><span class="nt">&gt;</span>
+    Options Indexes FollowSymLinks
+
+    AllowOverride None
+
+    AuthUserFile /etc/httpd/conf/.htpasswd
+    AuthGroupFile /dev/null
+    AuthName &quot;input your id and passwd&quot;
+    AuthType Basic
+    require valid-user
+<span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;IfModule</span> <span class="err">dir_module</span><span class="nt">&gt;</span>
+    DirectoryIndex index.html
+<span class="nt">&lt;/IfModule&gt;</span>
+
+<span class="nt">&lt;Files</span> <span class="err">&quot;.ht*&quot;</span><span class="nt">&gt;</span>
+    Require all denied
+<span class="nt">&lt;/Files&gt;</span>
+
+ErrorLog &quot;logs/error_log&quot;
+
+LogLevel warn
+
+<span class="nt">&lt;IfModule</span> <span class="err">log_config_module</span><span class="nt">&gt;</span>
+    LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined
+    LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b&quot; common
+
+    <span class="nt">&lt;IfModule</span> <span class="err">logio_module</span><span class="nt">&gt;</span>
+      LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot; %I %O&quot; combinedio
+    <span class="nt">&lt;/IfModule&gt;</span>
+
+
+    CustomLog &quot;logs/access_log&quot; combined
+<span class="nt">&lt;/IfModule&gt;</span>
+
+<span class="nt">&lt;IfModule</span> <span class="err">alias_module</span><span class="nt">&gt;</span>
+
+
+    ScriptAlias /cgi-bin/ &quot;/var/www/cgi-bin/&quot;
+
+<span class="nt">&lt;/IfModule&gt;</span>
+
+<span class="nt">&lt;Directory</span> <span class="err">&quot;/var/www/cgi-bin&quot;</span><span class="nt">&gt;</span>
+    AllowOverride None
+    Options None
+    Require all granted
+<span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;IfModule</span> <span class="err">mime_module</span><span class="nt">&gt;</span>
+    TypesConfig /etc/mime.types
+
+    AddType application/x-compress .Z
+    AddType application/x-gzip .gz .tgz
+
+
+
+    AddType text/html .shtml
+    AddOutputFilter INCLUDES .shtml
+<span class="nt">&lt;/IfModule&gt;</span>
+
+AddDefaultCharset UTF-8
+
+<span class="nt">&lt;IfModule</span> <span class="err">mime_magic_module</span><span class="nt">&gt;</span>
+    MIMEMagicFile conf/magic
+<span class="nt">&lt;/IfModule&gt;</span>
+
+
+EnableSendfile on
+
+IncludeOptional conf.d/*.conf
 </pre></div>
 </td></tr></table>
                 
@@ -839,7 +1182,7 @@ GConf2-2.14.0-9.el5.x86_64.rpm
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20180615_linux_collective_setting_password/" title="20180615_linux_一括でユーザーのパスワード設定を行う方法(chpasswd)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="00000000_トップページ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -848,19 +1191,19 @@ GConf2-2.14.0-9.el5.x86_64.rpm
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                20180615_linux_一括でユーザーのパスワード設定を行う方法(chpasswd)
+                00000000_トップページ
               </span>
             </div>
           </a>
         
         
-          <a href="../20180613_centos_ntfs_hdd_mount/" title="20180613_centos6.8でntfsのHDDをマウントする (ntfs-3g)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20180714_vagrant_otherclient_ssh/" title="20180714_vagrantで作成した仮想環境に別クライアントからsshする" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                20180613_centos6.8でntfsのHDDをマウントする (ntfs-3g)
+                20180714_vagrantで作成した仮想環境に別クライアントからsshする
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
