@@ -688,28 +688,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="お約束" class="md-nav__link">
-    お約束
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="概要" class="md-nav__link">
+  <a href="#_1" title="概要" class="md-nav__link">
     概要
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="動作環境" class="md-nav__link">
+  <a href="#_2" title="動作環境" class="md-nav__link">
     動作環境
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="初回コミット前にやること" class="md-nav__link">
+  <a href="#_3" title="初回コミット前にやること" class="md-nav__link">
     初回コミット前にやること
   </a>
   
@@ -717,7 +710,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" title="ユーザー、メールアドレスの登録" class="md-nav__link">
+  <a href="#_4" title="ユーザー、メールアドレスの登録" class="md-nav__link">
     ユーザー、メールアドレスの登録
   </a>
   
@@ -732,6 +725,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="ローカルリポジトリとリモートリポジトリ" class="md-nav__link">
+    ローカルリポジトリとリモートリポジトリ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubpush" title="githubにpushする" class="md-nav__link">
+    githubにpushする
+  </a>
   
 </li>
       
@@ -786,28 +793,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="お約束" class="md-nav__link">
-    お約束
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="概要" class="md-nav__link">
+  <a href="#_1" title="概要" class="md-nav__link">
     概要
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="動作環境" class="md-nav__link">
+  <a href="#_2" title="動作環境" class="md-nav__link">
     動作環境
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="初回コミット前にやること" class="md-nav__link">
+  <a href="#_3" title="初回コミット前にやること" class="md-nav__link">
     初回コミット前にやること
   </a>
   
@@ -815,7 +815,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" title="ユーザー、メールアドレスの登録" class="md-nav__link">
+  <a href="#_4" title="ユーザー、メールアドレスの登録" class="md-nav__link">
     ユーザー、メールアドレスの登録
   </a>
   
@@ -830,6 +830,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="ローカルリポジトリとリモートリポジトリ" class="md-nav__link">
+    ローカルリポジトリとリモートリポジトリ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#githubpush" title="githubにpushする" class="md-nav__link">
+    githubにpushする
+  </a>
   
 </li>
       
@@ -860,25 +874,16 @@
                 <h1 id="gitgithub">gitとgithubの備忘録</h1>
 <!-- Tag: git github -->
 
-<h2 id="_1">お約束</h2>
-<p>ハイライト部分は下記のように統一しています。</p>
-<ul>
-<li><code>#r</code>は管理者権限で実行</li>
-<li><code>$c</code>は一般ユーザーで実行</li>
-<li><strong><code>##c</code>はコメント</strong></li>
-<li><code>${hoge}</code>は任意の値</li>
-<li>自分が分かりやすいようにbashの変数風に記載してますが適宜置き換えて下さい</li>
-</ul>
-<h2 id="_2">概要</h2>
+<h2 id="_1">概要</h2>
 <p>最近gitとgithubを今更ながら触り始めました。<br />
 OSをセットアップした際に使えるようになるまでの手順をまとめました。</p>
-<h2 id="_3">動作環境</h2>
+<h2 id="_2">動作環境</h2>
 <ul>
 <li>Ubuntu 18.04 LTS</li>
 <li>xselコマンドを使用（ターミナルからのコピペなのでなくてもOK)</li>
 </ul>
-<h2 id="_4">初回コミット前にやること</h2>
-<h3 id="_5">ユーザー、メールアドレスの登録</h3>
+<h2 id="_3">初回コミット前にやること</h2>
+<h3 id="_4">ユーザー、メールアドレスの登録</h3>
 <p>ユーザー名とメールアドレスを登録しないとコミットできませんので登録しましょう。<br />
 実施するのはローカル環境です。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -887,7 +892,7 @@ OSをセットアップした際に使えるようになるまでの手順をま
 4
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## ターミナルで操作
 <span class="nv">$c</span> username=hoge
-<span class="nv">$c</span>  useremail=&quot;<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>@gmail.com&quot;
+<span class="nv">$c</span> useremail=&quot;<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>@gmail.com&quot;
 <span class="nv">$c</span> git config --global user.name &quot;<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>&quot;
 <span class="nv">$c</span> git config --global user.email <span class="cp">${</span><span class="n">useremail</span><span class="cp">}</span>
 </pre></div>
@@ -940,6 +945,61 @@ $c ssh -T git@github.com
 </pre></div>
 </td></tr></table>
 
+<h2 id="_5">ローカルリポジトリとリモートリポジトリ</h2>
+<p>gitの特有の概念としてローカルリポジトリとリモートリポジトリという考え方があります。</p>
+<p>自分のPC内で管理するリポジトリをローカルリポジトリと言い、githubなどのオンライン上で管理するリポジトリをリモートリポジトリと言います。</p>
+<p>ソースコードの修正はローカルリポジトリで行い、区切りの良いところで都度都度リモートリポジトリに反映する運用が一般的です。</p>
+<h2 id="githubpush">githubにpushする</h2>
+<p>流れとしてはadd =&gt; commit =&gt; pushを順番に行います。
+すでにリモートリポジトリにpushされているファイル類を取得する場合はcloneで新規にローカルリポジトリを作成します。</p>
+<table>
+<thead>
+<tr>
+<th>サブコマンド</th>
+<th>役割</th>
+<th>方向</th>
+<th>オプション</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add</td>
+<td>ローカルリポジトリに更新対象を追加</td>
+<td>ローカル =&gt; ローカル</td>
+<td><code>-A</code> 変更されたファイルを更新対象に含める</td>
+</tr>
+<tr>
+<td>commit</td>
+<td>addした更新対象を反映</td>
+<td>ローカル =&gt; ローカル</td>
+<td>-</td>
+</tr>
+<tr>
+<td>push</td>
+<td>ローカルリポジトリをリモートリポジトリへ反映</td>
+<td>ローカル =&gt; リモート</td>
+<td>-</td>
+</tr>
+<tr>
+<td>pull</td>
+<td>リモートリポジトリの更新をローカルリポジトリに反映</td>
+<td>リモート =&gt; ローカル</td>
+<td>-</td>
+</tr>
+<tr>
+<td>clone</td>
+<td>リモートリポジトリから新規でローカルリポジトリを作成</td>
+<td>リモート =&gt; ローカル</td>
+<td>-</td>
+</tr>
+<tr>
+<td>status</td>
+<td>addした対象やリポジトリの状況を確認</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <h2 id="sshclone">ssh形式でリモートリポジトリからclone</h2>
 <p>ssh形式でcloneするとpush時にユーザー名、パスワードが聞かれなくなるので便利。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
