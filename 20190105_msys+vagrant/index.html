@@ -36,7 +36,7 @@
     
     
       
-        <title>20180530_Windows10_win+eでマイコンピュータを開く - 忘れるための備忘録</title>
+        <title>20190105_msys2とvagrantを使う際の注意点 - 忘れるための備忘録</title>
       
     
     
@@ -72,7 +72,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#windows10wine" tabindex="1" class="md-skip">
+      <a href="#msys2vagrant" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -98,7 +98,7 @@
                 忘れるための備忘録
               </span>
               <span class="md-header-nav__topic">
-                20180530_Windows10_win+eでマイコンピュータを開く
+                20190105_msys2とvagrantを使う際の注意点
               </span>
             
           
@@ -179,11 +179,70 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../20190105_msys+vagrant/" title="20190105_msys2とvagrantを使う際の注意点" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        20190105_msys2とvagrantを使う際の注意点
+      </label>
+    
+    <a href="./" title="20190105_msys2とvagrantを使う際の注意点" class="md-nav__link md-nav__link--active">
       20190105_msys2とvagrantを使う際の注意点
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="環境" class="md-nav__link">
+    環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="原因" class="md-nav__link">
+    原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="対応" class="md-nav__link">
+    対応
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -575,56 +634,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        20180530_Windows10_win+eでマイコンピュータを開く
-      </label>
-    
-    <a href="./" title="20180530_Windows10_win+eでマイコンピュータを開く" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../20180530_windows10_open_computer_stting/" title="20180530_Windows10_win+eでマイコンピュータを開く" class="md-nav__link">
       20180530_Windows10_win+eでマイコンピュータを開く
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="概要" class="md-nav__link">
-    概要
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="設定方法" class="md-nav__link">
-    設定方法
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -764,8 +778,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="設定方法" class="md-nav__link">
-    設定方法
+  <a href="#_2" title="環境" class="md-nav__link">
+    環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="原因" class="md-nav__link">
+    原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="対応" class="md-nav__link">
+    対応
   </a>
   
 </li>
@@ -787,22 +815,25 @@
               
                 
                 
-                <h1 id="windows10wine">Windows10のwin+eキーでマイコンピュータを開く</h1>
+                <h1 id="msys2vagrant">msys2とvagrantを使う際の注意点</h1>
 <h2 id="_1">概要</h2>
-<p>Windows10のデフォルト設定では、win+eでクイックメニューが開いてしまいます。
-従来通りコンピューターを開きたい場合は設定変更が必要なので記載しておきます</p>
-<h2 id="_2">設定方法</h2>
+<p>新しくPCを購入しchocolateyを使いながらWindowsの設定をしていました。
+msys2とvirtualboxとvagrantのインストールをして、いつも使っているvagrantfileから
+ubuntuを起動し<code>vagrant ssh</code>でログインしたところプロンプト表示が返ってこず。
+ただし<strong>コマンド入力</strong>は受け付けられている状況でした。</p>
+<p>Windows標準のコマンドプロンプトでは問題なく使えていたのでmsys2(mintty)の問題っぽいなと調べてみました。</p>
+<h2 id="_2">環境</h2>
 <ul>
-<li>適当なフォルダを開く</li>
-<li>表示リボン<ul>
-<li>オプション</li>
-<li>全般タブ<ul>
-<li><strong>エクスプローラーを開く： [PC]</strong>に設定</li>
+<li>OS: Windows10 v1803</li>
+<li>msys2: 20180531</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+<h2 id="_3">原因</h2>
+<p>msys2にopen-sshがのインストールされていない。</p>
+<h2 id="_4">対応</h2>
+<p>msys2にopen-sshをインストールする。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c pacman -S openssh
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -823,7 +854,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20180601_windows_diskpart_partion_create/" title="20180601_diskpartコマンドでパーティションを切る" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="00000000_トップページ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -832,19 +863,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                20180601_diskpartコマンドでパーティションを切る
+                00000000_トップページ
               </span>
             </div>
           </a>
         
         
-          <a href="../20180529_windows10_autologin_setting/" title="20180529_Windows10_OS起動時に自動ログインする" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20181230_chocolatey/" title="20181230_chocolateyでWindows開発環境を作る" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                20180529_Windows10_OS起動時に自動ログインする
+                20181230_chocolateyでWindows開発環境を作る
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
