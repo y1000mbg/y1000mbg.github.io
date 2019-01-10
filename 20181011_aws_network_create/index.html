@@ -36,7 +36,7 @@
     
     
       
-        <title>20180704_Windows10でキーボードショートカットで拡大鏡を使う - 忘れるための備忘録</title>
+        <title>20181011_AWSのネットワークの作り方 - 忘れるための備忘録</title>
       
     
     
@@ -72,7 +72,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#windows10" tabindex="1" class="md-skip">
+      <a href="#aws" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -98,7 +98,7 @@
                 忘れるための備忘録
               </span>
               <span class="md-header-nav__topic">
-                20180704_Windows10でキーボードショートカットで拡大鏡を使う
+                20181011_AWSのネットワークの作り方
               </span>
             
           
@@ -203,11 +203,145 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../20181011_aws_network_create/" title="20181011_AWSのネットワークの作り方" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        20181011_AWSのネットワークの作り方
+      </label>
+    
+    <a href="./" title="20181011_AWSのネットワークの作り方" class="md-nav__link md-nav__link--active">
       20181011_AWSのネットワークの作り方
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="このページでわかること" class="md-nav__link">
+    このページでわかること
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws_1" title="AWSのネットワークを構成するコンポーネント" class="md-nav__link">
+    AWSのネットワークを構成するコンポーネント
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpc" title="VPC" class="md-nav__link">
+    VPC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="サブネット" class="md-nav__link">
+    サブネット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#igw" title="インターネットゲートウェイ(IGW)" class="md-nav__link">
+    インターネットゲートウェイ(IGW)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="ルートテーブル" class="md-nav__link">
+    ルートテーブル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic-ip" title="Elastic IP" class="md-nav__link">
+    Elastic IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="ネットワークを作る順番" class="md-nav__link">
+    ネットワークを作る順番
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpc_1" title="VPCの注意点" class="md-nav__link">
+    VPCの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="サブネットの注意点" class="md-nav__link">
+    サブネットの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="インターネットゲートウェイの注意点" class="md-nav__link">
+    インターネットゲートウェイの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="ルートテーブルの注意点" class="md-nav__link">
+    ルートテーブルの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic-ip_1" title="Elastic IPの注意点" class="md-nav__link">
+    Elastic IPの注意点
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -335,83 +469,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        20180704_Windows10でキーボードショートカットで拡大鏡を使う
-      </label>
-    
-    <a href="./" title="20180704_Windows10でキーボードショートカットで拡大鏡を使う" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../20180704_windows10_loupe/" title="20180704_Windows10でキーボードショートカットで拡大鏡を使う" class="md-nav__link">
       20180704_Windows10でキーボードショートカットで拡大鏡を使う
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="このページで分かること" class="md-nav__link">
-    このページで分かること
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="ショートカット一覧" class="md-nav__link">
-    ショートカット一覧
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" title="全モード共通" class="md-nav__link">
-    全モード共通
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="全画面モード" class="md-nav__link">
-    全画面モード
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" title="レンズモード" class="md-nav__link">
-    レンズモード
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -808,37 +870,99 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="このページで分かること" class="md-nav__link">
-    このページで分かること
+  <a href="#_1" title="このページでわかること" class="md-nav__link">
+    このページでわかること
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="ショートカット一覧" class="md-nav__link">
-    ショートカット一覧
+  <a href="#aws_1" title="AWSのネットワークを構成するコンポーネント" class="md-nav__link">
+    AWSのネットワークを構成するコンポーネント
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="全モード共通" class="md-nav__link">
-    全モード共通
+  <a href="#vpc" title="VPC" class="md-nav__link">
+    VPC
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="全画面モード" class="md-nav__link">
-    全画面モード
+  <a href="#_2" title="サブネット" class="md-nav__link">
+    サブネット
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="レンズモード" class="md-nav__link">
-    レンズモード
+  <a href="#igw" title="インターネットゲートウェイ(IGW)" class="md-nav__link">
+    インターネットゲートウェイ(IGW)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="ルートテーブル" class="md-nav__link">
+    ルートテーブル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic-ip" title="Elastic IP" class="md-nav__link">
+    Elastic IP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="ネットワークを作る順番" class="md-nav__link">
+    ネットワークを作る順番
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vpc_1" title="VPCの注意点" class="md-nav__link">
+    VPCの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="サブネットの注意点" class="md-nav__link">
+    サブネットの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="インターネットゲートウェイの注意点" class="md-nav__link">
+    インターネットゲートウェイの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="ルートテーブルの注意点" class="md-nav__link">
+    ルートテーブルの注意点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic-ip_1" title="Elastic IPの注意点" class="md-nav__link">
+    Elastic IPの注意点
   </a>
   
 </li>
@@ -865,93 +989,116 @@
               
                 
                 
-                <h1 id="windows10">Windows10でキーボードショートカットで拡大鏡を使う</h1>
-<!-- Tag: Windows Windows10 拡大鏡 使い方メモ -->
-
-<h2 id="_1">このページで分かること</h2>
+                <h1 id="aws">AWSのネットワークの作り方</h1>
+<h2 id="_1">このページでわかること</h2>
 <ul>
-<li>Windows10環境で拡大鏡をキーボードショートカットで使う方法</li>
+<li>AWSを使った外部接続可能なネットワークの作り方</li>
 </ul>
-<p>目が悪いので拡大鏡によくお世話になります。キーボードショートカットを使うと呼び出しや大きさの変更などスムーズに使えますが覚えきれていない部分もあるので改めてまとめてみることにしました。</p>
-<h2 id="_2">ショートカット一覧</h2>
-<h3 id="_3">全モード共通</h3>
+<p>仕事でAWSを触り始めたので忘れないうちにまとめておきます。
+ネットワークとか専門じゃないので結構適当です。</p>
+<h2 id="aws_1">AWSのネットワークを構成するコンポーネント</h2>
+<p>必要なコンポーネント（部品）が複数あります。</p>
 <table>
 <thead>
 <tr>
-<th>キーボードショートカット</th>
-<th>効果</th>
+<th>名称</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>win + esc</td>
-<td>拡大鏡の終了</td>
+<td>VPC</td>
+<td>ネットワーク全体(IPの範囲を設定)</td>
 </tr>
 <tr>
-<td>win + +</td>
-<td>拡大鏡を起動と拡大率を上げる</td>
+<td>サブネット</td>
+<td>VPC内でサブネットを切れます</td>
 </tr>
 <tr>
-<td>win + -</td>
-<td>拡大率を下げる</td>
+<td>インターネットゲートウェイ</td>
+<td>外部に出るためのゲートウェイ。VPCにアタッチして使います</td>
 </tr>
 <tr>
-<td>ctrl + alt + f</td>
-<td>全画面モードへ切り替え</td>
+<td>ルートテーブル</td>
+<td>VPC内のルーティング設定をします</td>
 </tr>
 <tr>
-<td>ctrl + alt + l</td>
-<td>レンズモードへ切り替え</td>
-</tr>
-<tr>
-<td>ctl + alt + d</td>
-<td>固定モードへ切り替え</td>
+<td>Elastic IP</td>
+<td>グローバルIPとプライベートIPを変換してくれる仕組みです</td>
 </tr>
 </tbody>
 </table>
-<h3 id="_4">全画面モード</h3>
-<table>
-<thead>
-<tr>
-<th>キーボードショートカット</th>
-<th>効果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ctrl + alt + space</td>
-<td>全画面プレビュー</td>
-</tr>
-</tbody>
-</table>
-<p>全画面プレビューは拡大して見えない領域を一時的に表示させる機能です。</p>
-<h3 id="_5">レンズモード</h3>
-<table>
-<thead>
-<tr>
-<th>キーボードショートカット</th>
-<th>効果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>alt + shift + right</td>
-<td>横幅の拡大</td>
-</tr>
-<tr>
-<td>alt + shift + left</td>
-<td>横幅の縮小</td>
-</tr>
-<tr>
-<td>alt + shift + up</td>
-<td>縦幅の拡大</td>
-</tr>
-<tr>
-<td>alt + shift + down</td>
-<td>縦幅の縮小</td>
-</tr>
-</tbody>
-</table>
+<h3 id="vpc">VPC</h3>
+<p>VPCはネットワーク全体のイメージです。指定したIP範囲がそのVPCで使用できるネットワークになります。
+例えば172.31.0.0/16を指定すればその範囲内のIPアドレスを使用できます。</p>
+<h3 id="_2">サブネット</h3>
+<p>VPC内でサブネットを切ることができます。複数のセグメント形態に分けることができるため、同じVPCだけど別セグメントのような設定も可能だと思います。</p>
+<h3 id="igw">インターネットゲートウェイ(IGW)</h3>
+<p>外部接続用の口です。VPCにアタッチしない場合は外部接続できません。</p>
+<h3 id="_3">ルートテーブル</h3>
+<p>IGWへの経路をどうするかなどを設定すると外部接続できるようになります。その他接続もルーティング設定することが可能なようです。</p>
+<h3 id="elastic-ip">Elastic IP</h3>
+<p>グローバルIPとプライベートIPを変換する仕組みです。一旦紐づけすればそのグローバルIPで接続することができます。
+SSHやRDP用に使うことが多いです。</p>
+<h2 id="_4">ネットワークを作る順番</h2>
+<ol>
+<li>VPC</li>
+<li>サブネット</li>
+<li>IGW</li>
+<li>ルートテーブル
+5  EC2インスタンス(Elastic IPを紐付けるために先に作成)</li>
+<li>Elastic IP</li>
+</ol>
+<h3 id="vpc_1">VPCの注意点</h3>
+<ul>
+<li>名前タグ : わかりやすい名前</li>
+<li>ipv4 CIDRブロック : そのネットワークの範囲<code>xxx.xxx.xxx.xxx/xx</code>で指定</li>
+<li>ipv6 CIDRブロック : 未使用なので詳細はわからないが、多分ipv6の範囲。任意に範囲を指定はできない。</li>
+<li>テナンシー : デフォルトでOK</li>
+</ul>
+<p><strong>ipv6やテナンシーは使ったことないので詳細は分からないです</strong></p>
+<h3 id="_5">サブネットの注意点</h3>
+<ul>
+<li>名前タグ : わかりやすい名前</li>
+<li>VPC : アタッチするVPC名を指定するので先に作成しておくこと</li>
+<li>アベイラビリティゾーン : 指定なし (自動判断)</li>
+<li>ipv4 CIDR ブロック : VPCと同じIP範囲を指定すればサブネット1個になる</li>
+</ul>
+<h3 id="_6">インターネットゲートウェイの注意点</h3>
+<ul>
+<li>名前タグ : わかりやすい名前</li>
+</ul>
+<p><strong> 作成後、アクションメニューからVPCにアタッチを忘れないこと </strong></p>
+<h3 id="_7">ルートテーブルの注意点</h3>
+<ul>
+<li>名前タグ : わかりやすい名前</li>
+<li>VPC : 既存の紐付けるVPCを選択</li>
+</ul>
+<p>作成後の画面で下記を設定すること</p>
+<ul>
+<li><strong>ルートタブ</strong>から編集<ul>
+<li><strong>別のルートを追加</strong><ul>
+<li>送信先: 0.0.0.0/0 (ALL設定)</li>
+<li>ターゲット: IGW</li>
+</ul>
+</li>
+<li><strong>サブネットの関連付け</strong>から編集<ul>
+<li>紐付いているサブネットの関連付けに[x}を入れ保存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>※サブネットの関連付けを明示的にしないと、デフォルトのサブネットが使用されて想定した通りの通信が出来ない。</p>
+<h3 id="elastic-ip_1">Elastic IPの注意点</h3>
+<p>新しいアドレスの割り当てを選び<strong>割り当て</strong></p>
+<p>作成後アクションメニューから<strong>アドレスの関連付け</strong>で下記を設定すること</p>
+<ul>
+<li>リソースタイプ : インスタンス</li>
+<li>インスタンス : 紐づけたいインスタンスを選択</li>
+<li>プライベートIP : 複数ある場合は変換するIPアドレスを選択</li>
+<li>再関連付け : アタッチ済みの場合はチェック</li>
+</ul>
                 
                   
                 
@@ -972,7 +1119,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20180706_vim_encoding_setting/" title="20180706_vimで文字コード・改行コードを指定する" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../20181230_chocolatey/" title="20181230_chocolateyでWindows開発環境を作る" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -981,19 +1128,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                20180706_vimで文字コード・改行コードを指定する
+                20181230_chocolateyでWindows開発環境を作る
               </span>
             </div>
           </a>
         
         
-          <a href="../20180703_mkdocs_blog_startup/" title="20180703_mkdocsで静的サイトをつくる" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20180821_what_you_memo/" title="20180821_「ポエム」なぜメモを書き続けるのか" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                20180703_mkdocsで静的サイトをつくる
+                20180821_「ポエム」なぜメモを書き続けるのか
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
