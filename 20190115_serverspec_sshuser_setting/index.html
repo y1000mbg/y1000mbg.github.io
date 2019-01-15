@@ -36,7 +36,7 @@
     
     
       
-        <title>20180618_Windows10_認証なしでフォルダ共有をかける - 忘れるための備忘録</title>
+        <title>20190115_serverspecでsshの接続ユーザーを指定する - 忘れるための備忘録</title>
       
     
     
@@ -72,7 +72,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#windows10" tabindex="1" class="md-skip">
+      <a href="#serverspecssh" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -98,7 +98,7 @@
                 忘れるための備忘録
               </span>
               <span class="md-header-nav__topic">
-                20180618_Windows10_認証なしでフォルダ共有をかける
+                20190115_serverspecでsshの接続ユーザーを指定する
               </span>
             
           
@@ -179,11 +179,76 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../20190115_serverspec_sshuser_setting/" title="20190115_serverspecでsshの接続ユーザーを指定する" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        20190115_serverspecでsshの接続ユーザーを指定する
+      </label>
+    
+    <a href="./" title="20190115_serverspecでsshの接続ユーザーを指定する" class="md-nav__link md-nav__link--active">
       20190115_serverspecでsshの接続ユーザーを指定する
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="このページで分かること" class="md-nav__link">
+    このページで分かること
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="設定方法" class="md-nav__link">
+    設定方法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="結論はシンプル" class="md-nav__link">
+    結論はシンプル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="詳細手順" class="md-nav__link">
+    詳細手順
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -467,83 +532,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        20180618_Windows10_認証なしでフォルダ共有をかける
-      </label>
-    
-    <a href="./" title="20180618_Windows10_認証なしでフォルダ共有をかける" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../20180618_windows10_share_nopassword/" title="20180618_Windows10_認証なしでフォルダ共有をかける" class="md-nav__link">
       20180618_Windows10_認証なしでフォルダ共有をかける
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="このページでわかること" class="md-nav__link">
-    このページでわかること
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="概要" class="md-nav__link">
-    概要
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="作業の流れ" class="md-nav__link">
-    作業の流れ
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" title="1.『共有の詳細設定』の変更" class="md-nav__link">
-    1.『共有の詳細設定』の変更
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" title="2. フォルダ共有の実施" class="md-nav__link">
-    2. フォルダ共有の実施
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -844,37 +837,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="このページでわかること" class="md-nav__link">
-    このページでわかること
+  <a href="#_1" title="このページで分かること" class="md-nav__link">
+    このページで分かること
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="概要" class="md-nav__link">
-    概要
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="作業の流れ" class="md-nav__link">
-    作業の流れ
+  <a href="#_2" title="設定方法" class="md-nav__link">
+    設定方法
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1" title="1.『共有の詳細設定』の変更" class="md-nav__link">
-    1.『共有の詳細設定』の変更
+  <a href="#_3" title="結論はシンプル" class="md-nav__link">
+    結論はシンプル
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2" title="2. フォルダ共有の実施" class="md-nav__link">
-    2. フォルダ共有の実施
+  <a href="#_4" title="詳細手順" class="md-nav__link">
+    詳細手順
   </a>
   
 </li>
@@ -901,35 +887,49 @@
               
                 
                 
-                <h1 id="windows10">Windows10で認証なしでフォルダ共有をかける</h1>
-<!-- Tag: Windows Windows10 認証 フォルダ共有 -->
-
-<h2 id="_1">このページでわかること</h2>
+                <h1 id="serverspecssh">serverspecでsshの接続ユーザーを指定する</h1>
+<h2 id="_1">このページで分かること</h2>
 <ul>
-<li>Windows10の<strong>フォルダ共有機能で認証なし</strong>で共有をかける際の設定方法</li>
+<li>serverspecでsshの接続ユーザーを指定する方法</li>
 </ul>
-<h2 id="_2">概要</h2>
-<p>Windows10では従来のWindowsのようにフォルダ共有をしても、<strong>デフォルトで認証あり</strong>になりました。<br />
-たとえパスワード保護をしていないローカルアカウントでも、接続時の資格情報を確認されるためそのままではアクセスできません。</p>
-<p>設定を変更し、認証なしでフォルダ共有が可能な状態にします。</p>
-<h2 id="_3">作業の流れ</h2>
-<ol>
-<li>『共有の詳細設定』の変更</li>
-<li>フォルダ共有の実施</li>
-</ol>
-<h3 id="1">1.『共有の詳細設定』の変更</h3>
-<p>コントロールパネル =&gt; ネットワークと共有センター =&gt; 『共有の詳細設定』 =&gt; 一番下の『すべてのネットワーク』を開閉</p>
-<p>以下の項目を選択しチェックします</p>
-<ul class="task-list">
-<li>『パブリックフォルダの共有』</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <em><strong>共有を有効にして、ネットワークアクセスがある場合はパブリックフォルダ内のファイルを読み書きできるようにする</strong></em></li>
-<li>『ファイル共有の権限』</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <em><strong>40ビット暗号化または56ビット暗号化を使用するデバイスのためのファイル共有を有効にする</strong></em></li>
-<li>『パスワード保護共有』</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <em><strong>パスワード保護共有を無効にする</strong></em></li>
-</ul>
-<h3 id="2">2. フォルダ共有の実施</h3>
-<p>共有したいフォルダを右クリック =&gt; 『共有』から通常通りフォルダの共有を設定します。</p>
+<p>初めてansibleとserverspecの環境を触りました。
+serverspecでssh接続するユーザーをansibleと共通化しようとして苦戦したので備忘録です。</p>
+<h2 id="_2">設定方法</h2>
+<h3 id="_3">結論はシンプル</h3>
+<p>結論として <code>~/.ssh/config</code> に接続情報(User)を設定すれば対応できます。</p>
+<h3 id="_4">詳細手順</h3>
+<p><code>vim ~/.ssh/config</code>で接続情報を記載します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 凡例
+##c <span class="cp">${</span><span class="n">target_hostname</span><span class="cp">}</span> = 対象のホスト名 / <span class="cp">${</span><span class="n">target_host_ipaddr</span><span class="cp">}</span> = 対象IP / <span class="cp">${</span><span class="n">ssh_user</span><span class="cp">}</span> = ssh接続に使用するユーザー
+Host <span class="cp">${</span><span class="n">target_hostname</span><span class="cp">}</span>
+  HostName <span class="cp">${</span><span class="n">target_host_ipaddr</span><span class="cp">}</span>
+  User <span class="cp">${</span><span class="n">ssh_user</span><span class="cp">}</span>
+  Port 22
+  IdentityFile ~/.ssh/id_rsa
+
+##c 実際に設定した内容
+Host ansible-guest
+  HostName 192.168.55.94
+  User ansible
+  Port 22
+  IdentityFile ~/.ssh/id_rsa
+</pre></div>
+</td></tr></table>
+
+<p>初回設定の際にHostにIPアドレス、HostNameにサーバー名を入れてしまい、まったく設定が通らなくハマりました。</p>
                 
                   
                 
@@ -950,7 +950,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20180619_nutanix_disk_convert/" title="20180619_nutanixのディスクイメージをvdi形式に変換する" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="00000000_トップページ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -959,19 +959,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                20180619_nutanixのディスクイメージをvdi形式に変換する
+                00000000_トップページ
               </span>
             </div>
           </a>
         
         
-          <a href="../20180617_windows10_startup_registration/" title="20180617_Windows10環境でのスタートアップ登録方法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20190113_windows_account_change/" title="20190113_windows10でローカルアカウントからMicrosoftアカウントに切り替える" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                20180617_Windows10環境でのスタートアップ登録方法
+                20190113_windows10でローカルアカウントからMicrosoftアカウントに切り替える
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
