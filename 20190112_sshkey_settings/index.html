@@ -181,6 +181,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../20190122_vagrant_uid_error/" title="20190122_vagrant up 時にUIDエラーが出る" class="md-nav__link">
+      20190122_vagrant up 時にUIDエラーが出る
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../20190115_serverspec_sshuser_setting/" title="20190115_serverspecでsshの接続ユーザーを指定する" class="md-nav__link">
       20190115_serverspecでsshの接続ユーザーを指定する
     </a>
@@ -280,8 +292,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="参考; 秘密鍵から公開鍵の作成" class="md-nav__link">
-    参考; 秘密鍵から公開鍵の作成
+  <a href="#_5" title="参考: 秘密鍵から公開鍵の作成" class="md-nav__link">
+    参考: 秘密鍵から公開鍵の作成
   </a>
   
 </li>
@@ -906,8 +918,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="参考; 秘密鍵から公開鍵の作成" class="md-nav__link">
-    参考; 秘密鍵から公開鍵の作成
+  <a href="#_5" title="参考: 秘密鍵から公開鍵の作成" class="md-nav__link">
+    参考: 秘密鍵から公開鍵の作成
   </a>
   
 </li>
@@ -957,7 +969,7 @@
 <tr>
 <td>id_rsa.pub (公開鍵)</td>
 <td>F</td>
-<td>644</td>
+<td>600</td>
 </tr>
 <tr>
 <td>authorized_keys (公開鍵)</td>
@@ -968,7 +980,7 @@
 </table>
 <h2 id="ssh_1">ssh鍵認証の設定方法</h2>
 <h3 id="_3">手動での方法設定</h3>
-<p><strong>【接続先サーバー】</strong>\で実行</p>
+<p><strong>【接続先サーバー】</strong>で実行</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1079,7 +1091,7 @@ The key&#39;s randomart image is:
 </pre></div>
 </td></tr></table>
 
-<h2 id="_5">参考; 秘密鍵から公開鍵の作成</h2>
+<h2 id="_5">参考: 秘密鍵から公開鍵の作成</h2>
 <p>たまに公開鍵ファイルがなくなったり……</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">$c</span> ssh-keygen -yf <span class="cp">${</span><span class="n">key_file</span><span class="cp">}</span>
 </pre></div>
