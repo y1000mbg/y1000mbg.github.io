@@ -907,15 +907,18 @@
 <p>先日msys2でvagrantを動かしていたときにCtrl+cでコマンド中止ができなく非常に困ったので調べました。</p>
 <h2 id="_2">環境</h2>
 <ul>
-<li>OS: Windows10 pro</li>
+<li>Windows10 pro v1803</li>
 <li>Vagrant 2.2.2</li>
 </ul>
 <h2 id="or">設定方法 or 対応方法</h2>
 <p>原因としてはminttyは対話形式のコマンドをうまく扱えない仕様があるようです。winコマンドに関してはwinptyというコマンドでラップしてあげると正常動作になりますのでaliasに登録してあげましょう。</p>
-<p>alias vagran'='winpty vagrant'</p>
-<p>.bashrcに登録してあげると便利です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>alias vagran&#39;=&#39;winpty vagrant&#39;
+</pre></div>
+</td></tr></table>
+
+<p>.bashrcに登録してあげるとラップを意識しせずに使えるので便利です。</p>
 <h2 id="_3">備考</h2>
-<p>Ruby on Railsなども同じ現象に見舞われて<code>rails s</code>でサーバー起動後、Ctrl+cで停止できなかったりｓるのでその場合はkillコマンドでプロセスを終了させるしかなさそうです。</p>
+<p>Ruby on Railsなども同じ現象に見舞われて<code>rails s</code>でサーバー起動後、Ctrl+cで停止できなのでその場合はkillコマンドでプロセスを終了させるしかなさそうです。</p>
 <p>ctrl+cでSIGINTがシェルに送られるはずですが、minttyと対話形式は相性が悪いようです。WSLからWindows側Vagrantが動かせると風の噂で聞き試しましたが上手くいかず……ぐぬぬ。</p>
 <p>ubuntuでもネイティブなLinux環境が動くのは魅力ですが普段VagrantとDockerを使っているのでこの二つが動かないと厳しかったりします。DockerはWSLのUbuntu 16.4で動くようになったようなので後日試してみます！</p>
                 
