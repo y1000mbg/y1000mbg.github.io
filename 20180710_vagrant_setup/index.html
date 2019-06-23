@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20180710_Vagrantを使ってLinux開発環境を用意しよう
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -1215,25 +1225,25 @@ sudo localectl set-locale <span class="nv">LANG</span><span class="o">=</span>ja
 <p>VagrantFileを生成したディレクトリで下記コマンドを実行することでboxを起動できます。
 <code>config.vm.box</code>で指定したboxが初起動の場合はダウンロードが始まるのでしばらく時間がかかります(これがbase-box)
 一度ダウンロードされたbase-boxは<code>%HOMEPATH%\.vagrant.d\boxes</code>(c:\User\${user_name}.vagrant.d\boxes)に保存され同じboxを使用する場合は次回up時はダウンロードは発生しません。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vagrant up
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vagrant</span> <span class="n">up</span>
 </pre></div>
 </td></tr></table>
 
 <p>起動が完了後sshで接続が可能です。msys2経由では問題なくログインできました。
 コマンドプロンプトだとsscクライアントが入ってないから上手くいかないかもしれません。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vagrant ssh
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vagrant</span> <span class="n">ssh</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="4-box">4. boxの終了</h2>
 <p>boxの終了は下記コマンドで実施します。box自体は削除されません。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vagrant halt
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vagrant</span> <span class="n">halt</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="5-box">5. boxの破棄</h2>
 <p>box自体不要になった場合は破棄することができます。boxは破棄されますが<strong>base-boxは破棄されない</strong>ので次回up時にダウンロードから始まる事はないです。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vagrant destroy
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vagrant</span> <span class="k">destroy</span>
 </pre></div>
 </td></tr></table>
 
@@ -1285,53 +1295,53 @@ sudo localectl set-locale <span class="nv">LANG</span><span class="o">=</span>ja
 44
 45
 46
-47</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c vagrant.exe up
-Bringing machine &#39;default&#39; up with &#39;virtualbox&#39; provider...
-==&gt; default: Importing base box &#39;ubuntu/xenial64&#39;...
-==&gt; default: Matching MAC address for NAT networking...
-==&gt; default: Checking if box &#39;ubuntu/xenial64&#39; is up to date...
-==&gt; default: A newer version of the box &#39;ubuntu/xenial64&#39; for provider &#39;virtualbox&#39; is
-==&gt; default: available! You currently have version &#39;20180705.0.0&#39;. The latest is version
-==&gt; default: &#39;20180706.0.0&#39;. Run `vagrant box update` to update.
-==&gt; default: Setting the name of the VM: tbuntu
-==&gt; default: Clearing any previously set network interfaces...
-==&gt; default: Preparing network interfaces based on configuration...
-    default: Adapter 1: nat
-    default: Adapter 2: bridged
-==&gt; default: Forwarding ports...
-    default: 3000 (guest) =&gt; 3000 (host) (adapter 1)
-    default: 22 (guest) =&gt; 2222 (host) (adapter 1)
-==&gt; default: Running &#39;pre-boot&#39; VM customizations...
-==&gt; default: Booting VM...
-==&gt; default: Waiting for machine to boot. This may take a few minutes...
-    default: SSH address: 127.0.0.1:2222
-    default: SSH username: vagrant
-    default: SSH auth method: private key
-    default:
-    default: Vagrant insecure key detected. Vagrant will automatically replace
-    default: this with a newly generated keypair for better security.
-    default:
-    default: Inserting generated public key within guest...
-    default: Removing insecure key from the guest if it&#39;s present...
-    default: Key inserted! Disconnecting and reconnecting using new SSH key...
-==&gt; default: Machine booted and ready!
-==&gt; default: Checking for guest additions in VM...
-    default: The guest additions on this VM do not match the installed version of
-    default: VirtualBox! In most cases this is fine, but in rare cases it can
-    default: prevent things such as shared folders from working properly. If you see
-    default: shared folder errors, please make sure the guest additions within the
-    default: virtual machine match the version of VirtualBox you have installed on
-    default: your host and reload your VM.
-    default:
-    default: Guest Additions Version: 5.1.34
-    default: VirtualBox Version: 5.2
-==&gt; default: Setting hostname...
-==&gt; default: Configuring and enabling network interfaces...
-==&gt; default: Mounting shared folders...
-    default: /vagrant =&gt; C:/Users/winu/vagrant/testubuntu
-==&gt; default: Running provisioner: shell...
-    default: Running: C:/Users/winu/AppData/Local/Temp/vagrant-shell20180710-7212-a3l6ry.sh
-$c
+47</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mh">$c</span> <span class="nv">vagrant</span>.<span class="nv">exe</span> <span class="nv">up</span>
+<span class="nv">Bringing</span> <span class="nv">machine</span> <span class="s1">&#39;</span><span class="s">default</span><span class="s1">&#39;</span> <span class="nv">up</span> <span class="nv">with</span> <span class="s1">&#39;</span><span class="s">virtualbox</span><span class="s1">&#39;</span> <span class="nv">provider</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Importing</span> <span class="nv">base</span> <span class="nv">box</span> <span class="s1">&#39;</span><span class="s">ubuntu/xenial64</span><span class="s1">&#39;</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Matching</span> <span class="nv">MAC</span> <span class="nv">address</span> <span class="k">for</span> <span class="nv">NAT</span> <span class="nv">networking</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Checking</span> <span class="k">if</span> <span class="nv">box</span> <span class="s1">&#39;</span><span class="s">ubuntu/xenial64</span><span class="s1">&#39;</span> <span class="nv">is</span> <span class="nv">up</span> <span class="nv">to</span> <span class="nv">date</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">A</span> <span class="nv">newer</span> <span class="nv">version</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">box</span> <span class="s1">&#39;</span><span class="s">ubuntu/xenial64</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="nv">provider</span> <span class="s1">&#39;</span><span class="s">virtualbox</span><span class="s1">&#39;</span> <span class="nv">is</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">available</span><span class="o">!</span> <span class="nv">You</span> <span class="nv">currently</span> <span class="nv">have</span> <span class="nv">version</span> <span class="s1">&#39;</span><span class="s">20180705.0.0</span><span class="s1">&#39;</span>. <span class="nv">The</span> <span class="nv">latest</span> <span class="nv">is</span> <span class="nv">version</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="s1">&#39;</span><span class="s">20180706.0.0</span><span class="s1">&#39;</span>. <span class="nv">Run</span> `<span class="nv">vagrant</span> <span class="nv">box</span> <span class="nv">update</span>` <span class="nv">to</span> <span class="nv">update</span>.
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Setting</span> <span class="nv">the</span> <span class="nv">name</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">VM</span>: <span class="nv">tbuntu</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Clearing</span> <span class="nv">any</span> <span class="nv">previously</span> <span class="nv">set</span> <span class="nv">network</span> <span class="nv">interfaces</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Preparing</span> <span class="nv">network</span> <span class="nv">interfaces</span> <span class="nv">based</span> <span class="nv">on</span> <span class="nv">configuration</span>...
+    <span class="nv">default</span>: <span class="nv">Adapter</span> <span class="mi">1</span>: <span class="nv">nat</span>
+    <span class="nv">default</span>: <span class="nv">Adapter</span> <span class="mi">2</span>: <span class="nv">bridged</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Forwarding</span> <span class="nv">ports</span>...
+    <span class="nv">default</span>: <span class="mi">3000</span> <span class="ss">(</span><span class="nv">guest</span><span class="ss">)</span> <span class="o">=&gt;</span> <span class="mi">3000</span> <span class="ss">(</span><span class="nv">host</span><span class="ss">)</span> <span class="ss">(</span><span class="nv">adapter</span> <span class="mi">1</span><span class="ss">)</span>
+    <span class="nv">default</span>: <span class="mi">22</span> <span class="ss">(</span><span class="nv">guest</span><span class="ss">)</span> <span class="o">=&gt;</span> <span class="mi">2222</span> <span class="ss">(</span><span class="nv">host</span><span class="ss">)</span> <span class="ss">(</span><span class="nv">adapter</span> <span class="mi">1</span><span class="ss">)</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Running</span> <span class="s1">&#39;</span><span class="s">pre-boot</span><span class="s1">&#39;</span> <span class="nv">VM</span> <span class="nv">customizations</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Booting</span> <span class="nv">VM</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Waiting</span> <span class="k">for</span> <span class="nv">machine</span> <span class="nv">to</span> <span class="nv">boot</span>. <span class="nv">This</span> <span class="nv">may</span> <span class="nv">take</span> <span class="nv">a</span> <span class="nv">few</span> <span class="nv">minutes</span>...
+    <span class="nv">default</span>: <span class="nv">SSH</span> <span class="nv">address</span>: <span class="mi">127</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">1</span>:<span class="mi">2222</span>
+    <span class="nv">default</span>: <span class="nv">SSH</span> <span class="nv">username</span>: <span class="nv">vagrant</span>
+    <span class="nv">default</span>: <span class="nv">SSH</span> <span class="nv">auth</span> <span class="nv">method</span>: <span class="nv">private</span> <span class="nv">key</span>
+    <span class="nv">default</span>:
+    <span class="nv">default</span>: <span class="nv">Vagrant</span> <span class="nv">insecure</span> <span class="nv">key</span> <span class="nv">detected</span>. <span class="nv">Vagrant</span> <span class="nv">will</span> <span class="nv">automatically</span> <span class="nv">replace</span>
+    <span class="nv">default</span>: <span class="nv">this</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">newly</span> <span class="nv">generated</span> <span class="nv">keypair</span> <span class="k">for</span> <span class="nv">better</span> <span class="nv">security</span>.
+    <span class="nv">default</span>:
+    <span class="nv">default</span>: <span class="nv">Inserting</span> <span class="nv">generated</span> <span class="nv">public</span> <span class="nv">key</span> <span class="nv">within</span> <span class="nv">guest</span>...
+    <span class="nv">default</span>: <span class="nv">Removing</span> <span class="nv">insecure</span> <span class="nv">key</span> <span class="nv">from</span> <span class="nv">the</span> <span class="nv">guest</span> <span class="k">if</span> <span class="nv">it</span><span class="s1">&#39;</span><span class="s">s present...</span>
+    <span class="nv">default</span>: <span class="nv">Key</span> <span class="nv">inserted</span><span class="o">!</span> <span class="nv">Disconnecting</span> <span class="nv">and</span> <span class="nv">reconnecting</span> <span class="nv">using</span> <span class="nv">new</span> <span class="nv">SSH</span> <span class="nv">key</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Machine</span> <span class="nv">booted</span> <span class="nv">and</span> <span class="nv">ready</span><span class="o">!</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Checking</span> <span class="k">for</span> <span class="nv">guest</span> <span class="nv">additions</span> <span class="nv">in</span> <span class="nv">VM</span>...
+    <span class="nv">default</span>: <span class="nv">The</span> <span class="nv">guest</span> <span class="nv">additions</span> <span class="nv">on</span> <span class="nv">this</span> <span class="nv">VM</span> <span class="k">do</span> <span class="nv">not</span> <span class="nv">match</span> <span class="nv">the</span> <span class="nv">installed</span> <span class="nv">version</span> <span class="nv">of</span>
+    <span class="nv">default</span>: <span class="nv">VirtualBox</span><span class="o">!</span> <span class="nv">In</span> <span class="nv">most</span> <span class="nv">cases</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">fine</span>, <span class="nv">but</span> <span class="nv">in</span> <span class="nv">rare</span> <span class="nv">cases</span> <span class="nv">it</span> <span class="nv">can</span>
+    <span class="nv">default</span>: <span class="nv">prevent</span> <span class="nv">things</span> <span class="nv">such</span> <span class="nv">as</span> <span class="nv">shared</span> <span class="nv">folders</span> <span class="nv">from</span> <span class="nv">working</span> <span class="nv">properly</span>. <span class="k">If</span> <span class="nv">you</span> <span class="nv">see</span>
+    <span class="nv">default</span>: <span class="nv">shared</span> <span class="nv">folder</span> <span class="nv">errors</span>, <span class="nv">please</span> <span class="nv">make</span> <span class="nv">sure</span> <span class="nv">the</span> <span class="nv">guest</span> <span class="nv">additions</span> <span class="nv">within</span> <span class="nv">the</span>
+    <span class="nv">default</span>: <span class="nv">virtual</span> <span class="nv">machine</span> <span class="nv">match</span> <span class="nv">the</span> <span class="nv">version</span> <span class="nv">of</span> <span class="nv">VirtualBox</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">installed</span> <span class="nv">on</span>
+    <span class="nv">default</span>: <span class="nv">your</span> <span class="nv">host</span> <span class="nv">and</span> <span class="nv">reload</span> <span class="nv">your</span> <span class="nv">VM</span>.
+    <span class="nv">default</span>:
+    <span class="nv">default</span>: <span class="nv">Guest</span> <span class="nv">Additions</span> <span class="nv">Version</span>: <span class="mi">5</span>.<span class="mi">1</span>.<span class="mi">34</span>
+    <span class="nv">default</span>: <span class="nv">VirtualBox</span> <span class="nv">Version</span>: <span class="mi">5</span>.<span class="mi">2</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Setting</span> <span class="nv">hostname</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Configuring</span> <span class="nv">and</span> <span class="nv">enabling</span> <span class="nv">network</span> <span class="nv">interfaces</span>...
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Mounting</span> <span class="nv">shared</span> <span class="nv">folders</span>...
+    <span class="nv">default</span>: <span class="o">/</span><span class="nv">vagrant</span> <span class="o">=&gt;</span> <span class="nv">C</span>:<span class="o">/</span><span class="nv">Users</span><span class="o">/</span><span class="nv">winu</span><span class="o">/</span><span class="nv">vagrant</span><span class="o">/</span><span class="nv">testubuntu</span>
+<span class="o">==&gt;</span> <span class="nv">default</span>: <span class="nv">Running</span> <span class="nv">provisioner</span>: <span class="nv">shell</span>...
+    <span class="nv">default</span>: <span class="nv">Running</span>: <span class="nv">C</span>:<span class="o">/</span><span class="nv">Users</span><span class="o">/</span><span class="nv">winu</span><span class="o">/</span><span class="nv">AppData</span><span class="o">/</span><span class="nv">Local</span><span class="o">/</span><span class="nv">Temp</span><span class="o">/</span><span class="nv">vagrant</span><span class="o">-</span><span class="nv">shell20180710</span><span class="o">-</span><span class="mi">7212</span><span class="o">-</span><span class="nv">a3l6ry</span>.<span class="nv">sh</span>
+<span class="mh">$c</span>
 </pre></div>
 </td></tr></table>
 
@@ -1340,11 +1350,11 @@ $c
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c vagrant destroy
-    default: Are you sure you want to destroy the &#39;default&#39; VM? [y/N] y
-==&gt; default: Forcing shutdown of VM...
-==&gt; default: Destroying VM and associated drives...
-$c
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">vagrant</span> <span class="k">destroy</span>
+    <span class="k">default</span><span class="p">:</span> <span class="k">Are</span> <span class="n">you</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">want</span> <span class="k">to</span> <span class="k">destroy</span> <span class="n">the</span> <span class="s1">&#39;default&#39;</span> <span class="n">VM</span><span class="o">?</span> <span class="p">[</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">]</span> <span class="n">y</span>
+<span class="o">==&gt;</span> <span class="k">default</span><span class="p">:</span> <span class="n">Forcing</span> <span class="n">shutdown</span> <span class="k">of</span> <span class="n">VM</span><span class="p">...</span>
+<span class="o">==&gt;</span> <span class="k">default</span><span class="p">:</span> <span class="n">Destroying</span> <span class="n">VM</span> <span class="k">and</span> <span class="n">associated</span> <span class="n">drives</span><span class="p">...</span>
+<span class="err">$</span><span class="k">c</span>
 </pre></div>
 </td></tr></table>
                 
@@ -1410,15 +1420,13 @@ $c
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1427,10 +1435,6 @@ $c
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           

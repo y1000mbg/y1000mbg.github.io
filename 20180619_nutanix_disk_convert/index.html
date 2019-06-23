@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20180619_nutanixのディスクイメージをvdi形式に変換する
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -1095,12 +1105,12 @@
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r 使用しているコンテナの特定
-$ ncli container list | grep Name
-[Thu Apr 26 11:58:41.702 2018]     Name                      : default-container-81148704361867
-[Thu Apr 26 11:58:41.702 2018]     VStore Name(s)            : default-container-81148704361867
-[Thu Apr 26 11:58:41.704 2018]     Name                      : NutanixManagementShare
-[Thu Apr 26 11:58:41.708 2018]     VStore Name(s)            : NutanixManagementShare
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="err">使用しているコンテナの特定</span>
+<span class="err">$</span> <span class="n">ncli</span> <span class="n">container</span> <span class="n">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">Name</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">41</span><span class="p">.</span><span class="mi">702</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">Name</span>                      <span class="p">:</span> <span class="k">default</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="mi">81148704361867</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">41</span><span class="p">.</span><span class="mi">702</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">VStore</span> <span class="n">Name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>            <span class="p">:</span> <span class="k">default</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="mi">81148704361867</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">41</span><span class="p">.</span><span class="mi">704</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">Name</span>                      <span class="p">:</span> <span class="n">NutanixManagementShare</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mi">41</span><span class="p">.</span><span class="mi">708</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">VStore</span> <span class="n">Name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>            <span class="p">:</span> <span class="n">NutanixManagementShare</span>
 </pre></div>
 </td></tr></table>
 
@@ -1142,42 +1152,42 @@ $ ncli container list | grep Name
 33
 34
 35
-36</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c コンテナの中身を確認
-#r nfs_ls -a -R /default-container-81148704361867
-[Thu Apr 26 11:59:00.692 2018] .acropolis
-[Thu Apr 26 11:59:00.692 2018] .acropolis/image
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/2b89a156-1e2b-47c6-bb77-16fa448dde2a
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/2b89a156-1e2b-47c6-bb77-16fa448dde2a/vmdisk
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/2b89a156-1e2b-47c6-bb77-16fa448dde2a/vmdisk/c36b56e5-affe-48e7-966e-4211b7a71b65
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/34150625-e664-408d-820e-5e2088dc46da
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/34150625-e664-408d-820e-5e2088dc46da/vmdisk
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/34150625-e664-408d-820e-5e2088dc46da/vmdisk/ec51c56e-770b-472b-88d4-0cf52a7e849c
-[Thu Apr 26 11:59:00.692 2018] .acropolis/snapshot/3f546926-0232-4655-aeac-286b38c2d913
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/3f546926-0232-4655-aeac-286b38c2d913/vmdisk
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/5d4a248e-930f-4301-971d-e2cc255677fa
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/5d4a248e-930f-4301-971d-e2cc255677fa/vmdisk
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/5d4a248e-930f-4301-971d-e2cc255677fa/vmdisk/c36b56e5-affe-48e7-966e-4211b7a71b65
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/838554aa-5030-48ff-8fd5-53326d1aa8d5
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/838554aa-5030-48ff-8fd5-53326d1aa8d5/vmdisk
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/9874633a-e84a-43b2-80a8-8b36b86763ba
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/9874633a-e84a-43b2-80a8-8b36b86763ba/vmdisk
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/d2ff3601-704d-43d6-808a-e033dd3b997d
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/d2ff3601-704d-43d6-808a-e033dd3b997d/vmdisk
-[Thu Apr 26 11:59:00.707 2018] .acropolis/snapshot/d2ff3601-704d-43d6-808a-e033dd3b997d/vmdisk/5477c310-ec2c-4f3b-9c7d-ec337e013cde
-[Thu Apr 26 11:59:00.707 2018] .acropolis/vmdisk
-[Thu Apr 26 11:59:00.707 2018] .acropolis/vmdisk/088f8a13-6cea-4115-b912-dd5a1c0eac6f
-[Thu Apr 26 11:59:00.707 2018] .acropolis/vmdisk/3440756b-1d8a-405b-8d2e-f1fc3723d1cf
-[Thu Apr 26 11:59:00.707 2018] .acropolis/vmdisk/466015b0-711f-4dca-ab5e-665c9d8f0631
-[Thu Apr 26 11:59:00.707 2018] .acropolis/vmdisk/57b09a5e-e5bd-4687-9c72-b416e43c232a
-[Thu Apr 26 11:59:00.707 2018] .acropolis/vmdisk/8acf635f-acd3-483b-a8c8-c04152bda710
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/aa660700-0ce1-4356-b45d-f472e4f6d92e
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/c0fe9841-4e9e-42fb-a73c-70a397adc8a9
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/c36b56e5-affe-48e7-966e-4211b7a71b65
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/c3a0101b-4817-438b-9ec5-e57bb1fccba6
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/cb40a595-82ea-4ec5-a1a6-f08987249aaa
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/cdbc11f3-2f31-4122-a842-8f935efc19f1
-[Thu Apr 26 11:59:00.720 2018] .acropolis/vmdisk/e7e2da64-062a-4ad7-8832-5451e475b5b7
+36</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">コンテナの中身を確認</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">nfs_ls</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">R</span> <span class="o">/</span><span class="k">default</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="mi">81148704361867</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">image</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">2</span><span class="n">b89a156</span><span class="o">-</span><span class="mi">1</span><span class="n">e2b</span><span class="o">-</span><span class="mi">47</span><span class="n">c6</span><span class="o">-</span><span class="n">bb77</span><span class="o">-</span><span class="mi">16</span><span class="n">fa448dde2a</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">2</span><span class="n">b89a156</span><span class="o">-</span><span class="mi">1</span><span class="n">e2b</span><span class="o">-</span><span class="mi">47</span><span class="n">c6</span><span class="o">-</span><span class="n">bb77</span><span class="o">-</span><span class="mi">16</span><span class="n">fa448dde2a</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">2</span><span class="n">b89a156</span><span class="o">-</span><span class="mi">1</span><span class="n">e2b</span><span class="o">-</span><span class="mi">47</span><span class="n">c6</span><span class="o">-</span><span class="n">bb77</span><span class="o">-</span><span class="mi">16</span><span class="n">fa448dde2a</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">c36b56e5</span><span class="o">-</span><span class="n">affe</span><span class="o">-</span><span class="mi">48</span><span class="n">e7</span><span class="o">-</span><span class="mi">966</span><span class="n">e</span><span class="o">-</span><span class="mi">4211</span><span class="n">b7a71b65</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">34150625</span><span class="o">-</span><span class="n">e664</span><span class="o">-</span><span class="mi">408</span><span class="n">d</span><span class="o">-</span><span class="mi">820</span><span class="n">e</span><span class="o">-</span><span class="mi">5</span><span class="n">e2088dc46da</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">34150625</span><span class="o">-</span><span class="n">e664</span><span class="o">-</span><span class="mi">408</span><span class="n">d</span><span class="o">-</span><span class="mi">820</span><span class="n">e</span><span class="o">-</span><span class="mi">5</span><span class="n">e2088dc46da</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">34150625</span><span class="o">-</span><span class="n">e664</span><span class="o">-</span><span class="mi">408</span><span class="n">d</span><span class="o">-</span><span class="mi">820</span><span class="n">e</span><span class="o">-</span><span class="mi">5</span><span class="n">e2088dc46da</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">ec51c56e</span><span class="o">-</span><span class="mi">770</span><span class="n">b</span><span class="o">-</span><span class="mi">472</span><span class="n">b</span><span class="o">-</span><span class="mi">88</span><span class="n">d4</span><span class="o">-</span><span class="mi">0</span><span class="n">cf52a7e849c</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">692</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">3</span><span class="n">f546926</span><span class="o">-</span><span class="mi">0232</span><span class="o">-</span><span class="mi">4655</span><span class="o">-</span><span class="n">aeac</span><span class="o">-</span><span class="mi">286</span><span class="n">b38c2d913</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">3</span><span class="n">f546926</span><span class="o">-</span><span class="mi">0232</span><span class="o">-</span><span class="mi">4655</span><span class="o">-</span><span class="n">aeac</span><span class="o">-</span><span class="mi">286</span><span class="n">b38c2d913</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">5</span><span class="n">d4a248e</span><span class="o">-</span><span class="mi">930</span><span class="n">f</span><span class="o">-</span><span class="mi">4301</span><span class="o">-</span><span class="mi">971</span><span class="n">d</span><span class="o">-</span><span class="n">e2cc255677fa</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">5</span><span class="n">d4a248e</span><span class="o">-</span><span class="mi">930</span><span class="n">f</span><span class="o">-</span><span class="mi">4301</span><span class="o">-</span><span class="mi">971</span><span class="n">d</span><span class="o">-</span><span class="n">e2cc255677fa</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">5</span><span class="n">d4a248e</span><span class="o">-</span><span class="mi">930</span><span class="n">f</span><span class="o">-</span><span class="mi">4301</span><span class="o">-</span><span class="mi">971</span><span class="n">d</span><span class="o">-</span><span class="n">e2cc255677fa</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">c36b56e5</span><span class="o">-</span><span class="n">affe</span><span class="o">-</span><span class="mi">48</span><span class="n">e7</span><span class="o">-</span><span class="mi">966</span><span class="n">e</span><span class="o">-</span><span class="mi">4211</span><span class="n">b7a71b65</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">838554</span><span class="n">aa</span><span class="o">-</span><span class="mi">5030</span><span class="o">-</span><span class="mi">48</span><span class="n">ff</span><span class="o">-</span><span class="mi">8</span><span class="n">fd5</span><span class="o">-</span><span class="mi">53326</span><span class="n">d1aa8d5</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">838554</span><span class="n">aa</span><span class="o">-</span><span class="mi">5030</span><span class="o">-</span><span class="mi">48</span><span class="n">ff</span><span class="o">-</span><span class="mi">8</span><span class="n">fd5</span><span class="o">-</span><span class="mi">53326</span><span class="n">d1aa8d5</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">9874633</span><span class="n">a</span><span class="o">-</span><span class="n">e84a</span><span class="o">-</span><span class="mi">43</span><span class="n">b2</span><span class="o">-</span><span class="mi">80</span><span class="n">a8</span><span class="o">-</span><span class="mi">8</span><span class="n">b36b86763ba</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="mi">9874633</span><span class="n">a</span><span class="o">-</span><span class="n">e84a</span><span class="o">-</span><span class="mi">43</span><span class="n">b2</span><span class="o">-</span><span class="mi">80</span><span class="n">a8</span><span class="o">-</span><span class="mi">8</span><span class="n">b36b86763ba</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="n">d2ff3601</span><span class="o">-</span><span class="mi">704</span><span class="n">d</span><span class="o">-</span><span class="mi">43</span><span class="n">d6</span><span class="o">-</span><span class="mi">808</span><span class="n">a</span><span class="o">-</span><span class="n">e033dd3b997d</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="n">d2ff3601</span><span class="o">-</span><span class="mi">704</span><span class="n">d</span><span class="o">-</span><span class="mi">43</span><span class="n">d6</span><span class="o">-</span><span class="mi">808</span><span class="n">a</span><span class="o">-</span><span class="n">e033dd3b997d</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">snapshot</span><span class="o">/</span><span class="n">d2ff3601</span><span class="o">-</span><span class="mi">704</span><span class="n">d</span><span class="o">-</span><span class="mi">43</span><span class="n">d6</span><span class="o">-</span><span class="mi">808</span><span class="n">a</span><span class="o">-</span><span class="n">e033dd3b997d</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="mi">5477</span><span class="n">c310</span><span class="o">-</span><span class="n">ec2c</span><span class="o">-</span><span class="mi">4</span><span class="n">f3b</span><span class="o">-</span><span class="mi">9</span><span class="n">c7d</span><span class="o">-</span><span class="n">ec337e013cde</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="mi">088</span><span class="n">f8a13</span><span class="o">-</span><span class="mi">6</span><span class="n">cea</span><span class="o">-</span><span class="mi">4115</span><span class="o">-</span><span class="n">b912</span><span class="o">-</span><span class="n">dd5a1c0eac6f</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="mi">3440756</span><span class="n">b</span><span class="o">-</span><span class="mi">1</span><span class="n">d8a</span><span class="o">-</span><span class="mi">405</span><span class="n">b</span><span class="o">-</span><span class="mi">8</span><span class="n">d2e</span><span class="o">-</span><span class="n">f1fc3723d1cf</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="mi">466015</span><span class="n">b0</span><span class="o">-</span><span class="mi">711</span><span class="n">f</span><span class="o">-</span><span class="mi">4</span><span class="n">dca</span><span class="o">-</span><span class="n">ab5e</span><span class="o">-</span><span class="mi">665</span><span class="n">c9d8f0631</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="mi">57</span><span class="n">b09a5e</span><span class="o">-</span><span class="n">e5bd</span><span class="o">-</span><span class="mi">4687</span><span class="o">-</span><span class="mi">9</span><span class="n">c72</span><span class="o">-</span><span class="n">b416e43c232a</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">707</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="mi">8</span><span class="n">acf635f</span><span class="o">-</span><span class="n">acd3</span><span class="o">-</span><span class="mi">483</span><span class="n">b</span><span class="o">-</span><span class="n">a8c8</span><span class="o">-</span><span class="n">c04152bda710</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">aa660700</span><span class="o">-</span><span class="mi">0</span><span class="n">ce1</span><span class="o">-</span><span class="mi">4356</span><span class="o">-</span><span class="n">b45d</span><span class="o">-</span><span class="n">f472e4f6d92e</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">c0fe9841</span><span class="o">-</span><span class="mi">4</span><span class="n">e9e</span><span class="o">-</span><span class="mi">42</span><span class="n">fb</span><span class="o">-</span><span class="n">a73c</span><span class="o">-</span><span class="mi">70</span><span class="n">a397adc8a9</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">c36b56e5</span><span class="o">-</span><span class="n">affe</span><span class="o">-</span><span class="mi">48</span><span class="n">e7</span><span class="o">-</span><span class="mi">966</span><span class="n">e</span><span class="o">-</span><span class="mi">4211</span><span class="n">b7a71b65</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">c3a0101b</span><span class="o">-</span><span class="mi">4817</span><span class="o">-</span><span class="mi">438</span><span class="n">b</span><span class="o">-</span><span class="mi">9</span><span class="n">ec5</span><span class="o">-</span><span class="n">e57bb1fccba6</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">cb40a595</span><span class="o">-</span><span class="mi">82</span><span class="n">ea</span><span class="o">-</span><span class="mi">4</span><span class="n">ec5</span><span class="o">-</span><span class="n">a1a6</span><span class="o">-</span><span class="n">f08987249aaa</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">cdbc11f3</span><span class="o">-</span><span class="mi">2</span><span class="n">f31</span><span class="o">-</span><span class="mi">4122</span><span class="o">-</span><span class="n">a842</span><span class="o">-</span><span class="mi">8</span><span class="n">f935efc19f1</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">00</span><span class="p">.</span><span class="mi">720</span> <span class="mi">2018</span><span class="p">]</span> <span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">e7e2da64</span><span class="o">-</span><span class="mi">062</span><span class="n">a</span><span class="o">-</span><span class="mi">4</span><span class="n">ad7</span><span class="o">-</span><span class="mi">8832</span><span class="o">-</span><span class="mi">5451</span><span class="n">e475b5b7</span>
 </pre></div>
 </td></tr></table>
 
@@ -1187,11 +1197,11 @@ $ ncli container list | grep Name
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 対象ディスクのuuid確認
-#r acli vm.get hoge_vm | grep -e bus -e vmdisk_uuid
-[Thu Apr 26 11:59:46.359 2018]         bus: &quot;scsi&quot;
-[Thu Apr 26 11:59:46.359 2018]       source_vmdisk_uuid: &quot;5477c310-ec2c-4f3b-9c7d-ec337e013cde&quot;
-[Thu Apr 26 11:59:46.359 2018]       vmdisk_uuid: &quot;c36b56e5-affe-48e7-966e-4211b7a71b65&quot;
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">対象ディスクの</span><span class="n">uuid</span><span class="err">確認</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">acli</span> <span class="n">vm</span><span class="p">.</span><span class="k">get</span> <span class="n">hoge_vm</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">e</span> <span class="n">bus</span> <span class="o">-</span><span class="n">e</span> <span class="n">vmdisk_uuid</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">46</span><span class="p">.</span><span class="mi">359</span> <span class="mi">2018</span><span class="p">]</span>         <span class="n">bus</span><span class="p">:</span> <span class="ss">&quot;scsi&quot;</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">46</span><span class="p">.</span><span class="mi">359</span> <span class="mi">2018</span><span class="p">]</span>       <span class="n">source_vmdisk_uuid</span><span class="p">:</span> <span class="ss">&quot;5477c310-ec2c-4f3b-9c7d-ec337e013cde&quot;</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">11</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">46</span><span class="p">.</span><span class="mi">359</span> <span class="mi">2018</span><span class="p">]</span>       <span class="n">vmdisk_uuid</span><span class="p">:</span> <span class="ss">&quot;c36b56e5-affe-48e7-966e-4211b7a71b65&quot;</span>
 </pre></div>
 </td></tr></table>
 
@@ -1202,12 +1212,12 @@ $ ncli container list | grep Name
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c NFSホワイトリストの確認
-#r ncli container list | grep -e Nam e -e Whitelist
-[Thu Apr 26 12:11:43.555 2018]     Name                      : default-container-81148704361867
-[Thu Apr 26 12:11:43.568 2018]     NFS Whitelist Inherited   : true
-[Thu Apr 26 12:11:43.568 2018]     Container NFS Whitelist   : 
-[Thu Apr 26 12:11:43.568 2018]     VStore Name(s)            : default-container-81148704361867
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="n">NFS</span><span class="err">ホワイトリストの確認</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">ncli</span> <span class="n">container</span> <span class="n">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">e</span> <span class="n">Nam</span> <span class="n">e</span> <span class="o">-</span><span class="n">e</span> <span class="n">Whitelist</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">12</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">43</span><span class="p">.</span><span class="mi">555</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">Name</span>                      <span class="p">:</span> <span class="k">default</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="mi">81148704361867</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">12</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">43</span><span class="p">.</span><span class="mi">568</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">NFS</span> <span class="n">Whitelist</span> <span class="n">Inherited</span>   <span class="p">:</span> <span class="k">true</span>
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">12</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">43</span><span class="p">.</span><span class="mi">568</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">Container</span> <span class="n">NFS</span> <span class="n">Whitelist</span>   <span class="p">:</span> 
+<span class="p">[</span><span class="n">Thu</span> <span class="n">Apr</span> <span class="mi">26</span> <span class="mi">12</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">43</span><span class="p">.</span><span class="mi">568</span> <span class="mi">2018</span><span class="p">]</span>     <span class="n">VStore</span> <span class="n">Name</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>            <span class="p">:</span> <span class="k">default</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="mi">81148704361867</span>
 </pre></div>
 </td></tr></table>
 
@@ -1238,48 +1248,48 @@ $ ncli container list | grep Name
 24
 25
 26
-27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c ホワイトリストにネットワーク帯域の追加
-##c NFSマウントするPCが所属するネットワーク帯域を指定する
-#r ncli container add-to-nfs-whiteli st name=default-container-81148704361867 ip-subnet-masks=192.168.11.0/255.255. 255.0
-[Thu Apr 26 12:13:11.115 2018] The containers listed below are storage containers
-[Thu Apr 26 12:13:11.115 2018] 
-[Thu Apr 26 12:13:11.115 2018]     Id                        : 00054a58-361a-cad8-740e-68b5996eab1e::4
-[Thu Apr 26 12:13:11.115 2018]     Uuid                      : 0487ead1-a417-46ae-abe3-5f0970ac8262
-[Thu Apr 26 12:13:11.115 2018]     Name                      : default-container-81148704361867
-[Thu Apr 26 12:13:11.115 2018]     Storage Pool Id           : 00054a58-361a-cad8-740e-68b5996eab1e::3
-[Thu Apr 26 12:13:11.115 2018]     Storage Pool Uuid         : 1b126c8e-10a0-463d-9220-090f092f023d
-[Thu Apr 26 12:13:11.115 2018]     Free Space (Logical)      : 1.47 TiB (1,613,963,937,157 bytes)
-[Thu Apr 26 12:13:11.115 2018]     Used Space (Logical)      : 57.22 GiB (61,441,343,488 bytes)
-[Thu Apr 26 12:13:11.115 2018]     Allowed Max Capacity      : 1.52 TiB (1,675,405,280,645 bytes)
-[Thu Apr 26 12:13:11.115 2018]     Used by other Containers  : 0 bytes
-[Thu Apr 26 12:13:11.115 2018]     Explicit Reservation      : 0 bytes
-[Thu Apr 26 12:13:11.115 2018]     Thick Provisioned         : 0 bytes
-[Thu Apr 26 12:13:11.115 2018]     Replication Factor        : 1
-[Thu Apr 26 12:13:11.115 2018]     Oplog Replication Factor  : 1
-[Thu Apr 26 12:13:11.115 2018]     NFS Whitelist Inherited   : false
-[Thu Apr 26 12:13:11.120 2018]     Container NFS Whitelist   : 192.168.11.0/255.255.255.0
-[Thu Apr 26 12:13:11.120 2018]     VStore Name(s)            : default-container-81148704361867
-[Thu Apr 26 12:13:11.120 2018]     Random I/O Pri Order      : SSD-PCIe, SSD-SATA, DAS-SATA
-[Thu Apr 26 12:13:11.120 2018]     Sequential I/O Pri Order  : SSD-PCIe, SSD-SATA, DAS-SATA
-[Thu Apr 26 12:13:11.121 2018]     Compression               : off
-[Thu Apr 26 12:13:11.121 2018]     Fingerprint On Write      : off
-[Thu Apr 26 12:13:11.121 2018]     On-Disk Dedup             : none
-[Thu Apr 26 12:13:11.121 2018]     Erasure Code              : off
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##<span class="nv">c</span> ホワイトリストにネットワーク帯域の追加
+##<span class="nv">c</span> <span class="nv">NFS</span>マウントする<span class="nv">PC</span>が所属するネットワーク帯域を指定する
+#<span class="nv">r</span> <span class="nv">ncli</span> <span class="nv">container</span> <span class="nv">add</span><span class="o">-</span><span class="nv">to</span><span class="o">-</span><span class="nv">nfs</span><span class="o">-</span><span class="nv">whiteli</span> <span class="nv">st</span> <span class="nv">name</span><span class="o">=</span><span class="nv">default</span><span class="o">-</span><span class="nv">container</span><span class="o">-</span><span class="mi">81148704361867</span> <span class="nv">ip</span><span class="o">-</span><span class="nv">subnet</span><span class="o">-</span><span class="nv">masks</span><span class="o">=</span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">11</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">255</span>.<span class="mi">255</span>. <span class="mi">255</span>.<span class="mi">0</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>] <span class="nv">The</span> <span class="nv">containers</span> <span class="nv">listed</span> <span class="nv">below</span> <span class="nv">are</span> <span class="nv">storage</span> <span class="nv">containers</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>] 
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Id</span>                        : <span class="mi">00054</span><span class="nv">a58</span><span class="o">-</span><span class="mi">361</span><span class="nv">a</span><span class="o">-</span><span class="nv">cad8</span><span class="o">-</span><span class="mi">740</span><span class="nv">e</span><span class="o">-</span><span class="mi">68</span><span class="nv">b5996eab1e</span>::<span class="mi">4</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Uuid</span>                      : <span class="mi">0487</span><span class="nv">ead1</span><span class="o">-</span><span class="nv">a417</span><span class="o">-</span><span class="mi">46</span><span class="nv">ae</span><span class="o">-</span><span class="nv">abe3</span><span class="o">-</span><span class="mi">5</span><span class="nv">f0970ac8262</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Name</span>                      : <span class="nv">default</span><span class="o">-</span><span class="nv">container</span><span class="o">-</span><span class="mi">81148704361867</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Storage</span> <span class="nv">Pool</span> <span class="nv">Id</span>           : <span class="mi">00054</span><span class="nv">a58</span><span class="o">-</span><span class="mi">361</span><span class="nv">a</span><span class="o">-</span><span class="nv">cad8</span><span class="o">-</span><span class="mi">740</span><span class="nv">e</span><span class="o">-</span><span class="mi">68</span><span class="nv">b5996eab1e</span>::<span class="mi">3</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Storage</span> <span class="nv">Pool</span> <span class="nv">Uuid</span>         : <span class="mi">1</span><span class="nv">b126c8e</span><span class="o">-</span><span class="mi">10</span><span class="nv">a0</span><span class="o">-</span><span class="mi">463</span><span class="nv">d</span><span class="o">-</span><span class="mi">9220</span><span class="o">-</span><span class="mi">090</span><span class="nv">f092f023d</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Free</span> <span class="nv">Space</span> <span class="ss">(</span><span class="nv">Logical</span><span class="ss">)</span>      : <span class="mi">1</span>.<span class="mi">47</span> <span class="nv">TiB</span> <span class="ss">(</span><span class="mi">1</span>,<span class="mi">613</span>,<span class="mi">963</span>,<span class="mi">937</span>,<span class="mi">157</span> <span class="nv">bytes</span><span class="ss">)</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Used</span> <span class="nv">Space</span> <span class="ss">(</span><span class="nv">Logical</span><span class="ss">)</span>      : <span class="mi">57</span>.<span class="mi">22</span> <span class="nv">GiB</span> <span class="ss">(</span><span class="mi">61</span>,<span class="mi">441</span>,<span class="mi">343</span>,<span class="mi">488</span> <span class="nv">bytes</span><span class="ss">)</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Allowed</span> <span class="nv">Max</span> <span class="nv">Capacity</span>      : <span class="mi">1</span>.<span class="mi">52</span> <span class="nv">TiB</span> <span class="ss">(</span><span class="mi">1</span>,<span class="mi">675</span>,<span class="mi">405</span>,<span class="mi">280</span>,<span class="mi">645</span> <span class="nv">bytes</span><span class="ss">)</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Used</span> <span class="nv">by</span> <span class="nv">other</span> <span class="nv">Containers</span>  : <span class="mi">0</span> <span class="nv">bytes</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Explicit</span> <span class="nv">Reservation</span>      : <span class="mi">0</span> <span class="nv">bytes</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Thick</span> <span class="nv">Provisioned</span>         : <span class="mi">0</span> <span class="nv">bytes</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Replication</span> <span class="nv">Factor</span>        : <span class="mi">1</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">Oplog</span> <span class="nv">Replication</span> <span class="nv">Factor</span>  : <span class="mi">1</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">115</span> <span class="mi">2018</span>]     <span class="nv">NFS</span> <span class="nv">Whitelist</span> <span class="nv">Inherited</span>   : <span class="nv">false</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">120</span> <span class="mi">2018</span>]     <span class="nv">Container</span> <span class="nv">NFS</span> <span class="nv">Whitelist</span>   : <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">11</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">0</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">120</span> <span class="mi">2018</span>]     <span class="nv">VStore</span> <span class="nv">Name</span><span class="ss">(</span><span class="nv">s</span><span class="ss">)</span>            : <span class="nv">default</span><span class="o">-</span><span class="nv">container</span><span class="o">-</span><span class="mi">81148704361867</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">120</span> <span class="mi">2018</span>]     <span class="k">Random</span> <span class="nv">I</span><span class="o">/</span><span class="nv">O</span> <span class="nv">Pri</span> <span class="nv">Order</span>      : <span class="nv">SSD</span><span class="o">-</span><span class="nv">PCIe</span>, <span class="nv">SSD</span><span class="o">-</span><span class="nv">SATA</span>, <span class="nv">DAS</span><span class="o">-</span><span class="nv">SATA</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">120</span> <span class="mi">2018</span>]     <span class="nv">Sequential</span> <span class="nv">I</span><span class="o">/</span><span class="nv">O</span> <span class="nv">Pri</span> <span class="nv">Order</span>  : <span class="nv">SSD</span><span class="o">-</span><span class="nv">PCIe</span>, <span class="nv">SSD</span><span class="o">-</span><span class="nv">SATA</span>, <span class="nv">DAS</span><span class="o">-</span><span class="nv">SATA</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">121</span> <span class="mi">2018</span>]     <span class="nv">Compression</span>               : <span class="nv">off</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">121</span> <span class="mi">2018</span>]     <span class="nv">Fingerprint</span> <span class="nv">On</span> <span class="nv">Write</span>      : <span class="nv">off</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">121</span> <span class="mi">2018</span>]     <span class="nv">On</span><span class="o">-</span><span class="nv">Disk</span> <span class="nv">Dedup</span>             : <span class="nv">none</span>
+[<span class="nv">Thu</span> <span class="nv">Apr</span> <span class="mi">26</span> <span class="mi">12</span>:<span class="mi">13</span>:<span class="mi">11</span>.<span class="mi">121</span> <span class="mi">2018</span>]     <span class="nv">Erasure</span> <span class="nv">Code</span>              : <span class="nv">off</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="vm">移行対象vmの状態確認</h3>
 <p>kOffであればvm停止状態です。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r acli vm.get hoge_vm | grep state
-  state: &quot;kOff&quot;
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">acli</span> <span class="n">vm</span><span class="p">.</span><span class="k">get</span> <span class="n">hoge_vm</span> <span class="o">|</span> <span class="n">grep</span> <span class="k">state</span>
+  <span class="k">state</span><span class="p">:</span> <span class="ss">&quot;kOff&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="nfs_1">NFSマウントする側の準備</h2>
 <h3 id="_6">必要パッケージのダウンロード</h3>
 <p>nfsマウントにnfs-utils、イメージ変換にqemu-imgを使用します。yumで一発で導入できます。。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r yum install -y nfs-utils qemu-img
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nfs</span><span class="o">-</span><span class="n">utils</span> <span class="n">qemu</span><span class="o">-</span><span class="n">img</span>
 </pre></div>
 </td></tr></table>
 
@@ -1288,10 +1298,10 @@ $ ncli container list | grep Name
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c mount 192.168.xxx.xxx:/default-container-81148704361867 /mnt
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="n">mount</span> <span class="mi">192</span><span class="p">.</span><span class="mi">168</span><span class="p">.</span><span class="n">xxx</span><span class="p">.</span><span class="n">xxx</span><span class="p">:</span><span class="o">/</span><span class="k">default</span><span class="o">-</span><span class="n">container</span><span class="o">-</span><span class="mi">81148704361867</span> <span class="o">/</span><span class="n">mnt</span>
 
-##c 対象のuuidを探す
-##c ls -la /mnt/.acropolis/vmdisk/
+<span class="o">##</span><span class="k">c</span> <span class="err">対象の</span><span class="n">uuid</span><span class="err">を探す</span>
+<span class="o">##</span><span class="k">c</span> <span class="n">ls</span> <span class="o">-</span><span class="n">la</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span>
 </pre></div>
 </td></tr></table>
 
@@ -1299,7 +1309,7 @@ $ ncli container list | grep Name
 <p>ディスイメージをVirtualboxで扱えるvdi形式に変換します。
 nfsでマウントしているので、作業していたマシンのローカルに変換後のディスクが作成されます。
 ディスク容量は使用している部分のみが実容量になるみたいです。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r qemu-img convert -O vdi /mnt/.acropolis/vmdisk/c36b56e5-affe-48e7-966e-4211b7a71b65 /run/media/hoge/HDD-001/hoge_vm.vdi
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">qemu</span><span class="o">-</span><span class="n">img</span> <span class="k">convert</span> <span class="o">-</span><span class="n">O</span> <span class="n">vdi</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="p">.</span><span class="n">acropolis</span><span class="o">/</span><span class="n">vmdisk</span><span class="o">/</span><span class="n">c36b56e5</span><span class="o">-</span><span class="n">affe</span><span class="o">-</span><span class="mi">48</span><span class="n">e7</span><span class="o">-</span><span class="mi">966</span><span class="n">e</span><span class="o">-</span><span class="mi">4211</span><span class="n">b7a71b65</span> <span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">hoge</span><span class="o">/</span><span class="n">HDD</span><span class="o">-</span><span class="mi">001</span><span class="o">/</span><span class="n">hoge_vm</span><span class="p">.</span><span class="n">vdi</span>
 </pre></div>
 </td></tr></table>
                 
@@ -1365,15 +1375,13 @@ nfsでマウントしているので、作業していたマシンのローカ�
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1382,10 +1390,6 @@ nfsでマウントしているので、作業していたマシンのローカ�
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           

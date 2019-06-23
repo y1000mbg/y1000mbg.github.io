@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20180527_Dockerを使ってみる
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -965,7 +975,7 @@
 <p><a href="https://hub.docker.com/">Docker Hub</a>と呼ばれるコンテナイメージが公開されているサイトがあります。
 そこから必要なイメージをダウンロードします。</p>
 <p>例えばcentoosは<a href="https://hub.docker.com/_/centos/">library/centos - Docker Hub</a>に公開されており対応する名称をpull時に指定することでダウンロードされます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r docker pull centos:centos7
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">docker</span> <span class="n">pull</span> <span class="n">centos</span><span class="p">:</span><span class="n">centos7</span>
 </pre></div>
 </td></tr></table>
 
@@ -974,11 +984,11 @@
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r docker images
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">docker</span> <span class="n">images</span>
 
-##c 結果
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-centos              centos7             e934aafc2206        7 weeks ago         199MB
+<span class="o">##</span><span class="k">c</span> <span class="err">結果</span>
+<span class="n">REPOSITORY</span>          <span class="n">TAG</span>                 <span class="n">IMAGE</span> <span class="n">ID</span>            <span class="n">CREATED</span>             <span class="k">SIZE</span>
+<span class="n">centos</span>              <span class="n">centos7</span>             <span class="n">e934aafc2206</span>        <span class="mi">7</span> <span class="n">weeks</span> <span class="n">ago</span>         <span class="mi">199</span><span class="n">MB</span>
 </pre></div>
 </td></tr></table>
 
@@ -1041,15 +1051,15 @@ centos              centos7             e934aafc2206        7 weeks ago         
 6
 7
 8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 実行コマンド
-#r docker ps -a
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">実行コマンド</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">a</span>
 
-##c 結果
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
-9c9ba7ea5586        centos:centos7      &quot;/bin/bash&quot;         30 minutes ago      Exited (0) 7 seconds ago                       testcont
-5715a9d37826        centos:centos7      &quot;/bin/bash&quot;         2 hours ago         Up 2 hours                                     centos7
+<span class="o">##</span><span class="k">c</span> <span class="err">結果</span>
+<span class="n">CONTAINER</span> <span class="n">ID</span>        <span class="n">IMAGE</span>               <span class="n">COMMAND</span>             <span class="n">CREATED</span>             <span class="n">STATUS</span>                     <span class="n">PORTS</span>               <span class="k">NAMES</span>
+<span class="mi">9</span><span class="n">c9ba7ea5586</span>        <span class="n">centos</span><span class="p">:</span><span class="n">centos7</span>      <span class="ss">&quot;/bin/bash&quot;</span>         <span class="mi">30</span> <span class="n">minutes</span> <span class="n">ago</span>      <span class="n">Exited</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="mi">7</span> <span class="n">seconds</span> <span class="n">ago</span>                       <span class="n">testcont</span>
+<span class="mi">5715</span><span class="n">a9d37826</span>        <span class="n">centos</span><span class="p">:</span><span class="n">centos7</span>      <span class="ss">&quot;/bin/bash&quot;</span>         <span class="mi">2</span> <span class="n">hours</span> <span class="n">ago</span>         <span class="n">Up</span> <span class="mi">2</span> <span class="n">hours</span>                                     <span class="n">centos7</span>
 
-##c testcontコンテナは終了、centos7コンテナは起動中
+<span class="o">##</span><span class="k">c</span> <span class="n">testcont</span><span class="err">コンテナは終了、</span><span class="n">centos7</span><span class="err">コンテナは起動中</span>
 </pre></div>
 </td></tr></table>
 
@@ -1070,8 +1080,8 @@ Virtualboxなどのホスト型の仮想環境ソフトよりもリソースも�
 <h2 id="_5">補足</h2>
 <p>今回使ったcentos7はipコマンドがなかったので別途インストールが必要</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c コンテナ内のrootユーザーで実行
-#r yum -y install iproute
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">コンテナ内の</span><span class="n">root</span><span class="err">ユーザーで実行</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">iproute</span>
 </pre></div>
 </td></tr></table>
                 
@@ -1137,15 +1147,13 @@ Virtualboxなどのホスト型の仮想環境ソフトよりもリソースも�
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1154,10 +1162,6 @@ Virtualboxなどのホスト型の仮想環境ソフトよりもリソースも�
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           

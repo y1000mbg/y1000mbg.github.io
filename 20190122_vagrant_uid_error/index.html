@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20190122_vagrant up 時にUIDエラーが出る
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -934,14 +944,14 @@
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c vagrant.exe up
-The VirtualBox VM was created with a user that doesn&#39;t match the
-current user running Vagrant. VirtualBox requires that the same user
-be used to manage the VM that was created. Please re-run Vagrant with
-that user. This is not a Vagrant issue.
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">vagrant</span><span class="p">.</span><span class="n">exe</span> <span class="n">up</span>
+<span class="n">The</span> <span class="n">VirtualBox</span> <span class="n">VM</span> <span class="n">was</span> <span class="n">created</span> <span class="k">with</span> <span class="n">a</span> <span class="k">user</span> <span class="n">that</span> <span class="n">doesn</span><span class="err">&#39;</span><span class="n">t</span> <span class="k">match</span> <span class="n">the</span>
+<span class="k">current</span> <span class="k">user</span> <span class="n">running</span> <span class="n">Vagrant</span><span class="p">.</span> <span class="n">VirtualBox</span> <span class="n">requires</span> <span class="n">that</span> <span class="n">the</span> <span class="n">same</span> <span class="k">user</span>
+<span class="n">be</span> <span class="n">used</span> <span class="k">to</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">that</span> <span class="n">was</span> <span class="n">created</span><span class="p">.</span> <span class="n">Please</span> <span class="n">re</span><span class="o">-</span><span class="n">run</span> <span class="n">Vagrant</span> <span class="k">with</span>
+<span class="n">that</span> <span class="k">user</span><span class="p">.</span> <span class="n">This</span> <span class="k">is</span> <span class="k">not</span> <span class="n">a</span> <span class="n">Vagrant</span> <span class="n">issue</span><span class="p">.</span>
 
-The UID used to create the VM was: 1000
-Your UID is: 0
+<span class="n">The</span> <span class="n">UID</span> <span class="n">used</span> <span class="k">to</span> <span class="k">create</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">was</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="n">Your</span> <span class="n">UID</span> <span class="k">is</span><span class="p">:</span> <span class="mi">0</span>
 </pre></div>
 </td></tr></table>
 
@@ -1014,15 +1024,13 @@ Your UID is: 0
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1031,10 +1039,6 @@ Your UID is: 0
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           

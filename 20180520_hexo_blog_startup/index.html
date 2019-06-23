@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20180520_hexoでブログ作成の手順
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -1066,13 +1076,13 @@
 <h2 id="nodejs">node.jsのインストール</h2>
 <p><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager | Node.js</a></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-$c sudo apt-get install -y nodejs
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">deb</span><span class="p">.</span><span class="n">nodesource</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">setup_8</span><span class="p">.</span><span class="n">x</span> <span class="o">|</span> <span class="n">sudo</span> <span class="o">-</span><span class="n">E</span> <span class="n">bash</span> <span class="o">-</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nodejs</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="hexo_1">hexoのインストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c sudo npm install -g hexo
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">hexo</span>
 </pre></div>
 </td></tr></table>
 
@@ -1088,7 +1098,7 @@ $c sudo apt-get install -y nodejs
 
 <h3 id="_5">ローカル環境での確認</h3>
 <p>下記コマンドでhttp://localhost:4000でサーバーが起動します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c hexo server
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">hexo</span> <span class="n">server</span>
 </pre></div>
 </td></tr></table>
 
@@ -1121,27 +1131,27 @@ $c sudo apt-get install -y nodejs
 18
 19
 20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$c git diff -U0 -no-index config.yml.org cnfig.yml
-diff --git a/_config.yml.org b/_config.yml
-index b6bbdf4..6e0f0fe 100644
---- a/_config.yml.org
-+++ b/_config.yml
-@@ -6 +6 @@
--title: Hexo
-+title: testblog
-@@ -11,2 +11,2 @@ author: John Doe
--language:
--timezone:
-+language: ja
-+timezone: Asia/Tokyo
-@@ -16 +16 @@ timezone:
--url: http://yoursite.com
-+url: http://y1000mbg.github.io.git
-@@ -81 +81,3 @@ deploy:
--  type:
-+  type: git
-+  repo: git@github.com:y1000mbg/y1000mbg.github.io.git
-+  branch : master
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="n">c</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">-</span><span class="n">U0</span><span class="w"> </span><span class="o">-</span><span class="k">no</span><span class="o">-</span><span class="k">index</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">yml</span><span class="p">.</span><span class="n">org</span><span class="w"> </span><span class="n">cnfig</span><span class="p">.</span><span class="n">yml</span><span class="w"></span>
+<span class="n">diff</span><span class="w"> </span><span class="c1">--git a/_config.yml.org b/_config.yml</span>
+<span class="k">index</span><span class="w"> </span><span class="n">b6bbdf4</span><span class="p">.</span><span class="mf">.6e0</span><span class="n">f0fe</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
+<span class="c1">--- a/_config.yml.org</span>
+<span class="o">+++</span><span class="w"> </span><span class="n">b</span><span class="o">/</span><span class="n">_config</span><span class="p">.</span><span class="n">yml</span><span class="w"></span>
+<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="w"> </span><span class="o">+</span><span class="mi">6</span><span class="w"> </span><span class="err">@@</span><span class="w"></span>
+<span class="o">-</span><span class="nl">title</span><span class="p">:</span><span class="w"> </span><span class="n">Hexo</span><span class="w"></span>
+<span class="o">+</span><span class="nl">title</span><span class="p">:</span><span class="w"> </span><span class="n">testblog</span><span class="w"></span>
+<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="w"> </span><span class="err">@@</span><span class="w"> </span><span class="nl">author</span><span class="p">:</span><span class="w"> </span><span class="n">John</span><span class="w"> </span><span class="n">Doe</span><span class="w"></span>
+<span class="o">-</span><span class="k">language</span><span class="err">:</span><span class="w"></span>
+<span class="o">-</span><span class="nl">timezone</span><span class="p">:</span><span class="w"></span>
+<span class="o">+</span><span class="k">language</span><span class="err">:</span><span class="w"> </span><span class="n">ja</span><span class="w"></span>
+<span class="o">+</span><span class="nl">timezone</span><span class="p">:</span><span class="w"> </span><span class="n">Asia</span><span class="o">/</span><span class="n">Tokyo</span><span class="w"></span>
+<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="w"> </span><span class="o">+</span><span class="mi">16</span><span class="w"> </span><span class="err">@@</span><span class="w"> </span><span class="nl">timezone</span><span class="p">:</span><span class="w"></span>
+<span class="o">-</span><span class="nl">url</span><span class="p">:</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">yoursite</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="o">+</span><span class="nl">url</span><span class="p">:</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">y1000mbg</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">81</span><span class="w"> </span><span class="o">+</span><span class="mi">81</span><span class="p">,</span><span class="mi">3</span><span class="w"> </span><span class="err">@@</span><span class="w"> </span><span class="nl">deploy</span><span class="p">:</span><span class="w"></span>
+<span class="o">-</span><span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w"></span>
+<span class="o">+</span><span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="n">git</span><span class="w"></span>
+<span class="o">+</span><span class="w">  </span><span class="nl">repo</span><span class="p">:</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">y1000mbg</span><span class="o">/</span><span class="n">y1000mbg</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<span class="o">+</span><span class="w">  </span><span class="n">branch</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">master</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1150,11 +1160,11 @@ index b6bbdf4..6e0f0fe 100644
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## デプロイツールをインストール
-$c sudo npm install hexo-deployer-git --save
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="err">デプロイツールをインストール</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="n">hexo</span><span class="o">-</span><span class="n">deployer</span><span class="o">-</span><span class="n">git</span> <span class="c1">--save</span>
 
-## デプロイ
-$c hexo deploy -g
+<span class="o">##</span> <span class="err">デプロイ</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">hexo</span> <span class="n">deploy</span> <span class="o">-</span><span class="k">g</span>
 </pre></div>
 </td></tr></table>
 
@@ -1211,15 +1221,13 @@ githubにデプロイされるのは、あくまで静的ファイル（html）�
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1228,10 +1236,6 @@ githubにデプロイされるのは、あくまで静的ファイル（html）�
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           

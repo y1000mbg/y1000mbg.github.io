@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20180524_Windowsのデジタルプロダクトキー認証について
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -967,17 +977,17 @@
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c プロダクトキーの削除
-##c ※入力後ダイアログで『プロダクトキーを正常にアンインストールしました』の表示
-slmgr /upk
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">プロダクトキーの削除</span>
+<span class="o">##</span><span class="k">c</span> <span class="err">※入力後ダイアログで『プロダクトキーを正常にアンインストールしました』の表示</span>
+<span class="n">slmgr</span> <span class="o">/</span><span class="n">upk</span>
 
-##c 新しいプロダクトキーの登録（上記のエディションを参照）
-##c ※入力後ダイアログで『正常にインストールされた』の表示
-slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+<span class="o">##</span><span class="k">c</span> <span class="err">新しいプロダクトキーの登録（上記のエディションを参照）</span>
+<span class="o">##</span><span class="k">c</span> <span class="err">※入力後ダイアログで『正常にインストールされた』の表示</span>
+<span class="n">slmgr</span> <span class="o">/</span><span class="n">ipk</span> <span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span>
 
-##c 入力したプロダクトキーの認証
-##c ※入力後ダイアログで『製品は正常にライセンス認証されました』の表示
-slmgr /ato
+<span class="o">##</span><span class="k">c</span> <span class="err">入力したプロダクトキーの認証</span>
+<span class="o">##</span><span class="k">c</span> <span class="err">※入力後ダイアログで『製品は正常にライセンス認証されました』の表示</span>
+<span class="n">slmgr</span> <span class="o">/</span><span class="n">ato</span>
 </pre></div>
 </td></tr></table>
 
@@ -1045,15 +1055,13 @@ slmgr /ato
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1062,10 +1070,6 @@ slmgr /ato
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           

@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,17 +40,17 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -96,22 +96,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                忘れるための備忘録
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
                 20180601_diskpartコマンドでパーティションを切る
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -134,7 +133,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,6 +172,18 @@
   <li class="md-nav__item">
     <a href=".." title="00000000_トップページ" class="md-nav__link">
       00000000_トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../20190622_vagrant_base_box/" title="vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      vagrantでベースのboxを作成して起動を速くする
     </a>
   </li>
 
@@ -1033,7 +1043,7 @@
 <li>ファイルシステムの作成とフォーマット</li>
 </ol>
 <h3 id="1">1. コマンドプロンプトを管理者権限で起動</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>C:\Users\myuser&gt;diskpart
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">myuser</span><span class="o">&gt;</span><span class="n">diskpart</span>
 </pre></div>
 </td></tr></table>
 
@@ -1047,25 +1057,25 @@
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DISKPART&gt; list disk
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">list</span> <span class="n">disk</span>
 
-  ディスク      状態           サイズ   空き   ダイナ GPT
-  ###                                          ミック
-  ------------  -------------  -------  -------  ---  ---
-  ディスク 0    オンライン           256 GB      0 B
-  ディスク 1    オンライン          2794 GB      0 B        *
-  ディスク 2    オンライン          1024 MB  1024 KB
-  ディスク 3    オンライン          2794 GB      0 B        *
-  ディスク 4    オンライン            29 GB      0 B
+  <span class="err">ディスク</span>      <span class="err">状態</span>           <span class="err">サイズ</span>   <span class="err">空き</span>   <span class="err">ダイナ</span> <span class="n">GPT</span>
+  <span class="o">###</span>                                          <span class="err">ミック</span>
+  <span class="c1">------------  -------------  -------  -------  ---  ---</span>
+  <span class="err">ディスク</span> <span class="mi">0</span>    <span class="err">オンライン</span>           <span class="mi">256</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>
+  <span class="err">ディスク</span> <span class="mi">1</span>    <span class="err">オンライン</span>          <span class="mi">2794</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>        <span class="o">*</span>
+  <span class="err">ディスク</span> <span class="mi">2</span>    <span class="err">オンライン</span>          <span class="mi">1024</span> <span class="n">MB</span>  <span class="mi">1024</span> <span class="n">KB</span>
+  <span class="err">ディスク</span> <span class="mi">3</span>    <span class="err">オンライン</span>          <span class="mi">2794</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>        <span class="o">*</span>
+  <span class="err">ディスク</span> <span class="mi">4</span>    <span class="err">オンライン</span>            <span class="mi">29</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="3">3. ディスクの選択</h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DISKPART&gt; select disk 4
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">disk</span> <span class="mi">4</span>
 
-ディスク 4 が選択されました。
+<span class="err">ディスク</span> <span class="mi">4</span> <span class="err">が選択されました。</span>
 </pre></div>
 </td></tr></table>
 
@@ -1077,14 +1087,14 @@
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>DISKPART&gt; clean
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">clean</span>
 
-DiskPart はディスクを正常にクリーンな状態にしました。
-DISKPART&gt; list partition
+<span class="n">DiskPart</span> <span class="err">はディスクを正常にクリーンな状態にしました。</span>
+<span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">list</span> <span class="n">partition</span>
 
-このディスクには表示するパーティションがありません。
+<span class="err">このディスクには表示するパーティションがありません。</span>
 
-DISKPART&gt;
+<span class="n">DISKPART</span><span class="o">&gt;</span>
 </pre></div>
 </td></tr></table>
 
@@ -1098,7 +1108,7 @@ DISKPART&gt; create partition primary</p>
 <ul>
 <li>Partition 1    プライマリ               29 GB  1024 KB</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>### 6. ファイルシステムの作成とフォーマット
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">###</span> <span class="mi">6</span><span class="p">.</span> <span class="err">ファイルシステムの作成とフォーマット</span>
 </pre></div>
 </td></tr></table>
 
@@ -1168,15 +1178,13 @@ DISKPART&gt; create partition primary</p>
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1185,10 +1193,6 @@ DISKPART&gt; create partition primary</p>
           
             
               
-                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           
