@@ -1,0 +1,2106 @@
+
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>2018-05-23_xubuntu18.04LTSの環境構築メモ - 忘れるための備忘録</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.4031d38b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#2018-05-23_xubuntu1804lts" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="忘れるための備忘録" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">cloud</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              忘れるための備忘録
+            </span>
+            <span class="md-header-nav__topic">
+              
+                2018-05-23_xubuntu18.04LTSの環境構築メモ
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." class="md-tabs__link">
+        トップページ
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../apache/20180717_apache_basic_auth/" class="md-tabs__link">
+          Apache
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../aws/20181011_aws_network_create/" class="md-tabs__link">
+          Aws
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../docker/20180527_docker_tutorial/" class="md-tabs__link">
+          Docker
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../git/20180521_git_githubmemo/" class="md-tabs__link">
+          Git
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../20180522_usbhdd_usbmem_linux_install/" class="md-tabs__link md-tabs__link--active">
+          Linux
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../msys2/20180702_msys2_install/" class="md-tabs__link">
+          Msys2
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../other/20180528_blackberry_ime_setup/" class="md-tabs__link">
+          Other
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../static_site/20180520_staticsite_hexo_blog_startup/" class="md-tabs__link">
+          Static site
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../vagrant/20180710_vagrant_setup/" class="md-tabs__link">
+          Vagrant
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../windows/20180524_windows10_dpk/" class="md-tabs__link">
+          Windows
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="忘れるための備忘録" class="md-nav__button md-logo">
+      
+        <i class="md-icon">cloud</i>
+      
+    </a>
+    忘れるための備忘録
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="トップページ" class="md-nav__link">
+      トップページ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../all_page/" title="全ページ一覧" class="md-nav__link">
+      全ページ一覧
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Apache
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Apache
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../apache/20180717_apache_basic_auth/" title="2018-07-17_ApacheでBasic認証を使ってみる" class="md-nav__link">
+      2018-07-17_ApacheでBasic認証を使ってみる
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Aws
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Aws
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../aws/20181011_aws_network_create/" title="2018-10-11_AWSのネットワークの作り方" class="md-nav__link">
+      2018-10-11_AWSのネットワークの作り方
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/20180527_docker_tutorial/" title="2018-05-27_Dockerを使ってみる" class="md-nav__link">
+      2018-05-27_Dockerを使ってみる
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/20180521_git_githubmemo/" title="2018-05-21_gitとgithubの備忘録" class="md-nav__link">
+      2018-05-21_gitとgithubの備忘録
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/20190129_github_sshkey_check_disable/" title="2019-01-29_githubへ初回接続の際にssh鍵認証のyes/no確認をしない" class="md-nav__link">
+      2019-01-29_githubへ初回接続の際にssh鍵認証のyes/no確認をしない
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180522_usbhdd_usbmem_linux_install/" title="2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする" class="md-nav__link">
+      2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        2018-05-23_xubuntu18.04LTSの環境構築メモ
+      </label>
+    
+    <a href="./" title="2018-05-23_xubuntu18.04LTSの環境構築メモ" class="md-nav__link md-nav__link--active">
+      2018-05-23_xubuntu18.04LTSの環境構築メモ
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    このページで分かること
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    パッケージを最新版に更新
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ディレクトリの英語に変更
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    起動時エラーの対応
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    ソフトウェアのインストール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    一括
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshserver" class="md-nav__link">
+    sshserverのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#googlechrome" class="md-nav__link">
+    googlechromeのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    vimのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atom" class="md-nav__link">
+    atomのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xsel" class="md-nav__link">
+    xselのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropbox" class="md-nav__link">
+    DropBoxのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rictydiminished" class="md-nav__link">
+    等倍フォント RictyDiminished のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminator" class="md-nav__link">
+    terminatorのインストール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminator_1" class="md-nav__link">
+    terminatorの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    自動起動設定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdclone" class="md-nav__link">
+    fdcloneのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranger" class="md-nav__link">
+    rangerのインストール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    pipのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranger_1" class="md-nav__link">
+    rangerのインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remmina" class="md-nav__link">
+    remminaのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exfat" class="md-nav__link">
+    exfat関連のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autokey" class="md-nav__link">
+    autokeyのインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    キーボードショートカット関係
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    キーボードの設定項目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ウィンドウマネージャー
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    備考
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180610_linux_command_chmod_chown/" title="2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)" class="md-nav__link">
+      2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180612_linux_console_color/" title="2018-06-12_Linuxのコンソール表示に色をつける" class="md-nav__link">
+      2018-06-12_Linuxのコンソール表示に色をつける
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180613_centos_ntfs_hdd_mount/" title="2018-06-13_centos6でntfsのHDDをマウントする(ntfs-3g)" class="md-nav__link">
+      2018-06-13_centos6でntfsのHDDをマウントする(ntfs-3g)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180614_centos_rpm_architecture_view/" title="2018-06-14_Centos_rpmコマンドでアーキテクチャ名を表示する" class="md-nav__link">
+      2018-06-14_Centos_rpmコマンドでアーキテクチャ名を表示する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180615_linux_collective_setting_password/" title="2018-06-15_Linuxで一括でユーザーのパスワード設定を行う方法(chpasswd)" class="md-nav__link">
+      2018-06-15_Linuxで一括でユーザーのパスワード設定を行う方法(chpasswd)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180622_ubuntuserver_install/" title="2018-06-22_UbuntuServerをインストールしてみる" class="md-nav__link">
+      2018-06-22_UbuntuServerをインストールしてみる
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180701_linux_charset_exchange/" title="2018-07-01_Linuxで文字コードと改行コードを確認、変換する" class="md-nav__link">
+      2018-07-01_Linuxで文字コードと改行コードを確認、変換する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180706_linux_vim_encoding_setting/" title="2018-07-06_vimで文字コード・改行コードを指定する" class="md-nav__link">
+      2018-07-06_vimで文字コード・改行コードを指定する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20180713_linux_ruby_install/" title="2018-07-13_Ruby,Rails環境のセットアップ" class="md-nav__link">
+      2018-07-13_Ruby,Rails環境のセットアップ
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20190112_linux_sshkey_settings/" title="2019-01-12_ssh鍵認証の設定" class="md-nav__link">
+      2019-01-12_ssh鍵認証の設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20190115_linux_serverspec_sshuser_setting/" title="2019-01-15_serverspecでsshの接続ユーザーを指定する" class="md-nav__link">
+      2019-01-15_serverspecでsshの接続ユーザーを指定する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20191026_distribution_check/" title="2019-10-26_Linuxの各ディストリビューション確認方法" class="md-nav__link">
+      2019-10-26_Linuxの各ディストリビューション確認方法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Msys2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Msys2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msys2/20180702_msys2_install/" title="2018-07-02_Windows10にmsys2の導入" class="md-nav__link">
+      2018-07-02_Windows10にmsys2の導入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msys2/20180707_msys2_path_include/" title="2018-07-07_msys2(mintty)でWindowsの環境変数を読み込む" class="md-nav__link">
+      2018-07-07_msys2(mintty)でWindowsの環境変数を読み込む
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msys2/20180720_msys2_symboliclink_use/" title="2018-07-20_MSYS2でシンボリックリンクを使えるようにする" class="md-nav__link">
+      2018-07-20_MSYS2でシンボリックリンクを使えるようにする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msys2/20190125_msys2_wincom_sigint/" title="2019-01-25_MSYS2(mintty)でwindowsコマンドが中止できない" class="md-nav__link">
+      2019-01-25_MSYS2(mintty)でwindowsコマンドが中止できない
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Other
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Other
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20180528_blackberry_ime_setup/" title="2018-05-28_BlackBerrykeyoneで検索窓に全角文字入力後にフリーズする" class="md-nav__link">
+      2018-05-28_BlackBerrykeyoneで検索窓に全角文字入力後にフリーズする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20180619_nutanix_disk_convert/" title="2018-06-19_Nutanixのディスクイメージをvdi形式に変換する" class="md-nav__link">
+      2018-06-19_Nutanixのディスクイメージをvdi形式に変換する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20180708_virtualbox_cui/" title="2018-07-08_Virtualboxで管理している仮想マシンをcuiで操作する" class="md-nav__link">
+      2018-07-08_Virtualboxで管理している仮想マシンをcuiで操作する
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Static site
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Static site
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../static_site/20180520_staticsite_hexo_blog_startup/" title="2018-05-20_hexoで静的サイトを作る" class="md-nav__link">
+      2018-05-20_hexoで静的サイトを作る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../static_site/20180703_saticsite_mkdocs_blog_startup/" title="2018-07-03_Mkdocsで静的サイトをつくる" class="md-nav__link">
+      2018-07-03_Mkdocsで静的サイトをつくる
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Vagrant
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Vagrant
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/20180710_vagrant_setup/" title="2018-07-10_Vagrantを使ってLinux開発環境を用意しよう" class="md-nav__link">
+      2018-07-10_Vagrantを使ってLinux開発環境を用意しよう
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/20180714_vagrant_otherclient_ssh/" title="2018-07-14_Vagrantで作成した仮想環境に別クライアントからsshする" class="md-nav__link">
+      2018-07-14_Vagrantで作成した仮想環境に別クライアントからsshする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+      2019-01-05_MSYS2とVagrantを使う際の注意点
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/20190122_vagrant_uid_error/" title="2019-01-22_vagrantでbox起動時にUIDエラーが出る" class="md-nav__link">
+      2019-01-22_vagrantでbox起動時にUIDエラーが出る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../vagrant/20190622_vagrant_base_box/" title="2019-06-22_vagrantでベースのboxを作成して起動を速くする" class="md-nav__link">
+      2019-06-22_vagrantでベースのboxを作成して起動を速くする
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Windows
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Windows
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180524_windows10_dpk/" title="2018-05-24_Windowsのデジタルプロダクトキー認証について" class="md-nav__link">
+      2018-05-24_Windowsのデジタルプロダクトキー認証について
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180526_windows10_photoview_use/" title="2018-05-26_windows10でフォトビューアを使えるようにする" class="md-nav__link">
+      2018-05-26_windows10でフォトビューアを使えるようにする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180529_windows10_autologin_setting/" title="2018-05-29_Windows10のOS起動時に自動ログインする" class="md-nav__link">
+      2018-05-29_Windows10のOS起動時に自動ログインする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180530_windows10_open_computer_stting/" title="2018-05-30_Windows10のwin+eキーでマイコンピュータを開く" class="md-nav__link">
+      2018-05-30_Windows10のwin+eキーでマイコンピュータを開く
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180601_windows_diskpart_partion_create/" title="2018-06-01_diskpartコマンドでパーティションを切る" class="md-nav__link">
+      2018-06-01_diskpartコマンドでパーティションを切る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180603_windows7_linkfile_association_reset/" title="2018-06-03_Windows7で.lnkの関連付けを元に戻す" class="md-nav__link">
+      2018-06-03_Windows7で.lnkの関連付けを元に戻す
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180605_windows10_remote_assistant_use/" title="2018-06-05_リモートアシスタントを使ってみる" class="md-nav__link">
+      2018-06-05_リモートアシスタントを使ってみる
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180607_windows10_startup_registration/" title="2018-06-07_Windows10のスタートアップへの登録方法" class="md-nav__link">
+      2018-06-07_Windows10のスタートアップへの登録方法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180609_windows10_windowsupdate_autodisable/" title="2018-06-09_Windows10ProでWindowsUpdateの自動更新を制御" class="md-nav__link">
+      2018-06-09_Windows10ProでWindowsUpdateの自動更新を制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180611_windows10_version_view/" title="2018-06-11_Windows10でversion情報を表示する" class="md-nav__link">
+      2018-06-11_Windows10でversion情報を表示する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180616_windows_remotedesktop_clipbord_enable/" title="2018-06-16_Windows10でリモートデスクトップでクリップボード共有が効かない" class="md-nav__link">
+      2018-06-16_Windows10でリモートデスクトップでクリップボード共有が効かない
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180617_windows10_startup_registration/" title="2018-06-17_Windows10のスタートアップ登録方法" class="md-nav__link">
+      2018-06-17_Windows10のスタートアップ登録方法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180618_windows10_share_nopassword/" title="2018-06-18_Windows10で認証なしでフォルダ共有をかける" class="md-nav__link">
+      2018-06-18_Windows10で認証なしでフォルダ共有をかける
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180620_X98PlusII_windows_factory_recovery/" title="2018-06-20_X98_Plus_IIのWindows領域をファクトリーリカバリーする" class="md-nav__link">
+      2018-06-20_X98_Plus_IIのWindows領域をファクトリーリカバリーする
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180621_windows_excel2013_time_cumulative/" title="2018-06-21_Microsoft_office_excel2013で時刻を累計表示する" class="md-nav__link">
+      2018-06-21_Microsoft_office_excel2013で時刻を累計表示する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180704_windows10_loupe/" title="2018-07-04_Windows10でキーボードショートカットで拡大鏡を使う" class="md-nav__link">
+      2018-07-04_Windows10でキーボードショートカットで拡大鏡を使う
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20180715_windows_hyper-v_memo/" title="2018-07-15_Hyper-vを使ってみる" class="md-nav__link">
+      2018-07-15_Hyper-vを使ってみる
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20181230_windows_chocolatey_setup/" title="2018-12-30_ChocolateyでWindows開発環境を作る" class="md-nav__link">
+      2018-12-30_ChocolateyでWindows開発環境を作る
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20190113_windows_account_change/" title="2019-01-13_Windows10でローカルアカウントからMicrosoftアカウントに切り替える" class="md-nav__link">
+      2019-01-13_Windows10でローカルアカウントからMicrosoftアカウントに切り替える
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    このページで分かること
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    パッケージを最新版に更新
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    ディレクトリの英語に変更
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    起動時エラーの対応
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    ソフトウェアのインストール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    一括
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sshserver" class="md-nav__link">
+    sshserverのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#googlechrome" class="md-nav__link">
+    googlechromeのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vim" class="md-nav__link">
+    vimのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atom" class="md-nav__link">
+    atomのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xsel" class="md-nav__link">
+    xselのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dropbox" class="md-nav__link">
+    DropBoxのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rictydiminished" class="md-nav__link">
+    等倍フォント RictyDiminished のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminator" class="md-nav__link">
+    terminatorのインストール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminator_1" class="md-nav__link">
+    terminatorの設定
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    自動起動設定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fdclone" class="md-nav__link">
+    fdcloneのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranger" class="md-nav__link">
+    rangerのインストール
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pip" class="md-nav__link">
+    pipのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranger_1" class="md-nav__link">
+    rangerのインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remmina" class="md-nav__link">
+    remminaのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exfat" class="md-nav__link">
+    exfat関連のインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autokey" class="md-nav__link">
+    autokeyのインストール
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    キーボードショートカット関係
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    キーボードの設定項目
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    ウィンドウマネージャー
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    備考
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="2018-05-23_xubuntu1804lts">2018-05-23_xubuntu18.04LTSの環境構築メモ</h1>
+<h2 id="_1">このページで分かること</h2>
+<ul>
+<li>xubuntuのセットアップ（自分用メモ）</li>
+</ul>
+<p>最近xubuntuのセットアップが多いので備忘録としてまとめました。
+xubuntuは軽快な動作なので気に入ってます。</p>
+<h2 id="_2">パッケージを最新版に更新</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">パッケージリストの更新</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="k">update</span>
+
+<span class="o">##</span> <span class="err">パッケージの更新</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">upgrade</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="_3">ディレクトリの英語に変更</h3>
+<p>下記コマンドでディレクトリを英語名に変更。
+ただし<strong>対象のディレクトリ空ではない場合は上手くいかないので注意</strong></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">LANG</span><span class="o">=</span><span class="k">C</span> <span class="n">xdg</span><span class="o">-</span><span class="k">user</span><span class="o">-</span><span class="n">dirs</span><span class="o">-</span><span class="k">update</span> <span class="c1">--force</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="_4">起動時エラーの対応</h4>
+<p>xubuntuの場合は次回ログイン時に「ダウンロード」ディレクトリが無いと下記エラーが出ます。
+dconf-editorを使い参照ディレクトリを変更が必要です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">Configured</span> <span class="nv">directory</span> <span class="k">for</span> <span class="nv">incoming</span> <span class="nv">files</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">exist</span>
+<span class="nv">Please</span> <span class="nv">make</span> <span class="nv">sure</span> <span class="nv">that</span> <span class="nv">directory</span> <span class="s2">&quot;</span><span class="s">/home/${username}/ダウンロード</span><span class="s2">&quot;</span> <span class="nv">exists</span> <span class="nv">or</span> <span class="nv">configure</span> <span class="nv">it</span> <span class="nv">with</span> <span class="nv">blueman</span><span class="o">-</span><span class="nv">services</span>
+</pre></div>
+</td></tr></table>
+
+<p>因みにdconf弄るのがめんどくさい場合はシンボリックリンク張るのも手です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">Downloads</span> <span class="o">~/</span><span class="err">ダウンロード</span>
+</pre></div>
+</td></tr></table>
+
+<p>dconfeditorインストール</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">インストール</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">dconf</span><span class="o">-</span><span class="n">editor</span>
+
+<span class="o">##</span><span class="k">c</span> <span class="err">実行</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">dconf</span><span class="o">-</span><span class="n">editor</span>
+</pre></div>
+</td></tr></table>
+
+<p>編集項目</p>
+<ul>
+<li>org =&gt; blueman =&gt; transfer =&gt; shared-path ダウンロードをDownloadsに変更</li>
+</ul>
+<h2 id="_5">ソフトウェアのインストール</h2>
+<h3 id="_6">一括</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span> <span class="n">vim</span> <span class="n">xsel</span> <span class="n">terminator</span> <span class="n">fdclone</span> <span class="n">remmina</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="sshserver">sshserverのインストール</h3>
+<p>sshdですね。xubuntuではデフォルトでは入っていないのでインストールします。因みにavahi-daemonがデフォルトでインストールされているので再起動後は<strong>${hotsname}.local</strong>でsshされる事ができます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
+
+<span class="o">##</span><span class="k">c</span> <span class="err">別マシンから操作するなら一旦再起動</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">shutdown</span> <span class="o">-</span><span class="n">r</span> <span class="n">now</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="googlechrome">googlechromeのインストール</h3>
+<ol>
+<li>firefoxで <a href="https://www.google.com/chrome/">https://www.google.com/chrome/</a> にアクセス。</li>
+<li>debパッケージをダウンロードしてインストール</li>
+</ol>
+<p>※googleアカウントにログインしておくと設定が同期されて便利ですね</p>
+<h3 id="vim">vimのインストール</h3>
+<p>cui用のエディタです。無いと困っちゃいます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">vim</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="atom">atomのインストール</h3>
+<p>gui用のエディタです。WindowsやMacでも使えるので操作方法に慣れておくと重宝します。
+aptにppa追加でも良いのですが公式からdebファイルをダウンロードして手動でインストールします。</p>
+<ol>
+<li>ブラウザで<a href="https://github.com/atom/atom/releases/">https://github.com/atom/atom/releases/</a>にアクセス。</li>
+<li>atom-amd64.debをダウンロードしインストール</li>
+</ol>
+<h3 id="xsel">xselのインストール</h3>
+<p>ターミナル上でクリップボードへのコピーによく使います。
+bashでテキスト加工した結果をコピーなど便利です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">xsel</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="dropbox">DropBoxのインストール</h3>
+<ol>
+<li>ブラウザで<a href="https://www.dropbox.com/ja/install-linux">https://www.dropbox.com/ja/install-linux</a>にアクセス</li>
+<li>Ubuntu(.dev)の64bitをダウンロードしてインストール</li>
+</ol>
+<h3 id="rictydiminished">等倍フォント RictyDiminished のインストール</h3>
+<p>ターミナルやエディタに設定する為の等倍フォントです。<br />
+可読性も高く、気に入ってます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="n">gzファイルの取得</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">edihbrandon</span><span class="o">/</span><span class="n">RictyDiminished</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+
+<span class="o">##</span><span class="k">c</span> <span class="err">展開</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">tar</span> <span class="n">xfv</span> <span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+
+<span class="o">##</span><span class="k">c</span> <span class="err">ユーザ別のインストールディレクトリを作成</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="o">~/</span><span class="p">.</span><span class="n">fonts</span> <span class="o">||</span> <span class="n">mkdir</span> <span class="o">~/</span><span class="p">.</span><span class="n">fonts</span>
+
+<span class="o">##</span><span class="k">c</span> <span class="err">フォントファイルを格納</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">cp</span> <span class="o">-</span><span class="n">p</span> <span class="n">RictyDiminished</span><span class="o">-</span><span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">3</span><span class="cm">/* ~/.fonts/</span>
+
+<span class="cm">## フォントの反映</span>
+<span class="cm">$c fc-cache -fv</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="terminator">terminatorのインストール</h3>
+<p>画面分割ができるターミナルエミュレータです。vimでシェルを書きながらlsするときなど便利ですね！</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">terminator</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="terminator_1">terminatorの設定</h4>
+<p>端末を右クリックし「設定」を選択</p>
+<ul class="task-list">
+<li>一般タブ</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 最前面に表示</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 全てのワークスペースに表示</li>
+<li>プロファイル 一般タブ</li>
+<li>[_] システムの固定幅フォントを使う RictyDiminished 18pt</li>
+<li>プロファイル 背景</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> 背景を透過 0.85</li>
+<li>レイアウト</li>
+<li>画面を最大化して[保存]を押下</li>
+<li>キーの割当</li>
+<li>hide_windows に F12キー を割り当て</li>
+</ul>
+<p>設定が終わったら一旦terminatorを終了させ再起動します。設定が反映されていれば完了です。設定変更後は必ず再起動して反映をさせて下さい。</p>
+<h4 id="_7">自動起動設定</h4>
+<p>システム起動時にterminatorを実行しておくと便利です。<br />
+xubuntuの<strong>セッションと起動</strong>設定から実施します。</p>
+<ol>
+<li>スタートメニューから「セッションと起動」を入力してエンターキーを押下</li>
+<li>「自動起動アプリケーション」を開き追加ボタンを押下</li>
+<li>名前: terminator</li>
+<li>説明: terminatorの起動</li>
+<li>コマンド: terminator</li>
+<li>再起動時に、terminatorが開くか確認</li>
+</ol>
+<h3 id="fdclone">fdcloneのインストール</h3>
+<p>CUIファイラー</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">fdclone</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="ranger">rangerのインストール</h3>
+<p>CUIファイラーは軽快に動作するので非常に便利です。</p>
+<h4 id="pip">pipのインストール</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="ranger_1">rangerのインストール</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">ranger</span><span class="o">-</span><span class="n">fm</span>
+<span class="o">##</span> <span class="err">起動</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">ranger</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="remmina">remminaのインストール</h3>
+<p>remminaはRDPやVNC接続が出来るクライアントです。  xubuntuからwindowsにアクセスしたりする際は便利なので導入しておきます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">remmina</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="exfat">exfat関連のインストール</h3>
+<p>exfatでフォーマットされた外付けディスクなどのマウントに使用します。<br />
+exfatはWindos,Linux,Macでマウントできるので便利です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">exfat</span><span class="o">-</span><span class="n">fuse</span> <span class="n">exfat</span><span class="o">-</span><span class="n">utils</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="autokey">autokeyのインストール</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">autokey</span><span class="o">-</span><span class="n">gtk</span> 
+</pre></div>
+</td></tr></table>
+
+<h2 id="_8">キーボードショートカット関係</h2>
+<h3 id="_9">キーボードの設定項目</h3>
+<ul>
+<li>左上のメニューアイコンをクリックし「キーボード」と入力しエンター</li>
+<li>「アプリケーションショートカット」タブを開く</li>
+<li>下記設定項目を参考に設定</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>ショートカット</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xfce4-popup-whiskermenu</td>
+<td>Super+Shift L</td>
+<td>Superのみだと後述タイル表示系がメニュー表示とかち合う</td>
+</tr>
+<tr>
+<td>xflock4</td>
+<td>Super+L</td>
+<td>　</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">ウィンドウマネージャー</h3>
+<ul>
+<li>左上のメニューアイコンをクリックし「ウィンドウマネージャー」と入力しエンター</li>
+<li>「キーボード」タブを開く</li>
+<li>下記設定項目を参考に設定 (win10でよく使うキーバインドにしました)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>動作</th>
+<th>ショートカットキー</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全画面化/解除の切り替え</td>
+<td>Super+Up</td>
+</tr>
+<tr>
+<td>ウィンドウを画面左にタイル表示</td>
+<td>Super+Left</td>
+</tr>
+<tr>
+<td>ウィンドウを画面右にタイル表示</td>
+<td>Super+Right</td>
+</tr>
+<tr>
+<td>デスクトップを表示</td>
+<td>Super+D</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_11">備考</h2>
+<p>初期構築は以上ですが、随時更新していきます。便利な設定などがあればこのページに追加したり、bashスクリプトである程度自動化してもよいかと思います。</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../20180522_usbhdd_usbmem_linux_install/" title="2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../20180610_linux_command_chmod_chown/" title="2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.718059d6.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>
