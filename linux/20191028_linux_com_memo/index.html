@@ -36,7 +36,7 @@
     
     
       
-        <title>2018-10-11_AWSのネットワークの作り方 - 忘れるための備忘録</title>
+        <title>Linuxコマンド小ネタ - 忘れるための備忘録</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#2018-10-11_aws" tabindex="1" class="md-skip">
+      <a href="#linux" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                2018-10-11_AWSのネットワークの作り方
+                Linuxコマンド小ネタ
               
             </span>
           
@@ -191,7 +191,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" class="md-tabs__link md-tabs__link--active">
+        <a href="../../aws/20181011_aws_network_create/" class="md-tabs__link">
           Aws
         </a>
       
@@ -230,7 +230,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../linux/20180522_usbhdd_usbmem_linux_install/" class="md-tabs__link">
+        <a href="../20180522_usbhdd_usbmem_linux_install/" class="md-tabs__link md-tabs__link--active">
           Linux
         </a>
       
@@ -390,12 +390,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       Aws
@@ -411,145 +409,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        2018-10-11_AWSのネットワークの作り方
-      </label>
-    
-    <a href="./" title="2018-10-11_AWSのネットワークの作り方" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../aws/20181011_aws_network_create/" title="2018-10-11_AWSのネットワークの作り方" class="md-nav__link">
       2018-10-11_AWSのネットワークの作り方
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    このページでわかること
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    AWSのネットワークを構成するコンポーネント
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vpc" class="md-nav__link">
-    VPC
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    サブネット
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#igw" class="md-nav__link">
-    インターネットゲートウェイ(IGW)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    ルートテーブル
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elastic-ip" class="md-nav__link">
-    Elastic IP
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    ネットワークを作る順番
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#vpc_1" class="md-nav__link">
-    VPCの注意点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    サブネットの注意点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    インターネットゲートウェイの注意点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    ルートテーブルの注意点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elastic-ip_1" class="md-nav__link">
-    Elastic IPの注意点
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -646,10 +510,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Linux
@@ -667,7 +533,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180522_usbhdd_usbmem_linux_install/" title="2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする" class="md-nav__link">
+    <a href="../20180522_usbhdd_usbmem_linux_install/" title="2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする" class="md-nav__link">
       2018-05-22_外付けHDDやUSBメモリにLinuxをインストールする
     </a>
   </li>
@@ -679,7 +545,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180523_xubuntu18_04LTS_startup/" title="2018-05-23_xubuntu18.04LTSの環境構築メモ" class="md-nav__link">
+    <a href="../20180523_xubuntu18_04LTS_startup/" title="2018-05-23_xubuntu18.04LTSの環境構築メモ" class="md-nav__link">
       2018-05-23_xubuntu18.04LTSの環境構築メモ
     </a>
   </li>
@@ -691,7 +557,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180610_linux_command_chmod_chown/" title="2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)" class="md-nav__link">
+    <a href="../20180610_linux_command_chmod_chown/" title="2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)" class="md-nav__link">
       2018-06-10_Linuxで特定のファイルの権限と所有者に合わせる(chmod , chown)
     </a>
   </li>
@@ -703,7 +569,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180612_linux_console_color/" title="2018-06-12_Linuxのコンソール表示に色をつける" class="md-nav__link">
+    <a href="../20180612_linux_console_color/" title="2018-06-12_Linuxのコンソール表示に色をつける" class="md-nav__link">
       2018-06-12_Linuxのコンソール表示に色をつける
     </a>
   </li>
@@ -715,7 +581,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180613_centos_ntfs_hdd_mount/" title="2018-06-13_centos6でntfsのHDDをマウントする(ntfs-3g)" class="md-nav__link">
+    <a href="../20180613_centos_ntfs_hdd_mount/" title="2018-06-13_centos6でntfsのHDDをマウントする(ntfs-3g)" class="md-nav__link">
       2018-06-13_centos6でntfsのHDDをマウントする(ntfs-3g)
     </a>
   </li>
@@ -727,7 +593,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180614_centos_rpm_architecture_view/" title="2018-06-14_Centos_rpmコマンドでアーキテクチャ名を表示する" class="md-nav__link">
+    <a href="../20180614_centos_rpm_architecture_view/" title="2018-06-14_Centos_rpmコマンドでアーキテクチャ名を表示する" class="md-nav__link">
       2018-06-14_Centos_rpmコマンドでアーキテクチャ名を表示する
     </a>
   </li>
@@ -739,7 +605,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180615_linux_collective_setting_password/" title="2018-06-15_Linuxで一括でユーザーのパスワード設定を行う方法(chpasswd)" class="md-nav__link">
+    <a href="../20180615_linux_collective_setting_password/" title="2018-06-15_Linuxで一括でユーザーのパスワード設定を行う方法(chpasswd)" class="md-nav__link">
       2018-06-15_Linuxで一括でユーザーのパスワード設定を行う方法(chpasswd)
     </a>
   </li>
@@ -751,7 +617,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180622_ubuntuserver_install/" title="2018-06-22_UbuntuServerをインストールしてみる" class="md-nav__link">
+    <a href="../20180622_ubuntuserver_install/" title="2018-06-22_UbuntuServerをインストールしてみる" class="md-nav__link">
       2018-06-22_UbuntuServerをインストールしてみる
     </a>
   </li>
@@ -763,7 +629,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180701_linux_charset_exchange/" title="2018-07-01_Linuxで文字コードと改行コードを確認、変換する" class="md-nav__link">
+    <a href="../20180701_linux_charset_exchange/" title="2018-07-01_Linuxで文字コードと改行コードを確認、変換する" class="md-nav__link">
       2018-07-01_Linuxで文字コードと改行コードを確認、変換する
     </a>
   </li>
@@ -775,7 +641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180706_linux_vim_encoding_setting/" title="2018-07-06_vimで文字コード・改行コードを指定する" class="md-nav__link">
+    <a href="../20180706_linux_vim_encoding_setting/" title="2018-07-06_vimで文字コード・改行コードを指定する" class="md-nav__link">
       2018-07-06_vimで文字コード・改行コードを指定する
     </a>
   </li>
@@ -787,7 +653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20180713_linux_ruby_install/" title="2018-07-13_Ruby,Rails環境のセットアップ" class="md-nav__link">
+    <a href="../20180713_linux_ruby_install/" title="2018-07-13_Ruby,Rails環境のセットアップ" class="md-nav__link">
       2018-07-13_Ruby,Rails環境のセットアップ
     </a>
   </li>
@@ -799,7 +665,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20190112_linux_sshkey_settings/" title="2019-01-12_ssh鍵認証の設定" class="md-nav__link">
+    <a href="../20190112_linux_sshkey_settings/" title="2019-01-12_ssh鍵認証の設定" class="md-nav__link">
       2019-01-12_ssh鍵認証の設定
     </a>
   </li>
@@ -811,7 +677,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20190115_linux_serverspec_sshuser_setting/" title="2019-01-15_serverspecでsshの接続ユーザーを指定する" class="md-nav__link">
+    <a href="../20190115_linux_serverspec_sshuser_setting/" title="2019-01-15_serverspecでsshの接続ユーザーを指定する" class="md-nav__link">
       2019-01-15_serverspecでsshの接続ユーザーを指定する
     </a>
   </li>
@@ -823,7 +689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20190318_linux_rhel_selinux_off/" title="2019-03-18_RHEL系でのSELinux無効化方法" class="md-nav__link">
+    <a href="../20190318_linux_rhel_selinux_off/" title="2019-03-18_RHEL系でのSELinux無効化方法" class="md-nav__link">
       2019-03-18_RHEL系でのSELinux無効化方法
     </a>
   </li>
@@ -835,7 +701,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../linux/20191026_distribution_check/" title="2019-10-26_Linuxの各ディストリビューション確認方法" class="md-nav__link">
+    <a href="../20191026_distribution_check/" title="2019-10-26_Linuxの各ディストリビューション確認方法" class="md-nav__link">
       2019-10-26_Linuxの各ディストリビューション確認方法
     </a>
   </li>
@@ -845,11 +711,190 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../linux/20191028_linux_com_memo/" title="Linuxコマンド小ネタ" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Linuxコマンド小ネタ
+      </label>
+    
+    <a href="./" title="Linuxコマンド小ネタ" class="md-nav__link md-nav__link--active">
       Linuxコマンド小ネタ
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    dateコマンド
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    表示フォーマットの指定
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yyyymmdd" class="md-nav__link">
+    YYYY/MM/DD形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yyyy-mm-dd" class="md-nav__link">
+    YYYY-MM-DD形式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    よく使うフォーマット
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基準日を指定フォーマットで表示
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2019101yyyymmdd" class="md-nav__link">
+    2019年10月1日をYYYY/MM/DD形式で表示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    基準日からの加算・減算
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#20191013" class="md-nav__link">
+    2019年10月1日を基準日とし3日後を表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20191013_1" class="md-nav__link">
+    2019年10月1日を基準日とし3日前を表示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sed" class="md-nav__link">
+    sed
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    セパレーター
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    行削除
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    先頭1行を削る
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1408,51 +1453,104 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    このページでわかること
+    概要
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#aws" class="md-nav__link">
-    AWSのネットワークを構成するコンポーネント
+  <a href="#cat" class="md-nav__link">
+    cat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    dateコマンド
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vpc" class="md-nav__link">
-    VPC
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    サブネット
+    表示フォーマットの指定
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yyyymmdd" class="md-nav__link">
+    YYYY/MM/DD形式
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#igw" class="md-nav__link">
-    インターネットゲートウェイ(IGW)
+  <a href="#yyyy-mm-dd" class="md-nav__link">
+    YYYY-MM-DD形式
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    ルートテーブル
+    よく使うフォーマット
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    基準日を指定フォーマットで表示
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2019101yyyymmdd" class="md-nav__link">
+    2019年10月1日をYYYY/MM/DD形式で表示
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    基準日からの加算・減算
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#20191013" class="md-nav__link">
+    2019年10月1日を基準日とし3日後を表示
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#elastic-ip" class="md-nav__link">
-    Elastic IP
+  <a href="#20191013_1" class="md-nav__link">
+    2019年10月1日を基準日とし3日前を表示
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1462,45 +1560,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    ネットワークを作る順番
+  <a href="#sed" class="md-nav__link">
+    sed
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vpc_1" class="md-nav__link">
-    VPCの注意点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    サブネットの注意点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    インターネットゲートウェイの注意点
+    セパレーター
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    ルートテーブルの注意点
+    行削除
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    先頭1行を削る
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#elastic-ip_1" class="md-nav__link">
-    Elastic IPの注意点
-  </a>
+      </ul>
+    </nav>
   
 </li>
         
@@ -1526,116 +1616,138 @@
               
                 
                 
-                <h1 id="2018-10-11_aws">2018-10-11_AWSのネットワークの作り方</h1>
-<h2 id="_1">このページでわかること</h2>
-<ul>
-<li>AWSを使った外部接続可能なネットワークの作り方</li>
-</ul>
-<p>仕事でAWSを触り始めたので忘れないうちにまとめておきます。
-ネットワークとか専門じゃないので結構適当です。</p>
-<h2 id="aws">AWSのネットワークを構成するコンポーネント</h2>
-<p>必要なコンポーネント（部品）が複数あります。</p>
+                <h1 id="linux">Linuxコマンド小ネタ</h1>
+<h2 id="_1">概要</h2>
+<p>今の案件ではシェルスクリプト組むことがないのですがしばらく触らないと忘れそうだったのでよく使うパターンをまとめることにしました。</p>
+<h2 id="cat">cat</h2>
+<p>リダイレクトと合わせて、追記するパターンをよく使います。</p>
+<p>終了文字列をシングルクォートで囲むことで、変数が展開されない <strong>(入力通りに追記される)</strong> テクニックがあります。シェルスクリプト内でconfigに自動追記したりするパターンでは便利です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat <span class="s">&lt;&lt; &#39;FIN&#39; &gt;&gt; ${output_file}</span>
+<span class="s">hogehoge</span>
+<span class="s">${piyo}</span>
+<span class="s">FIN</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="date">dateコマンド</h2>
+<h3 id="_2">表示フォーマットの指定</h3>
+<h4 id="yyyymmdd">YYYY/MM/DD形式</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date +<span class="s2">&quot;%Y/%m/%d&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="yyyy-mm-dd">YYYY-MM-DD形式</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date +<span class="s2">&quot;%F&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="_3">よく使うフォーマット</h4>
 <table>
 <thead>
 <tr>
-<th>名称</th>
+<th>パラメータ</th>
 <th>説明</th>
+<th>表示例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>VPC</td>
-<td>ネットワーク全体(IPの範囲を設定)</td>
+<td>%F</td>
+<td>YYYY-MM-DD形式</td>
+<td>2019-10-24</td>
 </tr>
 <tr>
-<td>サブネット</td>
-<td>VPC内でサブネットを切れます</td>
+<td>%Y</td>
+<td>年を4桁で表示</td>
+<td>2019</td>
 </tr>
 <tr>
-<td>インターネットゲートウェイ</td>
-<td>外部に出るためのゲートウェイ。VPCにアタッチして使います</td>
+<td>%y</td>
+<td>年を下2桁で表示</td>
+<td>19</td>
 </tr>
 <tr>
-<td>ルートテーブル</td>
-<td>VPC内のルーティング設定をします</td>
+<td>%m</td>
+<td>月</td>
+<td>01..12</td>
 </tr>
 <tr>
-<td>Elastic IP</td>
-<td>グローバルIPとプライベートIPを変換してくれる仕組みです</td>
+<td>%d</td>
+<td>日付</td>
+<td>01..31</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>時</td>
+<td>00..23</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>時</td>
+<td>01..12</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>分</td>
+<td>00..59</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>秒</td>
+<td>00..60</td>
+</tr>
+<tr>
+<td>%a</td>
+<td>ロケール表示による曜日の省略名</td>
+<td>Sun、日</td>
+</tr>
+<tr>
+<td>%A</td>
+<td>ロケール表示での曜日の完全名</td>
+<td>Sunday、日曜日</td>
 </tr>
 </tbody>
 </table>
-<h3 id="vpc">VPC</h3>
-<p>VPCはネットワーク全体のイメージです。指定したIP範囲がそのVPCで使用できるネットワークになります。
-例えば172.31.0.0/16を指定すればその範囲内のIPアドレスを使用できます。</p>
-<h3 id="_2">サブネット</h3>
-<p>VPC内でサブネットを切ることができます。複数のセグメント形態に分けることができるため、同じVPCだけど別セグメントのような設定も可能だと思います。</p>
-<h3 id="igw">インターネットゲートウェイ(IGW)</h3>
-<p>外部接続用の口です。VPCにアタッチしない場合は外部接続できません。</p>
-<h3 id="_3">ルートテーブル</h3>
-<p>IGWへの経路をどうするかなどを設定すると外部接続できるようになります。その他接続もルーティング設定することが可能なようです。</p>
-<h3 id="elastic-ip">Elastic IP</h3>
-<p>グローバルIPとプライベートIPを変換する仕組みです。一旦紐づけすればそのグローバルIPで接続することができます。
-SSHやRDP用に使うことが多いです。</p>
-<h2 id="_4">ネットワークを作る順番</h2>
-<ol>
-<li>VPC</li>
-<li>サブネット</li>
-<li>IGW</li>
-<li>ルートテーブル
-5  EC2インスタンス(Elastic IPを紐付けるために先に作成)</li>
-<li>Elastic IP</li>
-</ol>
-<h3 id="vpc_1">VPCの注意点</h3>
-<ul>
-<li>名前タグ : わかりやすい名前</li>
-<li>ipv4 CIDRブロック : そのネットワークの範囲<code>xxx.xxx.xxx.xxx/xx</code>で指定</li>
-<li>ipv6 CIDRブロック : 未使用なので詳細はわからないが、多分ipv6の範囲。任意に範囲を指定はできない。</li>
-<li>テナンシー : デフォルトでOK</li>
-</ul>
-<p><strong>ipv6やテナンシーは使ったことないので詳細は分からないです</strong></p>
-<h3 id="_5">サブネットの注意点</h3>
-<ul>
-<li>名前タグ : わかりやすい名前</li>
-<li>VPC : アタッチするVPC名を指定するので先に作成しておくこと</li>
-<li>アベイラビリティゾーン : 指定なし (自動判断)</li>
-<li>ipv4 CIDR ブロック : VPCと同じIP範囲を指定すればサブネット1個になる</li>
-</ul>
-<h3 id="_6">インターネットゲートウェイの注意点</h3>
-<ul>
-<li>名前タグ : わかりやすい名前</li>
-</ul>
-<p><strong> 作成後、アクションメニューからVPCにアタッチを忘れないこと </strong></p>
-<h3 id="_7">ルートテーブルの注意点</h3>
-<ul>
-<li>名前タグ : わかりやすい名前</li>
-<li>VPC : 既存の紐付けるVPCを選択</li>
-</ul>
-<p>作成後の画面で下記を設定すること</p>
-<ul>
-<li><strong>ルートタブ</strong>から編集<ul>
-<li><strong>別のルートを追加</strong><ul>
-<li>送信先: 0.0.0.0/0 (ALL設定)</li>
-<li>ターゲット: IGW</li>
-</ul>
-</li>
-<li><strong>サブネットの関連付け</strong>から編集<ul>
-<li>紐付いているサブネットの関連付けに[x}を入れ保存</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>※サブネットの関連付けを明示的にしないと、デフォルトのサブネットが使用されて想定した通りの通信が出来ない。</p>
-<h3 id="elastic-ip_1">Elastic IPの注意点</h3>
-<p>新しいアドレスの割り当てを選び<strong>割り当て</strong></p>
-<p>作成後アクションメニューから<strong>アドレスの関連付け</strong>で下記を設定すること</p>
-<ul>
-<li>リソースタイプ : インスタンス</li>
-<li>インスタンス : 紐づけたいインスタンスを選択</li>
-<li>プライベートIP : 複数ある場合は変換するIPアドレスを選択</li>
-<li>再関連付け : アタッチ済みの場合はチェック</li>
-</ul>
+<h3 id="_4">基準日を指定フォーマットで表示</h3>
+<h4 id="2019101yyyymmdd">2019年10月1日をYYYY/MM/DD形式で表示</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
+date -d <span class="s2">&quot;2019-10-01&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="_5">基準日からの加算・減算</h3>
+<h4 id="20191013">2019年10月1日を基準日とし3日後を表示</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days&quot;</span> 
+</pre></div>
+</td></tr></table>
+
+<p>指定フォーマットで表示もできる。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="20191013_1">2019年10月1日を基準日とし3日前を表示</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days ago&quot;</span> 
+</pre></div>
+</td></tr></table>
+
+<p>指定フォーマットで表示もできる。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days ago&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="sed">sed</h2>
+<h3 id="_6">セパレーター</h3>
+<p>セパレーターになっている文字が置換文字列に含まれていると、セパレーターと区別できずにエラーになります。セパレーターは通常はスラッシュ<code>/</code>を使いますが<code>@</code>なども使用できるので置換文字列に含まれない記号を使用するとエラーが回避できます。</p>
+<h3 id="_7">行削除</h3>
+<h4 id="1">先頭1行を削る</h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sed <span class="s1">&#39;1d&#39;</span> <span class="si">${</span><span class="nv">file_name</span><span class="si">}</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -1656,7 +1768,7 @@ SSHやRDP用に使うことが多いです。</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../apache/20180717_apache_basic_auth/" title="2018-07-17_ApacheでBasic認証を使ってみる" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../20191026_distribution_check/" title="2019-10-26_Linuxの各ディストリビューション確認方法" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1665,19 +1777,19 @@ SSHやRDP用に使うことが多いです。</p>
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2018-07-17_ApacheでBasic認証を使ってみる
+                2019-10-26_Linuxの各ディストリビューション確認方法
               </span>
             </div>
           </a>
         
         
-          <a href="../../docker/20180527_docker_tutorial/" title="2018-05-27_Dockerを使ってみる" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../msys2/20180702_msys2_install/" title="2018-07-02_Windows10にmsys2の導入" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2018-05-27_Dockerを使ってみる
+                2018-07-02_Windows10にmsys2の導入
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
