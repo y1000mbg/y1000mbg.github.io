@@ -36,7 +36,7 @@
     
     
       
-        <title>2019-01-15_serverspecでsshの接続ユーザーを指定する - 忘れるための備忘録</title>
+        <title>2019-03-18_RHEL系でのSELinux無効化方法 - 忘れるための備忘録</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#2019-01-15_serverspecssh" tabindex="1" class="md-skip">
+      <a href="#2019-03-18_rhelselinux" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                2019-01-15_serverspecでsshの接続ユーザーを指定する
+                2019-03-18_RHEL系でのSELinux無効化方法
               
             </span>
           
@@ -675,6 +675,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../20190115_linux_serverspec_sshuser_setting/" title="2019-01-15_serverspecでsshの接続ユーザーを指定する" class="md-nav__link">
+      2019-01-15_serverspecでsshの接続ユーザーを指定する
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -686,11 +698,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2019-01-15_serverspecでsshの接続ユーザーを指定する
+        2019-03-18_RHEL系でのSELinux無効化方法
       </label>
     
-    <a href="./" title="2019-01-15_serverspecでsshの接続ユーザーを指定する" class="md-nav__link md-nav__link--active">
-      2019-01-15_serverspecでsshの接続ユーザーを指定する
+    <a href="./" title="2019-03-18_RHEL系でのSELinux無効化方法" class="md-nav__link md-nav__link--active">
+      2019-03-18_RHEL系でのSELinux無効化方法
     </a>
     
       
@@ -712,6 +724,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     設定方法
   </a>
   
@@ -719,15 +738,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    結論はシンプル
+  <a href="#_4" class="md-nav__link">
+    現状の設定状況の確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    詳細手順
+  <a href="#_5" class="md-nav__link">
+    一時的に無効化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    永続的に無効化
   </a>
   
 </li>
@@ -745,18 +771,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../20190318_linux_rhel_selinux_off/" title="2019-03-18_RHEL系でのSELinux無効化方法" class="md-nav__link">
-      2019-03-18_RHEL系でのSELinux無効化方法
-    </a>
   </li>
 
         
@@ -1322,6 +1336,13 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     設定方法
   </a>
   
@@ -1329,15 +1350,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    結論はシンプル
+  <a href="#_4" class="md-nav__link">
+    現状の設定状況の確認
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    詳細手順
+  <a href="#_5" class="md-nav__link">
+    一時的に無効化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    永続的に無効化
   </a>
   
 </li>
@@ -1364,49 +1392,39 @@
               
                 
                 
-                <h1 id="2019-01-15_serverspecssh">2019-01-15_serverspecでsshの接続ユーザーを指定する</h1>
+                <h1 id="2019-03-18_rhelselinux">2019-03-18_RHEL系でのSELinux無効化方法</h1>
 <h2 id="_1">このページで分かること</h2>
 <ul>
-<li>serverspecでsshの接続ユーザーを指定する方法</li>
+<li>SELinuxの設定の切り方</li>
 </ul>
-<p>初めてansibleとserverspecの環境を触りました。
-serverspecでssh接続するユーザーをansibleと共通化しようとして苦戦したので備忘録です。</p>
-<h2 id="_2">設定方法</h2>
-<h3 id="_3">結論はシンプル</h3>
-<p>結論として <code>~/.ssh/config</code> に接続情報(User)を設定すれば対応できます。</p>
-<h3 id="_4">詳細手順</h3>
-<p><code>vim ~/.ssh/config</code>で接続情報を記載します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 凡例
-##c <span class="cp">${</span><span class="n">target_hostname</span><span class="cp">}</span> = 対象のホスト名 / <span class="cp">${</span><span class="n">target_host_ipaddr</span><span class="cp">}</span> = 対象IP / <span class="cp">${</span><span class="n">ssh_user</span><span class="cp">}</span> = ssh接続に使用するユーザー
-Host <span class="cp">${</span><span class="n">target_hostname</span><span class="cp">}</span>
-  HostName <span class="cp">${</span><span class="n">target_host_ipaddr</span><span class="cp">}</span>
-  User <span class="cp">${</span><span class="n">ssh_user</span><span class="cp">}</span>
-  Port 22
-  IdentityFile ~/.ssh/id_rsa
-
-##c 実際に設定した内容
-Host ansible-guest
-  HostName 192.168.55.94
-  User ansible
-  Port 22
-  IdentityFile ~/.ssh/id_rsa
+<p>たまに使うけど毎回検索しているので備忘として残しておきます。</p>
+<h2 id="_2">環境</h2>
+<ul>
+<li>OS: fedora30</li>
+</ul>
+<h2 id="_3">設定方法</h2>
+<h3 id="_4">現状の設定状況の確認</h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##c Enforcing=有効 / Disabled=無効 / Permissive=一時的に無効</span>
+<span class="c1">#r  getenforce</span>
+Enforcing
 </pre></div>
 </td></tr></table>
 
-<p>初回設定の際にHostにIPアドレス、HostNameにサーバー名を入れてしまい、まったく設定が通らなくハマりました。</p>
+<h3 id="_5">一時的に無効化</h3>
+<p>再起動すると<strong>Enforcing</strong>に戻ります。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##c 0=Permissive / 1=Enforcing</span>
+<span class="c1">#r setenforce 0</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="_6">永続的に無効化</h3>
+<p>設定ファイルを編集する必要があります。sedでバシッと書き換えちゃいましょう！</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#r sed -i_org s/&#39;SELINUX=enforcing&#39;/&#39;SELINUX=disabled&#39;/ /etc/selinux/config</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -1427,7 +1445,7 @@ Host ansible-guest
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20190112_linux_sshkey_settings/" title="2019-01-12_ssh鍵認証の設定" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../20190115_linux_serverspec_sshuser_setting/" title="2019-01-15_serverspecでsshの接続ユーザーを指定する" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1436,19 +1454,19 @@ Host ansible-guest
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2019-01-12_ssh鍵認証の設定
+                2019-01-15_serverspecでsshの接続ユーザーを指定する
               </span>
             </div>
           </a>
         
         
-          <a href="../20190318_linux_rhel_selinux_off/" title="2019-03-18_RHEL系でのSELinux無効化方法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20191026_distribution_check/" title="2019-10-26_Linuxの各ディストリビューション確認方法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2019-03-18_RHEL系でのSELinux無効化方法
+                2019-10-26_Linuxの各ディストリビューション確認方法
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
