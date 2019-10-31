@@ -36,7 +36,7 @@
     
     
       
-        <title>2019-10-29_MkdocsのMaterialThemaで日本語検索ができない - 忘れるための備忘録</title>
+        <title>2019-11-01_Mkdocsのビルドに時間がかかる - 忘れるための備忘録</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#2019-10-29_mkdocsmaterialthema" tabindex="1" class="md-skip">
+      <a href="#2019-11-01_mkdocs" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                2019-10-29_MkdocsのMaterialThemaで日本語検索ができない
+                2019-11-01_Mkdocsのビルドに時間がかかる
               
             </span>
           
@@ -903,6 +903,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../20191029_staticsite_mkdocs_japanease_search/" title="2019-10-29_MkdocsのMaterialThemaで日本語検索ができない" class="md-nav__link">
+      2019-10-29_MkdocsのMaterialThemaで日本語検索ができない
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -914,11 +926,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2019-10-29_MkdocsのMaterialThemaで日本語検索ができない
+        2019-11-01_Mkdocsのビルドに時間がかかる
       </label>
     
-    <a href="./" title="2019-10-29_MkdocsのMaterialThemaで日本語検索ができない" class="md-nav__link md-nav__link--active">
-      2019-10-29_MkdocsのMaterialThemaで日本語検索ができない
+    <a href="./" title="2019-11-01_Mkdocsのビルドに時間がかかる" class="md-nav__link md-nav__link--active">
+      2019-11-01_Mkdocsのビルドに時間がかかる
     </a>
     
       
@@ -947,30 +959,43 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    対応方法
+    結論として
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#githubclone" class="md-nav__link">
-    差新板をgithubからclone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    カスタムテーマの設定を反映
+    調査結果の詳細
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-320" class="md-nav__link">
+    パターンA: 320ファイルをビルド
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    動作確認の実施
+  <a href="#b" class="md-nav__link">
+    パターンB: ファイル数を増やしての測定
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    パターンB: ファイル数を減らしての測定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1379,30 +1404,43 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    対応方法
+    結論として
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#githubclone" class="md-nav__link">
-    差新板をgithubからclone
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    カスタムテーマの設定を反映
+    調査結果の詳細
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-320" class="md-nav__link">
+    パターンA: 320ファイルをビルド
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    動作確認の実施
+  <a href="#b" class="md-nav__link">
+    パターンB: ファイル数を増やしての測定
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    パターンB: ファイル数を減らしての測定
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1428,85 +1466,64 @@
               
                 
                 
-                <h1 id="2019-10-29_mkdocsmaterialthema">2019-10-29_MkdocsのMaterialThemaで日本語検索ができない</h1>
+                <h1 id="2019-11-01_mkdocs">2019-11-01_Mkdocsのビルドに時間がかかる</h1>
 <h2 id="_1">このページで分かること</h2>
 <ul>
-<li>MaterialThemaをpip以外でインストールする方法</li>
-<li>日本語検索ができないときの復旧方法</li>
-<li>カスタムテーマの適用方法</li>
+<li>Mkdocsのビルドが遅いときの対処法の参考情報</li>
 </ul>
-<p>fedoraでこのBlogの更新用の環境構築をして、いざビルドしたら日本語検索が動作しなかったので対応方法を調べました。</p>
-<hr />
-<p>結論としては、githubから最新のテーマファイルをダウンロードしてカスタムテーマとして適用すれば、無事に日本語検索が使用できるようになります。</p>
+<p>個人的に日記を書いており、このサイトと同じでMkdocsで整形しています。先日まであまり気にしていなかったのですがこのビルドに１分以上かかっており、このサイトと比べるとビルドに時間がかかっていることがわかりました。</p>
+<p>簡単に原因を調べてみましたのでメモしておきます。</p>
 <h2 id="_2">環境</h2>
 <ul>
 <li>OS: fedora30</li>
-<li>ミドル: <ul>
-<li>Python 3.6.0</li>
-<li>pip 9.0.1 </li>
+<li>ミドル:<ul>
 <li>mkdocs 1.0.4</li>
+<li>Python 3.6.0</li>
+<li>pip 9.0.1</li>
 </ul>
 </li>
 </ul>
-<h2 id="_3">対応方法</h2>
-<h3 id="githubclone">差新板をgithubからclone</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c githubから最新のテーマをcloneする
-##c ※なお、mkdocsのプロジェクトディレクトリ直下でcloneするとmkdocs.ymlなどが上書きされてしまうので注意。
-##c 必要なファイルはmaterialディレクトリだけなので、tmpディレクトリあたりでcloneしてコピーすればOK
-#r  REPO_URL=&#39;https://github.com/squidfunk/mkdocs-material.git&#39;
-#r  git clone <span class="cp">${</span><span class="n">REPO_URL</span><span class="cp">}</span>
-#r  cp -pr mkdocs-material/material <span class="cp">${</span><span class="n">mkdocs</span><span class="o">-</span><span class="n">project</span><span class="o">-</span><span class="nb">dir</span><span class="cp">}</span>
+<h2 id="_3">結論として</h2>
+<p>結論としては、 <strong>ビルド対象のファイル数</strong> に依存することが分かりました。</p>
+<p>一番影響があるのが<code>mkdocs server</code>コマンドでリアルタイムに編集しながら確認する際に、いちいちビルドが入るのでそのたびにページの描画に時間がかかります。</p>
+<p>なお実際にビルドを実施した仮想環境のCPU使用率が100%に張り付いており、割当コア数を増やしたりしてもみましたが、mkdocsはシングルコアでビルドするっぽいので改善には至りませんでした。<strong>ファイル数を減らすのが妥当</strong>のようです。</p>
+<h3 id="_4">調査結果の詳細</h3>
+<p>ビルド対象のファイルは日別作成されたmdファイルとなります。320ファイル程たまっており、１ファイルの文量は大したことありません。多くても7KBちょっとです。</p>
+<p>測定はtimeコマンドで実施しています。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#r time mkdocs build</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="_4">カスタムテーマの設定を反映</h3>
-<p>mkdocs.ymlに以下の内容を書き込みます。</p>
-<p><strong>※ 既にテーマの設定が入っている場合は適宜書き換えてください。</strong></p>
-<p>yamlフォーマットなのでスペースの数に注意してください。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">theme</span><span class="o">:</span>
-  <span class="n">name</span><span class="o">:</span> <span class="kc">null</span>
-  <span class="n">custom_dir</span><span class="o">:</span> <span class="s1">&#39;mkdocs-material/material&#39;</span>
-  <span class="n">language</span><span class="o">:</span> <span class="s1">&#39;ja&#39;</span>
-  <span class="n">palette</span><span class="o">:</span>
-    <span class="n">primary</span><span class="o">:</span> <span class="s1">&#39;indigo&#39;</span>
-    <span class="n">accent</span><span class="o">:</span> <span class="s1">&#39;indigo&#39;</span>
-  <span class="n">font</span><span class="o">:</span>
-    <span class="n">text</span><span class="o">:</span> <span class="s1">&#39;Roboto&#39;</span>
-    <span class="n">code</span><span class="o">:</span> <span class="s1">&#39;Roboto Mono&#39;</span>
-  <span class="n">logo</span><span class="o">:</span>
-    <span class="n">icon</span><span class="o">:</span> <span class="s1">&#39;cloud&#39;</span>
-  <span class="n">feature</span><span class="o">:</span>
-    <span class="n">tabs</span><span class="o">:</span> <span class="kc">true</span>
+<h4 id="a-320">パターンA: 320ファイルをビルド</h4>
+<p>通常時のビルド時間です。1分13秒かかっていることが分かります。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">real</span>    <span class="mi">1</span><span class="n">m13</span><span class="p">.</span><span class="mi">962</span><span class="n">s</span>
+<span class="k">user</span>    <span class="mi">0</span><span class="n">m59</span><span class="p">.</span><span class="mi">847</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m2</span><span class="p">.</span><span class="mi">493</span><span class="n">s</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="_5">動作確認の実施</h3>
-<p>サーバを立ち上げるかビルドコマンドを実施しエラーがなくサーバ起動 or ビルドが実施出来れば対応完了です。</p>
+<h4 id="b">パターンB: ファイル数を増やしての測定</h4>
+<p>320ファイルをコピーして倍の640ファイルでビルド時間を測定。
+ビルド時間は倍以上の3分47秒に増えてしまいました……</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#r  cd ${mkdocs-project-dir}</span>
-<span class="c1">#r  mkdocs build</span>
-<span class="c1">##c または</span>
-<span class="c1">#r  mkdocs serve</span>
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">real</span>    <span class="mi">3</span><span class="n">m47</span><span class="p">.</span><span class="mi">805</span><span class="n">s</span>
+<span class="k">user</span>    <span class="mi">3</span><span class="n">m14</span><span class="p">.</span><span class="mi">666</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m8</span><span class="p">.</span><span class="mi">430</span><span class="n">s</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="b_1">パターンB: ファイル数を減らしての測定</h4>
+<p>日次ファイルを結合して月次ファイルにしファイル数を12ファイルにしてビルド時間を測定。単純に結合しただけなので、ファイルの内容に差異はなく、１ファイルの容量は増えている。</p>
+<p><strong>1分13秒が17秒まで短縮された。</strong></p>
+<p>mkdocsがビルド時に複数ファイルを並列処理しているか分からないが、ビルド対象ファイル数でビルド時間は大幅に変わるようだ。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">real</span>    <span class="mi">0</span><span class="n">m17</span><span class="p">.</span><span class="mi">778</span><span class="n">s</span>
+<span class="k">user</span>    <span class="mi">0</span><span class="n">m12</span><span class="p">.</span><span class="mi">883</span><span class="n">s</span>
+<span class="n">sys</span>     <span class="mi">0</span><span class="n">m0</span><span class="p">.</span><span class="mi">884</span><span class="n">s</span>
 </pre></div>
 </td></tr></table>
                 
@@ -1529,7 +1546,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20180703_saticsite_mkdocs_blog_startup/" title="2018-07-03_Mkdocsで静的サイトをつくる" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../20191029_staticsite_mkdocs_japanease_search/" title="2019-10-29_MkdocsのMaterialThemaで日本語検索ができない" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1538,7 +1555,7 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2018-07-03_Mkdocsで静的サイトをつくる
+                2019-10-29_MkdocsのMaterialThemaで日本語検索ができない
               </span>
             </div>
           </a>
