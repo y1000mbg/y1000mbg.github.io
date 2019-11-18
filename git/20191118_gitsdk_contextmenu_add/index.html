@@ -36,7 +36,7 @@
     
     
       
-        <title>2019-11-18_GitSDKで「Git Bash here」をしたい - 忘れるための備忘録</title>
+        <title>2019-11-18_GitSDKでも「Git_Bash_here」を使いたい - 忘れるための備忘録</title>
       
     
     
@@ -83,7 +83,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#2019-11-18_gitsdkgit-bash-here" tabindex="1" class="md-skip">
+      <a href="#2019-11-18_gitsdkgit_bash_here" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -109,7 +109,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                2019-11-18_GitSDKで「Git Bash here」をしたい
+                2019-11-18_GitSDKでも「Git_Bash_here」を使いたい
               
             </span>
           
@@ -518,11 +518,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        2019-11-18_GitSDKで「Git Bash here」をしたい
+        2019-11-18_GitSDKでも「Git_Bash_here」を使いたい
       </label>
     
-    <a href="./" title="2019-11-18_GitSDKで「Git Bash here」をしたい" class="md-nav__link md-nav__link--active">
-      2019-11-18_GitSDKで「Git Bash here」をしたい
+    <a href="./" title="2019-11-18_GitSDKでも「Git_Bash_here」を使いたい" class="md-nav__link md-nav__link--active">
+      2019-11-18_GitSDKでも「Git_Bash_here」を使いたい
     </a>
     
       
@@ -552,13 +552,6 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     設定方法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    備考
   </a>
   
 </li>
@@ -1424,13 +1417,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    備考
-  </a>
-  
-</li>
-      
       
       
       
@@ -1448,21 +1434,19 @@
               
                 
                 
-                <h1 id="2019-11-18_gitsdkgit-bash-here">2019-11-18_GitSDKで「Git Bash here」をしたい</h1>
+                <h1 id="2019-11-18_gitsdkgit_bash_here">2019-11-18_GitSDKでも「Git_Bash_here」を使いたい</h1>
 <h2 id="_1">このページで分かること</h2>
 <ul>
-<li>Git Bashをインストールすると右クリックメニューに「git bash here」が追加されるがGit SDKでも同じ機能を実現する方法</li>
+<li>Git Bashのインストールでは自動で追加されるGit bash hereをGit SDKでも手動で追加する方法</li>
 </ul>
-<p>任意のディレクトリを開ける「git bash here」はとても便利なんです。
-Git SDKはGit Bashでは使用できないPACMAN(Arch Linuxのパッケージマネージャー)によるパッケージ追加が用意で、素のGit BashやCygwinを使うより導入が簡単＋足りないものはある程度あとから導入することが容易です。</p>
-<p>そんな Git SDK で「git bash here」をするにはレジストリを編集する必要があります。</p>
 <h2 id="_2">環境</h2>
 <ul>
 <li>OS: Windows10 v1903</li>
 </ul>
 <h2 id="_3">設定方法</h2>
-<p>フォルダを右クリックした際のコンテキスメニューからカレントとして開く機能が「GitBash here」でGit Bashをインストールする際にオプションとして有効化できる。Git SDKはgit cloneでリポジトリから持ってくるだけなのでそもそもインストールウィザードがない。
-なので、手動でレジストリを登録すれば同じことができる。</p>
+<p>Pacman+MSYS2+BashがセットになっているGIt SDKですがインストーラー形式ではなく、公開リポジトリからcloneしてくるタイプの導入方法を取っています。なのでGit Bashのようにインストールウィザード中にチェックを入れてgit bash hereを有効にする事ができません。</p>
+<p>なのでgit bash hereを実現しているレジストリーキーを調べて同じように設定することで、同じことが出来るようにします。</p>
+<p>値は以下の通りです。</p>
 <table>
 <thead>
 <tr>
@@ -1499,7 +1483,6 @@ Git SDKはGit Bashでは使用できないPACMAN(Arch Linuxのパッケージマ
 </tr>
 </tbody>
 </table>
-<h2 id="_4">備考</h2>
                 
                   
                 
