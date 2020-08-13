@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1079,7 +1079,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1397,6 +1397,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1477,180 +1489,100 @@
                 <h1 id="2019-10-26_linux">2019-10-26_Linuxの各ディストリビューション確認方法</h1>
 <p>Linuxでディストリビューションごとに分岐処理を作ろうとしたのでそのメモです。<code>/etc/os-relase</code>のIDあたりを入れば判別できそうでした。</p>
 <p>以下のコマンドでディストリビューション名を抜き出せました。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat /etc/os-release <span class="p">|</span> grep ^<span class="s1">&#39;ID=&#39;</span> <span class="p">|</span><span class="se">\</span>
-sed -e s/<span class="se">\&quot;</span>//g -e s/<span class="o">=</span>/<span class="s1">&#39; &#39;</span>/ <span class="p">|</span> gawk <span class="s1">&#39;{print $2}&#39;</span><span class="sb">`</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">cat /etc/os-release | grep ^'ID=' |\
+sed -e s/\&quot;//g -e s/=/' '/ | gawk '{print $2}'`</code></pre>
+
 
 <h2 id="centos">centos</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">root@centos7 etc</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">os</span><span class="o">-</span><span class="k">release</span><span class="w"></span>
-<span class="n">NAME</span><span class="o">=</span><span class="ss">&quot;CentOS Linux&quot;</span><span class="w"></span>
-<span class="n">VERSION</span><span class="o">=</span><span class="ss">&quot;7 (Core)&quot;</span><span class="w"></span>
-<span class="n">ID</span><span class="o">=</span><span class="ss">&quot;centos&quot;</span><span class="w"></span>
-<span class="n">ID_LIKE</span><span class="o">=</span><span class="ss">&quot;rhel fedora&quot;</span><span class="w"></span>
-<span class="n">VERSION_ID</span><span class="o">=</span><span class="ss">&quot;7&quot;</span><span class="w"></span>
-<span class="n">PRETTY_NAME</span><span class="o">=</span><span class="ss">&quot;CentOS Linux 7 (Core)&quot;</span><span class="w"></span>
-<span class="n">ANSI_COLOR</span><span class="o">=</span><span class="ss">&quot;0;31&quot;</span><span class="w"></span>
-<span class="n">CPE_NAME</span><span class="o">=</span><span class="ss">&quot;cpe:/o:centos:centos:7&quot;</span><span class="w"></span>
-<span class="n">HOME_URL</span><span class="o">=</span><span class="ss">&quot;https://www.centos.org/&quot;</span><span class="w"></span>
-<span class="n">BUG_REPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://bugs.centos.org/&quot;</span><span class="w"></span>
+<pre class="codehilite"><code class="linenums">[root@centos7 etc]# cat /etc/os-release
+NAME=&quot;CentOS Linux&quot;
+VERSION=&quot;7 (Core)&quot;
+ID=&quot;centos&quot;
+ID_LIKE=&quot;rhel fedora&quot;
+VERSION_ID=&quot;7&quot;
+PRETTY_NAME=&quot;CentOS Linux 7 (Core)&quot;
+ANSI_COLOR=&quot;0;31&quot;
+CPE_NAME=&quot;cpe:/o:centos:centos:7&quot;
+HOME_URL=&quot;https://www.centos.org/&quot;
+BUG_REPORT_URL=&quot;https://bugs.centos.org/&quot;
 
-<span class="n">CENTOS_MANTISBT_PROJECT</span><span class="o">=</span><span class="ss">&quot;CentOS-7&quot;</span><span class="w"></span>
-<span class="n">CENTOS_MANTISBT_PROJECT_VERSION</span><span class="o">=</span><span class="ss">&quot;7&quot;</span><span class="w"></span>
-<span class="n">REDHAT_SUPPORT_PRODUCT</span><span class="o">=</span><span class="ss">&quot;centos&quot;</span><span class="w"></span>
-<span class="n">REDHAT_SUPPORT_PRODUCT_VERSION</span><span class="o">=</span><span class="ss">&quot;7&quot;</span><span class="w"></span>
-<span class="o">[</span><span class="n">root@centos7 etc</span><span class="o">]</span><span class="err">#</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+CENTOS_MANTISBT_PROJECT=&quot;CentOS-7&quot;
+CENTOS_MANTISBT_PROJECT_VERSION=&quot;7&quot;
+REDHAT_SUPPORT_PRODUCT=&quot;centos&quot;
+REDHAT_SUPPORT_PRODUCT_VERSION=&quot;7&quot;
+[root@centos7 etc]#</code></pre>
+
 
 <h2 id="fedora">fedora</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">vagrant@fedora30base ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">os</span><span class="o">-</span><span class="k">release</span><span class="w"></span>
-<span class="n">NAME</span><span class="o">=</span><span class="n">Fedora</span><span class="w"></span>
-<span class="n">VERSION</span><span class="o">=</span><span class="ss">&quot;30 (Cloud Edition)&quot;</span><span class="w"></span>
-<span class="n">ID</span><span class="o">=</span><span class="n">fedora</span><span class="w"></span>
-<span class="n">VERSION_ID</span><span class="o">=</span><span class="mi">30</span><span class="w"></span>
-<span class="n">VERSION_CODENAME</span><span class="o">=</span><span class="ss">&quot;&quot;</span><span class="w"></span>
-<span class="n">PLATFORM_ID</span><span class="o">=</span><span class="ss">&quot;platform:f30&quot;</span><span class="w"></span>
-<span class="n">PRETTY_NAME</span><span class="o">=</span><span class="ss">&quot;Fedora 30 (Cloud Edition)&quot;</span><span class="w"></span>
-<span class="n">ANSI_COLOR</span><span class="o">=</span><span class="ss">&quot;0;34&quot;</span><span class="w"></span>
-<span class="n">LOGO</span><span class="o">=</span><span class="n">fedora</span><span class="o">-</span><span class="n">logo</span><span class="o">-</span><span class="n">icon</span><span class="w"></span>
-<span class="n">CPE_NAME</span><span class="o">=</span><span class="ss">&quot;cpe:/o:fedoraproject:fedora:30&quot;</span><span class="w"></span>
-<span class="n">HOME_URL</span><span class="o">=</span><span class="ss">&quot;https://fedoraproject.org/&quot;</span><span class="w"></span>
-<span class="n">DOCUMENTATION_URL</span><span class="o">=</span><span class="ss">&quot;https://docs.fedoraproject.org/en-US/fedora/f30/system-administrators-guide/&quot;</span><span class="w"></span>
-<span class="n">SUPPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://fedoraproject.org/wiki/Communicating_and_getting_help&quot;</span><span class="w"></span>
-<span class="n">BUG_REPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://bugzilla.redhat.com/&quot;</span><span class="w"></span>
-<span class="n">REDHAT_BUGZILLA_PRODUCT</span><span class="o">=</span><span class="ss">&quot;Fedora&quot;</span><span class="w"></span>
-<span class="n">REDHAT_BUGZILLA_PRODUCT_VERSION</span><span class="o">=</span><span class="mi">30</span><span class="w"></span>
-<span class="n">REDHAT_SUPPORT_PRODUCT</span><span class="o">=</span><span class="ss">&quot;Fedora&quot;</span><span class="w"></span>
-<span class="n">REDHAT_SUPPORT_PRODUCT_VERSION</span><span class="o">=</span><span class="mi">30</span><span class="w"></span>
-<span class="n">PRIVACY_POLICY_URL</span><span class="o">=</span><span class="ss">&quot;https://fedoraproject.org/wiki/Legal:PrivacyPolicy&quot;</span><span class="w"></span>
-<span class="n">VARIANT</span><span class="o">=</span><span class="ss">&quot;Cloud Edition&quot;</span><span class="w"></span>
-<span class="n">VARIANT_ID</span><span class="o">=</span><span class="n">cloud</span><span class="w"></span>
-<span class="o">[</span><span class="n">vagrant@fedora30base ~</span><span class="o">]</span><span class="err">$</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">[vagrant@fedora30base ~]$ cat /etc/os-release
+NAME=Fedora
+VERSION=&quot;30 (Cloud Edition)&quot;
+ID=fedora
+VERSION_ID=30
+VERSION_CODENAME=&quot;&quot;
+PLATFORM_ID=&quot;platform:f30&quot;
+PRETTY_NAME=&quot;Fedora 30 (Cloud Edition)&quot;
+ANSI_COLOR=&quot;0;34&quot;
+LOGO=fedora-logo-icon
+CPE_NAME=&quot;cpe:/o:fedoraproject:fedora:30&quot;
+HOME_URL=&quot;https://fedoraproject.org/&quot;
+DOCUMENTATION_URL=&quot;https://docs.fedoraproject.org/en-US/fedora/f30/system-administrators-guide/&quot;
+SUPPORT_URL=&quot;https://fedoraproject.org/wiki/Communicating_and_getting_help&quot;
+BUG_REPORT_URL=&quot;https://bugzilla.redhat.com/&quot;
+REDHAT_BUGZILLA_PRODUCT=&quot;Fedora&quot;
+REDHAT_BUGZILLA_PRODUCT_VERSION=30
+REDHAT_SUPPORT_PRODUCT=&quot;Fedora&quot;
+REDHAT_SUPPORT_PRODUCT_VERSION=30
+PRIVACY_POLICY_URL=&quot;https://fedoraproject.org/wiki/Legal:PrivacyPolicy&quot;
+VARIANT=&quot;Cloud Edition&quot;
+VARIANT_ID=cloud
+[vagrant@fedora30base ~]$</code></pre>
+
 
 <h2 id="ubuntu">Ubuntu</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">root</span><span class="nv">@ubuntu18</span><span class="err">:</span><span class="o">/</span><span class="n">etc</span><span class="err">#</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="n">os</span><span class="o">-</span><span class="k">release</span><span class="w"></span>
-<span class="n">NAME</span><span class="o">=</span><span class="ss">&quot;Ubuntu&quot;</span><span class="w"></span>
-<span class="n">VERSION</span><span class="o">=</span><span class="ss">&quot;18.04.3 LTS (Bionic Beaver)&quot;</span><span class="w"></span>
-<span class="n">ID</span><span class="o">=</span><span class="n">ubuntu</span><span class="w"></span>
-<span class="n">ID_LIKE</span><span class="o">=</span><span class="n">debian</span><span class="w"></span>
-<span class="n">PRETTY_NAME</span><span class="o">=</span><span class="ss">&quot;Ubuntu 18.04.3 LTS&quot;</span><span class="w"></span>
-<span class="n">VERSION_ID</span><span class="o">=</span><span class="ss">&quot;18.04&quot;</span><span class="w"></span>
-<span class="n">HOME_URL</span><span class="o">=</span><span class="ss">&quot;https://www.ubuntu.com/&quot;</span><span class="w"></span>
-<span class="n">SUPPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://help.ubuntu.com/&quot;</span><span class="w"></span>
-<span class="n">BUG_REPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://bugs.launchpad.net/ubuntu/&quot;</span><span class="w"></span>
-<span class="n">PRIVACY_POLICY_URL</span><span class="o">=</span><span class="ss">&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;</span><span class="w"></span>
-<span class="n">VERSION_CODENAME</span><span class="o">=</span><span class="n">bionic</span><span class="w"></span>
-<span class="n">UBUNTU_CODENAME</span><span class="o">=</span><span class="n">bionic</span><span class="w"></span>
-<span class="n">root</span><span class="nv">@ubuntu18</span><span class="err">:</span><span class="o">/</span><span class="n">etc</span><span class="err">#</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">root@ubuntu18:/etc# cat os-release
+NAME=&quot;Ubuntu&quot;
+VERSION=&quot;18.04.3 LTS (Bionic Beaver)&quot;
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME=&quot;Ubuntu 18.04.3 LTS&quot;
+VERSION_ID=&quot;18.04&quot;
+HOME_URL=&quot;https://www.ubuntu.com/&quot;
+SUPPORT_URL=&quot;https://help.ubuntu.com/&quot;
+BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot;
+PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+root@ubuntu18:/etc#</code></pre>
+
 
 <h2 id="debian">debian</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vagrant</span><span class="nv">@stretch</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="err">!$</span><span class="w"></span>
-<span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">os</span><span class="o">-</span><span class="k">release</span><span class="w"></span>
-<span class="n">PRETTY_NAME</span><span class="o">=</span><span class="ss">&quot;Debian GNU/Linux 9 (stretch)&quot;</span><span class="w"></span>
-<span class="n">NAME</span><span class="o">=</span><span class="ss">&quot;Debian GNU/Linux&quot;</span><span class="w"></span>
-<span class="n">VERSION_ID</span><span class="o">=</span><span class="ss">&quot;9&quot;</span><span class="w"></span>
-<span class="n">VERSION</span><span class="o">=</span><span class="ss">&quot;9 (stretch)&quot;</span><span class="w"></span>
-<span class="n">ID</span><span class="o">=</span><span class="n">debian</span><span class="w"></span>
-<span class="n">HOME_URL</span><span class="o">=</span><span class="ss">&quot;https://www.debian.org/&quot;</span><span class="w"></span>
-<span class="n">SUPPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://www.debian.org/support&quot;</span><span class="w"></span>
-<span class="n">BUG_REPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://bugs.debian.org/&quot;</span><span class="w"></span>
-<span class="n">vagrant</span><span class="nv">@stretch</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">vagrant@stretch:~$ cat !$
+cat /etc/os-release
+PRETTY_NAME=&quot;Debian GNU/Linux 9 (stretch)&quot;
+NAME=&quot;Debian GNU/Linux&quot;
+VERSION_ID=&quot;9&quot;
+VERSION=&quot;9 (stretch)&quot;
+ID=debian
+HOME_URL=&quot;https://www.debian.org/&quot;
+SUPPORT_URL=&quot;https://www.debian.org/support&quot;
+BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;
+vagrant@stretch:~$</code></pre>
+
 
 <h2 id="open-suse">open-suse</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">vagrant</span><span class="nv">@opensuse</span><span class="o">-</span><span class="n">leap</span><span class="o">-</span><span class="nl">x64</span><span class="p">:</span><span class="o">~&gt;</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">os</span><span class="o">-</span><span class="k">release</span><span class="w"></span>
-<span class="n">NAME</span><span class="o">=</span><span class="ss">&quot;openSUSE Leap&quot;</span><span class="w"></span>
-<span class="n">VERSION</span><span class="o">=</span><span class="ss">&quot;15.0&quot;</span><span class="w"></span>
-<span class="n">ID</span><span class="o">=</span><span class="ss">&quot;opensuse-leap&quot;</span><span class="w"></span>
-<span class="n">ID_LIKE</span><span class="o">=</span><span class="ss">&quot;suse opensuse&quot;</span><span class="w"></span>
-<span class="n">VERSION_ID</span><span class="o">=</span><span class="ss">&quot;15.0&quot;</span><span class="w"></span>
-<span class="n">PRETTY_NAME</span><span class="o">=</span><span class="ss">&quot;openSUSE Leap 15.0&quot;</span><span class="w"></span>
-<span class="n">ANSI_COLOR</span><span class="o">=</span><span class="ss">&quot;0;32&quot;</span><span class="w"></span>
-<span class="n">CPE_NAME</span><span class="o">=</span><span class="ss">&quot;cpe:/o:opensuse:leap:15.0&quot;</span><span class="w"></span>
-<span class="n">BUG_REPORT_URL</span><span class="o">=</span><span class="ss">&quot;https://bugs.opensuse.org&quot;</span><span class="w"></span>
-<span class="n">HOME_URL</span><span class="o">=</span><span class="ss">&quot;https://www.opensuse.org/&quot;</span><span class="w"></span>
-<span class="n">vagrant</span><span class="nv">@opensuse</span><span class="o">-</span><span class="n">leap</span><span class="o">-</span><span class="nl">x64</span><span class="p">:</span><span class="o">~&gt;</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">vagrant@opensuse-leap-x64:~&gt; cat /etc/os-release
+NAME=&quot;openSUSE Leap&quot;
+VERSION=&quot;15.0&quot;
+ID=&quot;opensuse-leap&quot;
+ID_LIKE=&quot;suse opensuse&quot;
+VERSION_ID=&quot;15.0&quot;
+PRETTY_NAME=&quot;openSUSE Leap 15.0&quot;
+ANSI_COLOR=&quot;0;32&quot;
+CPE_NAME=&quot;cpe:/o:opensuse:leap:15.0&quot;
+BUG_REPORT_URL=&quot;https://bugs.opensuse.org&quot;
+HOME_URL=&quot;https://www.opensuse.org/&quot;
+vagrant@opensuse-leap-x64:~&gt;</code></pre>
                 
                   
                 
@@ -1739,7 +1671,7 @@ sed -e s/<span class="se">\&quot;</span>//g -e s/<span class="o">=</span>/<span 
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1140,7 +1140,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1458,6 +1458,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1609,98 +1621,64 @@
 </ul>
 <h2 id="nodejs">node.jsのインストール</h2>
 <p><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager | Node.js</a></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">deb</span><span class="p">.</span><span class="n">nodesource</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">setup_8</span><span class="p">.</span><span class="n">x</span> <span class="o">|</span> <span class="n">sudo</span> <span class="o">-</span><span class="n">E</span> <span class="n">bash</span> <span class="o">-</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nodejs</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+$c sudo apt-get install -y nodejs</code></pre>
+
 
 <h2 id="hexo">hexoのインストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">hexo</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo npm install -g hexo</code></pre>
+
 
 <h2 id="_3">ブログの作成</h2>
 <h3 id="_4">雛形の生成</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 凡例
-##c hexo init <span class="cp">${</span><span class="n">blog名</span><span class="cp">}</span>
-<span class="nv">$c</span> hexo init testblog
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">##c 凡例
+##c hexo init ${blog名}
+$c hexo init testblog</code></pre>
+
 
 <h3 id="_5">ローカル環境での確認</h3>
 <p>下記コマンドでhttp://localhost:4000でサーバーが起動します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">hexo</span> <span class="n">server</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c hexo server</code></pre>
+
 
 <h2 id="github-pages">github pagesに公開</h2>
 <h3 id="github-pages_1">github pages用リポジトリーを作成</h3>
 <p>リポジトリー名を下記の形式で作成します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">${</span><span class="n">username</span><span class="cp">}</span>.github.io
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">${username}.github.io</code></pre>
+
 
 <h3 id="hexo_1">hexoのブログ設定の変更</h3>
 <p>hexoで作成したディレクトリ直下にconfig.ymlファイルがあり設定情報を記載します。下記は変更点のdiff比較です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="n">c</span><span class="w"> </span><span class="n">git</span><span class="w"> </span><span class="n">diff</span><span class="w"> </span><span class="o">-</span><span class="n">U0</span><span class="w"> </span><span class="o">-</span><span class="k">no</span><span class="o">-</span><span class="k">index</span><span class="w"> </span><span class="n">config</span><span class="p">.</span><span class="n">yml</span><span class="p">.</span><span class="n">org</span><span class="w"> </span><span class="n">cnfig</span><span class="p">.</span><span class="n">yml</span><span class="w"></span>
-<span class="n">diff</span><span class="w"> </span><span class="c1">--git a/_config.yml.org b/_config.yml</span>
-<span class="k">index</span><span class="w"> </span><span class="n">b6bbdf4</span><span class="p">.</span><span class="mf">.6e0</span><span class="n">f0fe</span><span class="w"> </span><span class="mi">100644</span><span class="w"></span>
-<span class="c1">--- a/_config.yml.org</span>
-<span class="o">+++</span><span class="w"> </span><span class="n">b</span><span class="o">/</span><span class="n">_config</span><span class="p">.</span><span class="n">yml</span><span class="w"></span>
-<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="w"> </span><span class="o">+</span><span class="mi">6</span><span class="w"> </span><span class="err">@@</span><span class="w"></span>
-<span class="o">-</span><span class="nl">title</span><span class="p">:</span><span class="w"> </span><span class="n">Hexo</span><span class="w"></span>
-<span class="o">+</span><span class="nl">title</span><span class="p">:</span><span class="w"> </span><span class="n">testblog</span><span class="w"></span>
-<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="mi">11</span><span class="p">,</span><span class="mi">2</span><span class="w"> </span><span class="err">@@</span><span class="w"> </span><span class="nl">author</span><span class="p">:</span><span class="w"> </span><span class="n">John</span><span class="w"> </span><span class="n">Doe</span><span class="w"></span>
-<span class="o">-</span><span class="k">language</span><span class="err">:</span><span class="w"></span>
-<span class="o">-</span><span class="nl">timezone</span><span class="p">:</span><span class="w"></span>
-<span class="o">+</span><span class="k">language</span><span class="err">:</span><span class="w"> </span><span class="n">ja</span><span class="w"></span>
-<span class="o">+</span><span class="nl">timezone</span><span class="p">:</span><span class="w"> </span><span class="n">Asia</span><span class="o">/</span><span class="n">Tokyo</span><span class="w"></span>
-<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">16</span><span class="w"> </span><span class="o">+</span><span class="mi">16</span><span class="w"> </span><span class="err">@@</span><span class="w"> </span><span class="nl">timezone</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="nl">url</span><span class="p">:</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">yoursite</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
-<span class="o">+</span><span class="nl">url</span><span class="p">:</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="n">y1000mbg</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
-<span class="err">@@</span><span class="w"> </span><span class="o">-</span><span class="mi">81</span><span class="w"> </span><span class="o">+</span><span class="mi">81</span><span class="p">,</span><span class="mi">3</span><span class="w"> </span><span class="err">@@</span><span class="w"> </span><span class="nl">deploy</span><span class="p">:</span><span class="w"></span>
-<span class="o">-</span><span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w"></span>
-<span class="o">+</span><span class="w">  </span><span class="nl">type</span><span class="p">:</span><span class="w"> </span><span class="n">git</span><span class="w"></span>
-<span class="o">+</span><span class="w">  </span><span class="nl">repo</span><span class="p">:</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">y1000mbg</span><span class="o">/</span><span class="n">y1000mbg</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
-<span class="o">+</span><span class="w">  </span><span class="n">branch</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">master</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c git diff -U0 -no-index config.yml.org cnfig.yml
+diff --git a/_config.yml.org b/_config.yml
+index b6bbdf4..6e0f0fe 100644
+--- a/_config.yml.org
++++ b/_config.yml
+@@ -6 +6 @@
+-title: Hexo
++title: testblog
+@@ -11,2 +11,2 @@ author: John Doe
+-language:
+-timezone:
++language: ja
++timezone: Asia/Tokyo
+@@ -16 +16 @@ timezone:
+-url: http://yoursite.com
++url: http://y1000mbg.github.io.git
+@@ -81 +81,3 @@ deploy:
+-  type:
++  type: git
++  repo: git@github.com:y1000mbg/y1000mbg.github.io.git
++  branch : master</code></pre>
+
 
 <h3 id="github">githubへデプロイ</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="err">デプロイツールをインストール</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="n">hexo</span><span class="o">-</span><span class="n">deployer</span><span class="o">-</span><span class="n">git</span> <span class="c1">--save</span>
+<pre class="codehilite"><code class="linenums">## デプロイツールをインストール
+$c sudo npm install hexo-deployer-git --save
 
-<span class="o">##</span> <span class="err">デプロイ</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">hexo</span> <span class="n">deploy</span> <span class="o">-</span><span class="k">g</span>
-</pre></div>
-</td></tr></table>
+## デプロイ
+$c hexo deploy -g</code></pre>
+
 
 <h2 id="_6">複数の環境で作業する際</h2>
 <p>githubのリポジトリからcloneすれば、複数環境でお手軽に編集できるのではと考えていましたが<strong><em>間違いです。</em></strong><br />
@@ -1794,7 +1772,7 @@ githubにデプロイされるのは、あくまで静的ファイル（html）�
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

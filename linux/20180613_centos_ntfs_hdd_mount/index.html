@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1092,7 +1092,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1410,6 +1410,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1529,158 +1541,85 @@
 <li>ntfsprogs</li>
 </ul>
 <p>※ntfs-3gだけでは<strong>ntfsディスクのマウントもmkfsでの作成も出来なかった為</strong>、ntfsprogsも導入しました</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Last login: Tue Jun <span class="m">13</span> <span class="m">19</span>:41:01 <span class="m">2017</span> from <span class="m">192</span>.168.55.44
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># rpm -qa &gt; /tmp/rpm_list_beforer</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># ls -l /tmp/*rpm</span>
--rw-r--r-- <span class="m">1</span> root root <span class="m">335928</span>  6月 <span class="m">13</span> <span class="m">19</span>:39 <span class="m">2017</span> /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm
--rw-r--r-- <span class="m">1</span> root root <span class="m">302736</span>  6月 <span class="m">13</span> <span class="m">19</span>:48 <span class="m">2017</span> /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># rpm -ivh --test /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm</span>
+<pre class="codehilite"><code class="language-bash linenums">Last login: Tue Jun 13 19:41:01 2017 from 192.168.55.44
+[root@sv02 ~]#
+[root@sv02 ~]# rpm -qa &gt; /tmp/rpm_list_beforer
+[root@sv02 ~]#
+[root@sv02 ~]# ls -l /tmp/*rpm
+-rw-r--r-- 1 root root 335928  6月 13 19:39 2017 /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm
+-rw-r--r-- 1 root root 302736  6月 13 19:48 2017 /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm
+[root@sv02 ~]#
+[root@sv02 ~]# rpm -ivh --test /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm
 警告: /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm: ヘッダ V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
-準備中...                <span class="c1">########################################### [100%]</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># rpm -ivh --test /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm</span>
+準備中...                ########################################### [100%]
+[root@sv02 ~]#
+[root@sv02 ~]# rpm -ivh --test /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm
 警告: /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm: ヘッダ V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
 エラー: 依存性の欠如:
-        libntfs-3g.so.87<span class="o">()(</span>64bit<span class="o">)</span> は ntfsprogs-2:2016.2.22-3.el6.x86_64 に必要とされています
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># rpm -ivh /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm</span>
+        libntfs-3g.so.87()(64bit) は ntfsprogs-2:2016.2.22-3.el6.x86_64 に必要とされています
+[root@sv02 ~]#
+[root@sv02 ~]#
+[root@sv02 ~]#
+[root@sv02 ~]# rpm -ivh /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm
 警告: /tmp/ntfs-3g-2016.2.22-3.el6.x86_64.rpm: ヘッダ V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
-準備中...                <span class="c1">########################################### [100%]</span>
-   <span class="m">1</span>:ntfs-3g                <span class="c1">########################################### [100%]</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># rpm -ivh /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm</span>
+準備中...                ########################################### [100%]
+   1:ntfs-3g                ########################################### [100%]
+[root@sv02 ~]#
+[root@sv02 ~]#
+[root@sv02 ~]# rpm -ivh /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm
 警告: /tmp/ntfsprogs-2016.2.22-3.el6.x86_64.rpm: ヘッダ V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
-準備中...                <span class="c1">########################################### [100%]</span>
-   <span class="m">1</span>:ntfsprogs              <span class="c1">########################################### [100%]</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># rpm -qa &gt; /tmp/rpm_list_after</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># : インストールしたパッケージの確認</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># diff /tmp/rpm_list_after /tmp/rpm_list_beforer</span>
+準備中...                ########################################### [100%]
+   1:ntfsprogs              ########################################### [100%]
+[root@sv02 ~]# rpm -qa &gt; /tmp/rpm_list_after
+[root@sv02 ~]# : インストールしたパッケージの確認
+[root@sv02 ~]# diff /tmp/rpm_list_after /tmp/rpm_list_beforer
 127d126
 &lt; ntfsprogs-2016.2.22-3.el6.x86_64
 1130d1128
 &lt; ntfs-3g-2016.2.22-3.el6.x86_64
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-</pre></div>
-</td></tr></table>
+[root@sv02 ~]#</code></pre>
+
 
 <h3 id="3ntfs">3.ntfsディスクのマウントが可能かを確認</h3>
 <p>virtualbox上で作業していたので、ntfsのディスクを用意(mkfsなど)</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># fdisk -l</span>
+<pre class="codehilite"><code class="language-bash linenums">[root@sv02 ~]# fdisk -l
 
-ディスク /dev/sdb: <span class="m">1073</span> MB, <span class="m">1073741824</span> バイト
-ヘッド <span class="m">255</span>, セクタ <span class="m">63</span>, シリンダ <span class="m">130</span>
-<span class="nv">Units</span> <span class="o">=</span> シリンダ数 of <span class="m">16065</span> * <span class="nv">512</span> <span class="o">=</span> <span class="m">8225280</span> バイト
-セクタサイズ <span class="o">(</span>論理 / 物理<span class="o">)</span>: <span class="m">512</span> バイト / <span class="m">512</span> バイト
-I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: <span class="m">512</span> bytes / <span class="m">512</span> bytes
+ディスク /dev/sdb: 1073 MB, 1073741824 バイト
+ヘッド 255, セクタ 63, シリンダ 130
+Units = シリンダ数 of 16065 * 512 = 8225280 バイト
+セクタサイズ (論理 / 物理): 512 バイト / 512 バイト
+I/O size (minimum/optimal): 512 bytes / 512 bytes
 ディスク識別子: 0xbc566951
 
 デバイス ブート      始点        終点     ブロック   Id  システム
-/dev/sdb1               <span class="m">1</span>         <span class="m">130</span>     <span class="m">1044193</span>+  <span class="m">83</span>  Linux
+/dev/sdb1               1         130     1044193+  83  Linux
 
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># mkfs -t ntfs -L labelname -Q /dev/sdb1</span>
-Cluster size has been automatically <span class="nb">set</span> to <span class="m">4096</span> bytes.
+[root@sv02 ~]# mkfs -t ntfs -L labelname -Q /dev/sdb1
+Cluster size has been automatically set to 4096 bytes.
 Creating NTFS volume structures.
 mkntfs completed successfully. Have a nice day.
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1">#</span>
-</pre></div>
-</td></tr></table>
+[root@sv02 ~]#</code></pre>
+
 
 <p>マウントと読み書きテスト</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># : マウントの準備</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># mkdir /hdd1</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># mount -t ntfs /dev/sdb1 /hdd1</span>
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># df -PhT /hdd1</span>
+<pre class="codehilite"><code class="language-bash linenums">[root@sv02 ~]# : マウントの準備
+[root@sv02 ~]# mkdir /hdd1
+[root@sv02 ~]# mount -t ntfs /dev/sdb1 /hdd1
+[root@sv02 ~]# df -PhT /hdd1
 Filesystem     Type     Size  Used Avail Use% Mounted on
-/dev/sdb1      fuseblk 1020M  <span class="m">5</span>.6M 1015M   <span class="m">1</span>% /hdd1
-<span class="o">[</span>root@sv02 ~<span class="o">]</span><span class="c1"># cd /hdd1/</span>
-<span class="o">[</span>root@sv02 hdd1<span class="o">]</span><span class="c1"># echo test &gt; write_test</span>
-<span class="o">[</span>root@sv02 hdd1<span class="o">]</span><span class="c1"># ls -l write_test</span>
--rwxrwxrwx <span class="m">1</span> root root <span class="m">5</span>  6月 <span class="m">13</span> <span class="m">20</span>:02 <span class="m">2017</span> write_test
-<span class="o">[</span>root@sv02 hdd1<span class="o">]</span><span class="c1"># cat !$</span>
+/dev/sdb1      fuseblk 1020M  5.6M 1015M   1% /hdd1
+[root@sv02 ~]# cd /hdd1/
+[root@sv02 hdd1]# echo test &gt; write_test
+[root@sv02 hdd1]# ls -l write_test
+-rwxrwxrwx 1 root root 5  6月 13 20:02 2017 write_test
+[root@sv02 hdd1]# cat !$
 cat write_test
-<span class="nb">test</span>
-<span class="o">[</span>root@sv02 hdd1<span class="o">]</span><span class="c1"># rm write_test</span>
-rm: remove 通常ファイル <span class="sb">`</span>write_test<span class="err">&#39;</span>? yes
-<span class="o">[</span>root@sv02 hdd1<span class="o">]</span><span class="c1"># cd ..</span>
-<span class="o">[</span>root@sv02 /<span class="o">]</span><span class="c1"># umount /hdd1/</span>
-<span class="o">[</span>root@sv02 /<span class="o">]</span><span class="c1">#</span>
-</pre></div>
-</td></tr></table>
+test
+[root@sv02 hdd1]# rm write_test
+rm: remove 通常ファイル `write_test'? yes
+[root@sv02 hdd1]# cd ..
+[root@sv02 /]# umount /hdd1/
+[root@sv02 /]#</code></pre>
                 
                   
                 
@@ -1769,7 +1708,7 @@ rm: remove 通常ファイル <span class="sb">`</span>write_test<span class="er
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

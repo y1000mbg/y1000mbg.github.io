@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1093,7 +1093,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1411,6 +1411,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1509,44 +1521,29 @@
 <p><a href="https://hub.docker.com/">Docker Hub</a>と呼ばれるコンテナイメージが公開されているサイトがあります。
 そこから必要なイメージをダウンロードします。</p>
 <p>例えばcentoosは<a href="https://hub.docker.com/_/centos/">library/centos - Docker Hub</a>に公開されており対応する名称をpull時に指定することでダウンロードされます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">docker</span> <span class="n">pull</span> <span class="n">centos</span><span class="p">:</span><span class="n">centos7</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">#r docker pull centos:centos7</code></pre>
+
 
 <p>ローカルに保存されたイメージの確認は<code>images</code>で行います。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="n">docker</span> <span class="n">images</span>
+<pre class="codehilite"><code class="linenums">#r docker images
 
-<span class="o">##</span><span class="k">c</span> <span class="err">結果</span>
-<span class="n">REPOSITORY</span>          <span class="n">TAG</span>                 <span class="n">IMAGE</span> <span class="n">ID</span>            <span class="n">CREATED</span>             <span class="k">SIZE</span>
-<span class="n">centos</span>              <span class="n">centos7</span>             <span class="n">e934aafc2206</span>        <span class="mi">7</span> <span class="n">weeks</span> <span class="n">ago</span>         <span class="mi">199</span><span class="n">MB</span>
-</pre></div>
-</td></tr></table>
+##c 結果
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+centos              centos7             e934aafc2206        7 weeks ago         199MB</code></pre>
+
 
 <h2 id="_2">コンテナの起動</h2>
 <p>コンテナを起動するには<code>docker run</code>コマンドを実行します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">##c docker run --name コンテナ名 オプション</span>
-<span class="cp">#r docker run --name testcont -it centos:centos7 /bin/bash</span>
+<pre class="codehilite"><code class="linenums">##c docker run --name コンテナ名 オプション
+#r docker run --name testcont -it centos:centos7 /bin/bash
 
-<span class="cp">##c 起動後bashプロンプトが表示されていればOK</span>
-<span class="p">[</span><span class="n">root</span><span class="mi">@9</span><span class="n">c9ba7ea5586</span> <span class="o">/</span><span class="p">]</span><span class="err">#</span>
+##c 起動後bashプロンプトが表示されていればOK
+[root@9c9ba7ea5586 /]#
 
-<span class="cp">##c OSバージョンの確認</span>
-<span class="p">[</span><span class="n">root</span><span class="mi">@9</span><span class="n">c9ba7ea5586</span> <span class="o">/</span><span class="p">]</span><span class="err">#</span> <span class="n">cat</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">redhat</span><span class="o">-</span><span class="k">release</span>
-<span class="n">CentOS</span> <span class="n">Linux</span> <span class="k">release</span> <span class="mf">7.4.1708</span> <span class="p">(</span><span class="n">Core</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+##c OSバージョンの確認
+[root@9c9ba7ea5586 /]# cat /etc/redhat-release
+CentOS Linux release 7.4.1708 (Core)</code></pre>
+
 
 <p>オプションを指定する事で挙動が変わります。</p>
 <table>
@@ -1577,32 +1574,22 @@
 </table>
 <h2 id="_3">コンテナの状態確認</h2>
 <p>コンテナの状態は<code>docker ps -a</code>で確認します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">実行コマンド</span>
-<span class="o">#</span><span class="n">r</span> <span class="n">docker</span> <span class="n">ps</span> <span class="o">-</span><span class="n">a</span>
+<pre class="codehilite"><code class="linenums">##c 実行コマンド
+#r docker ps -a
 
-<span class="o">##</span><span class="k">c</span> <span class="err">結果</span>
-<span class="n">CONTAINER</span> <span class="n">ID</span>        <span class="n">IMAGE</span>               <span class="n">COMMAND</span>             <span class="n">CREATED</span>             <span class="n">STATUS</span>                     <span class="n">PORTS</span>               <span class="k">NAMES</span>
-<span class="mi">9</span><span class="n">c9ba7ea5586</span>        <span class="n">centos</span><span class="p">:</span><span class="n">centos7</span>      <span class="ss">&quot;/bin/bash&quot;</span>         <span class="mi">30</span> <span class="n">minutes</span> <span class="n">ago</span>      <span class="n">Exited</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="mi">7</span> <span class="n">seconds</span> <span class="n">ago</span>                       <span class="n">testcont</span>
-<span class="mi">5715</span><span class="n">a9d37826</span>        <span class="n">centos</span><span class="p">:</span><span class="n">centos7</span>      <span class="ss">&quot;/bin/bash&quot;</span>         <span class="mi">2</span> <span class="n">hours</span> <span class="n">ago</span>         <span class="n">Up</span> <span class="mi">2</span> <span class="n">hours</span>                                     <span class="n">centos7</span>
+##c 結果
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+9c9ba7ea5586        centos:centos7      &quot;/bin/bash&quot;         30 minutes ago      Exited (0) 7 seconds ago                       testcont
+5715a9d37826        centos:centos7      &quot;/bin/bash&quot;         2 hours ago         Up 2 hours                                     centos7
 
-<span class="o">##</span><span class="k">c</span> <span class="n">testcontコンテナは終了</span><span class="err">、</span><span class="n">centos7コンテナは起動中</span>
-</pre></div>
-</td></tr></table>
+##c testcontコンテナは終了、centos7コンテナは起動中</code></pre>
+
 
 <h2 id="_4">コンテナの終了</h2>
 <p>bashからexitで抜けると終了します。
 また、ホスト側から終了させたい場合は下記のように<code>docker sutop ${コンテナ名}</code>を実行します</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r docker stop <span class="cp">${</span><span class="n">contname</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">#r docker stop ${contname}</code></pre>
+
 
 <h2 id="docker">dockerを使ってみて感じたこと</h2>
 <p>コンテナが一瞬で起動して、centos7環境にアクセス出来ました。
@@ -1613,11 +1600,8 @@ Virtualboxなどのホスト型の仮想環境ソフトよりもリソースも�
 <p>今回はdockerfileは触れませんでしたが、継続して勉強していきます。</p>
 <h2 id="_5">補足</h2>
 <p>今回使ったcentos7はipコマンドがなかったので別途インストールが必要</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">コンテナ内の</span><span class="n">rootユーザーで実行</span>
-<span class="o">#</span><span class="n">r</span> <span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">iproute</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">##c コンテナ内のrootユーザーで実行
+#r yum -y install iproute</code></pre>
                 
                   
                 
@@ -1706,7 +1690,7 @@ Virtualboxなどのホスト型の仮想環境ソフトよりもリソースも�
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

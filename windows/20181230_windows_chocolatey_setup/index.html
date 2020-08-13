@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1011,7 +1011,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1390,6 +1390,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1465,16 +1477,13 @@
 <p>Windowsでyumやaptのようにコマンドベースでアプリケーションをインストールできます。VirtualBoxやgitやVSCodeなどプログラム開発で使用するアプリケーションが提供されています。</p>
 <h2 id="chocolatey">Chocolateyのインストール</h2>
 <p>PowerShellを管理者権限で起動し下記のコマンドでインストールします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">r</span> <span class="k">Set</span><span class="o">-</span><span class="n">ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-</span><span class="k">Scope</span> <span class="n">Process</span> <span class="o">-</span><span class="k">Force</span><span class="p">;</span> <span class="n">iex</span> <span class="p">((</span><span class="k">New</span><span class="o">-</span><span class="k">Object</span> <span class="k">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadString</span><span class="p">(</span><span class="s1">&#39;https://chocolatey.org/install.ps1&#39;</span><span class="p">))</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">#r Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre>
+
 
 <h2 id="_2">パッケージをインストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r pkg_name=virtualbox
-#r choco install -y <span class="cp">${</span><span class="n">pkg_name</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">#r pkg_name=virtualbox
+#r choco install -y ${pkg_name}</code></pre>
+
 
 <p>インストールしたパッケージ</p>
 <ul>
@@ -1488,9 +1497,7 @@
 <p>※msys2インストール時は文字コードをutf8にしないとインストール時のログが文字化けします。
 インストール後は問題なし。</p>
 <h2 id="_3">パッケージをアップグレード</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#r chocolatey upgrade <span class="cp">${</span><span class="n">pkg_name</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">#r chocolatey upgrade ${pkg_name}</code></pre>
                 
                   
                 
@@ -1579,7 +1586,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

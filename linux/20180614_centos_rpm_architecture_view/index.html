@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1058,7 +1058,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1376,6 +1376,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1439,51 +1451,18 @@
 </ul>
 <p>自分がLinux触りたての頃にハマったので備忘の為にまとめておきます。
 結論としてはrpmコマンドに<code>--qf</code>オプションで書式を設定表示を追加します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>rpm -qa --qf <span class="s1">&#39;%{name}-%{version}-%{release}.%{arch}.rpm\n&#39;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">rpm -qa --qf '%{name}-%{version}-%{release}.%{arch}.rpm\n'</code></pre>
+
 
 <h2 id="_2">参考</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##c rpm -qa でパッケージ一覧を取得し行数を取得します</span>
-<span class="c1">##c 970パッケージインストールされてます</span>
-<span class="c1">#r rpm -qa | wc -l</span>
-<span class="m">970</span>
+<pre class="codehilite"><code class="language-bash linenums">##c rpm -qa でパッケージ一覧を取得し行数を取得します
+##c 970パッケージインストールされてます
+#r rpm -qa | wc -l
+970
 
-<span class="c1">##c どんなパッケージがあるかサラッと見てみます</span>
-<span class="c1">##c GConf2-2.14.0-9.el5 や ImageMagick-6.2.8.0-15.el5_8 重複しているように見えます</span>
-<span class="c1">#r rpm -qa | sort | head</span>
+##c どんなパッケージがあるかサラッと見てみます
+##c GConf2-2.14.0-9.el5 や ImageMagick-6.2.8.0-15.el5_8 重複しているように見えます
+#r rpm -qa | sort | head
 Cluster_Administration-ja-JP-5.8-1.el5.centos
 Deployment_Guide-en-US-5.8-1.el5.centos
 Deployment_Guide-ja-JP-5.8-1.el5.centos
@@ -1494,23 +1473,21 @@ ImageMagick-6.2.8.0-15.el5_8
 ImageMagick-6.2.8.0-15.el5_8
 MAKEDEV-3.23-1.2
 
-<span class="c1">##c 重複をカウントすると175行も出てきてしまいました……</span>
-<span class="c1">#r rpm -qa | sort | uniq -d | wc -l</span>
-<span class="m">175</span>
+##c 重複をカウントすると175行も出てきてしまいました……
+#r rpm -qa | sort | uniq -d | wc -l
+175
 
-<span class="c1">##c --qf(queryformat) オプションを使用し、フォーマット書式を指定します</span>
-<span class="c1">##c %{arch}がアーキテクチャー(i368とかx86_64)</span>
-<span class="c1">#r rpm -qa --qf &#39;%{name}-%{version}-%{release}.%{arch}.rpm\n&#39; |</span>
-grep <span class="s2">&quot;GConf2-2.14.0-9.el5&quot;</span>
+##c --qf(queryformat) オプションを使用し、フォーマット書式を指定します
+##c %{arch}がアーキテクチャー(i368とかx86_64)
+#r rpm -qa --qf '%{name}-%{version}-%{release}.%{arch}.rpm\n' |
+grep &quot;GConf2-2.14.0-9.el5&quot;
 GConf2-2.14.0-9.el5.i386.rpm
 GConf2-2.14.0-9.el5.x86_64.rpm
 
-<span class="c1">##c 重複がない事を確認します</span>
-<span class="c1">#r rpm -qa --qf &#39;%{name}-%{version}-%{release}.%{arch}.rpm\n&#39; \</span>
-<span class="p">|</span> sort <span class="p">|</span> uniq -d <span class="p">|</span> wc -l
-<span class="m">0</span>
-</pre></div>
-</td></tr></table>
+##c 重複がない事を確認します
+#r rpm -qa --qf '%{name}-%{version}-%{release}.%{arch}.rpm\n' \
+| sort | uniq -d | wc -l
+0</code></pre>
                 
                   
                 
@@ -1599,7 +1576,7 @@ GConf2-2.14.0-9.el5.x86_64.rpm
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

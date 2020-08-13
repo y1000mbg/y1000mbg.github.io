@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1011,7 +1011,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1376,6 +1376,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1443,87 +1455,46 @@
 <p>下記内容を.reg形式で保存して実行し適用してください。<br />
 適用後にファイルの関連付けでフォトビューアが表示されるようになるので設定を変更すれば今までどおり使用できます。</p>
 <p>regファイルの中身</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Windows Registry Editor Version 5.00
+<pre class="codehilite"><code class="linenums">Windows Registry Editor Version 5.00
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll]</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll]
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell]</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell]
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell\open]</span>
-<span class="na">&quot;MuiVerb&quot;</span><span class="o">=</span><span class="s">&quot;@photoviewer.dll,-3043&quot;</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\open]
+&quot;MuiVerb&quot;=&quot;@photoviewer.dll,-3043&quot;
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell\open\command]</span>
-<span class="na">@</span><span class="o">=</span><span class="nv">hex(2)</span><span class="p">:</span><span class="m">25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,</span><span class="err">\</span>
-<span class="err">00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,72,00,75,00,\</span>
-<span class="err">6e,00,64,00,6c,00,6c,00,33,00,32,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,\</span>
-<span class="err">00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,00,73,00,\</span>
-<span class="err">25,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,50,00,68,00,6f,\</span>
-<span class="err">00,74,00,6f,00,20,00,56,00,69,00,65,00,77,00,65,00,72,00,5c,00,50,00,68,00,\</span>
-<span class="err">6f,00,74,00,6f,00,56,00,69,00,65,00,77,00,65,00,72,00,2e,00,64,00,6c,00,6c,\</span>
-<span class="err">00,22,00,2c,00,20,00,49,00,6d,00,61,00,67,00,65,00,56,00,69,00,65,00,77,00,\</span>
-<span class="err">5f,00,46,00,75,00,6c,00,6c,00,73,00,63,00,72,00,65,00,65,00,6e,00,20,00,25,\</span>
-<span class="err">00,31,00,00,00</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\open\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,72,00,75,00,\
+6e,00,64,00,6c,00,6c,00,33,00,32,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,\
+00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,00,73,00,\
+25,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,50,00,68,00,6f,\
+00,74,00,6f,00,20,00,56,00,69,00,65,00,77,00,65,00,72,00,5c,00,50,00,68,00,\
+6f,00,74,00,6f,00,56,00,69,00,65,00,77,00,65,00,72,00,2e,00,64,00,6c,00,6c,\
+00,22,00,2c,00,20,00,49,00,6d,00,61,00,67,00,65,00,56,00,69,00,65,00,77,00,\
+5f,00,46,00,75,00,6c,00,6c,00,73,00,63,00,72,00,65,00,65,00,6e,00,20,00,25,\
+00,31,00,00,00
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell\open\DropTarget]</span>
-<span class="na">&quot;Clsid&quot;</span><span class="o">=</span><span class="s">&quot;{FFE2A43C-56B9-4bf5-9A79-CC6D4285608A}&quot;</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\open\DropTarget]
+&quot;Clsid&quot;=&quot;{FFE2A43C-56B9-4bf5-9A79-CC6D4285608A}&quot;
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell\print]</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\print]
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell\print\command]</span>
-<span class="na">@</span><span class="o">=</span><span class="nv">hex(2)</span><span class="p">:</span><span class="m">25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,</span><span class="err">\</span>
-<span class="err">00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,72,00,75,00,\</span>
-<span class="err">6e,00,64,00,6c,00,6c,00,33,00,32,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,\</span>
-<span class="err">00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,00,73,00,\</span>
-<span class="err">25,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,50,00,68,00,6f,\</span>
-<span class="err">00,74,00,6f,00,20,00,56,00,69,00,65,00,77,00,65,00,72,00,5c,00,50,00,68,00,\</span>
-<span class="err">6f,00,74,00,6f,00,56,00,69,00,65,00,77,00,65,00,72,00,2e,00,64,00,6c,00,6c,\</span>
-<span class="err">00,22,00,2c,00,20,00,49,00,6d,00,61,00,67,00,65,00,56,00,69,00,65,00,77,00,\</span>
-<span class="err">5f,00,46,00,75,00,6c,00,6c,00,73,00,63,00,72,00,65,00,65,00,6e,00,20,00,25,\</span>
-<span class="err">00,31,00,00,00</span>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\print\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,72,00,75,00,\
+6e,00,64,00,6c,00,6c,00,33,00,32,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,\
+00,50,00,72,00,6f,00,67,00,72,00,61,00,6d,00,46,00,69,00,6c,00,65,00,73,00,\
+25,00,5c,00,57,00,69,00,6e,00,64,00,6f,00,77,00,73,00,20,00,50,00,68,00,6f,\
+00,74,00,6f,00,20,00,56,00,69,00,65,00,77,00,65,00,72,00,5c,00,50,00,68,00,\
+6f,00,74,00,6f,00,56,00,69,00,65,00,77,00,65,00,72,00,2e,00,64,00,6c,00,6c,\
+00,22,00,2c,00,20,00,49,00,6d,00,61,00,67,00,65,00,56,00,69,00,65,00,77,00,\
+5f,00,46,00,75,00,6c,00,6c,00,73,00,63,00,72,00,65,00,65,00,6e,00,20,00,25,\
+00,31,00,00,00
 
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\Applications\photoviewer.dll\shell\print\DropTarget]</span>
-<span class="na">&quot;Clsid&quot;</span><span class="o">=</span><span class="s">&quot;{60fd46de-f830-4894-a628-6fa81bc0190d}&quot;</span>
-</pre></div>
-</td></tr></table>
+[HKEY_CLASSES_ROOT\Applications\photoviewer.dll\shell\print\DropTarget]
+&quot;Clsid&quot;=&quot;{60fd46de-f830-4894-a628-6fa81bc0190d}&quot;</code></pre>
                 
                   
                 
@@ -1612,7 +1583,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

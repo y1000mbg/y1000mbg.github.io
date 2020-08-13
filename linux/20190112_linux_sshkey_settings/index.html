@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1099,7 +1099,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1417,6 +1417,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1554,35 +1566,21 @@
 <h2 id="ssh">ssh鍵認証の設定方法</h2>
 <h3 id="_3">手動での方法設定</h3>
 <p><strong>【接続先サーバー】</strong>で実行</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">ディレクトリ生成</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">m</span> <span class="mi">700</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">cd</span> <span class="o">~/</span><span class="p">.</span><span class="n">ssh</span>
+<pre class="codehilite"><code class="linenums">##c ディレクトリ生成
+$c mkdir -m 700 ~/.ssh
+$c cd ~/.ssh
 
-<span class="o">##</span><span class="k">c</span> <span class="err">鍵ファイルを作成する</span>
-<span class="o">##</span><span class="k">c</span> <span class="mi">4096</span><span class="n">bitの暗号化強度で作成</span>
-<span class="o">##</span><span class="k">c</span> <span class="err">コマンド投下後、</span><span class="n">Enterを3回押下でファイル名id_rsaでパスワード非設定で作成</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">t</span> <span class="n">rsa</span> <span class="o">-</span><span class="n">b</span> <span class="mi">4096</span>
+##c 鍵ファイルを作成する
+##c 4096bitの暗号化強度で作成
+##c コマンド投下後、Enterを3回押下でファイル名id_rsaでパスワード非設定で作成
+$c ssh-keygen -t rsa -b 4096
 
-<span class="o">##</span><span class="k">c</span> <span class="n">authorized_keysを作成</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">cat</span> <span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span> <span class="o">&gt;&gt;</span> <span class="n">authorized_keys</span> <span class="o">&amp;&amp;</span> <span class="n">chmod</span> <span class="mi">600</span> <span class="n">authorized_keys</span>
+##c authorized_keysを作成
+$c cat id_rsa.pub &gt;&gt; authorized_keys &amp;&amp; chmod 600 authorized_keys
 
-<span class="o">##</span><span class="k">c</span> <span class="err">作成した秘密鍵は</span><span class="n">scpなどで接続元に転送しサーバ内からは削除</span><span class="err">。</span>
-<span class="o">##</span><span class="k">c</span> <span class="err">なお複数サーバー間で同じユーザーで相互接続をする場合は秘密鍵がお互いに必要なので残しておく。</span>
-</pre></div>
-</td></tr></table>
+##c 作成した秘密鍵はscpなどで接続元に転送しサーバ内からは削除。
+##c なお複数サーバー間で同じユーザーで相互接続をする場合は秘密鍵がお互いに必要なので残しておく。</code></pre>
+
 
 <h3 id="ssh-copy-id">ssh-copy-idコマンドを使う</h3>
 <p>前提条件を満たしているならこちらの方法が簡単です。</p>
@@ -1593,76 +1591,43 @@
 </ul>
 </li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c ディレクトリ生成
-<span class="nv">$c</span> mkdir -m 700 ~/.ssh
-<span class="nv">$c</span> cd ~/.ssh
+<pre class="codehilite"><code class="linenums">##c ディレクトリ生成
+$c mkdir -m 700 ~/.ssh
+$c cd ~/.ssh
 
 ##c 鍵ファイルを作成する
 ##c 4096bitの暗号化強度で作成
 ##c コマンド投下後、Enterを3回押下でファイル名id_rsaでパスワード非設定で作成
-<span class="nv">$c</span> ssh-keygen -t rsa -b 4096
+$c ssh-keygen -t rsa -b 4096
 
 ##c 公開鍵を接続先ホストにコピー
 ##c パスワード要求があったら接続先で指定しているパスワードを入力
-<span class="nv">$c</span> ssh-copy-id <span class="cp">${</span><span class="n">user</span><span class="cp">}</span>@<span class="cp">${</span><span class="n">target_host</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+$c ssh-copy-id ${user}@${target_host}</code></pre>
+
 
 <h3 id="_4">参考: 作成時ログ</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="mh">$c</span> <span class="nv">ssh</span><span class="o">-</span><span class="nv">keygen</span> <span class="o">-</span><span class="nv">t</span> <span class="nv">rsa</span> <span class="o">-</span><span class="nv">b</span> <span class="mi">4096</span>
-<span class="nv">Generating</span> <span class="nv">public</span><span class="o">/</span><span class="nv">private</span> <span class="nv">rsa</span> <span class="nv">key</span> <span class="nv">pair</span>.
-<span class="nv">Enter</span> <span class="nv">file</span> <span class="nv">in</span> <span class="nv">which</span> <span class="nv">to</span> <span class="nv">save</span> <span class="nv">the</span> <span class="nv">key</span> <span class="ss">(</span><span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">testuser</span><span class="o">/</span>.<span class="nv">ssh</span><span class="o">/</span><span class="nv">id_rsa</span><span class="ss">)</span>:
-<span class="nv">Enter</span> <span class="nv">passphrase</span> <span class="ss">(</span><span class="nv">empty</span> <span class="k">for</span> <span class="nv">no</span> <span class="nv">passphrase</span><span class="ss">)</span>:
-<span class="nv">Enter</span> <span class="nv">same</span> <span class="nv">passphrase</span> <span class="nv">again</span>:
-<span class="nv">Your</span> <span class="nv">identification</span> <span class="nv">has</span> <span class="nv">been</span> <span class="nv">saved</span> <span class="nv">in</span> <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">testuser</span><span class="o">/</span>.<span class="nv">ssh</span><span class="o">/</span><span class="nv">id_rsa</span>.
-<span class="nv">Your</span> <span class="nv">public</span> <span class="nv">key</span> <span class="nv">has</span> <span class="nv">been</span> <span class="nv">saved</span> <span class="nv">in</span> <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">testuser</span><span class="o">/</span>.<span class="nv">ssh</span><span class="o">/</span><span class="nv">id_rsa</span>.<span class="nv">pub</span>.
-<span class="nv">The</span> <span class="nv">key</span> <span class="nv">fingerprint</span> <span class="nv">is</span>:
-<span class="nv">SHA256</span>:<span class="nv">tF8RPmpMcpwCeDMQ5nB2wTWSKDikK57mNrWGeu7mtFk</span> <span class="nv">testuser</span>@<span class="nv">dev</span>
-<span class="nv">The</span> <span class="nv">key</span><span class="s1">&#39;</span><span class="s">s randomart image is:</span>
-<span class="o">+---</span>[<span class="nv">RSA</span> <span class="mi">4096</span>]<span class="o">----+</span>
-<span class="o">|</span>.<span class="nv">o</span>. <span class="o">**=+</span><span class="nv">o</span>   .    <span class="o">|</span>
-<span class="o">|+</span> .<span class="o">*</span><span class="nv">o</span>.<span class="o">*</span><span class="nv">o</span> <span class="nv">o</span> <span class="nv">o</span> .   <span class="o">|</span>
-<span class="o">|</span>.. ... <span class="nv">o</span><span class="o">+</span> <span class="o">=</span> <span class="o">+</span>    <span class="o">|</span>
-<span class="o">|</span> .     . <span class="nv">B</span> . <span class="nv">o</span>   <span class="o">|</span>
-<span class="o">|</span><span class="nv">o</span>       <span class="nv">S</span> <span class="o">+</span> .    <span class="o">|</span>
-<span class="o">|</span><span class="nv">o</span> ..     <span class="nv">o</span> .     <span class="o">|</span>
-<span class="o">|</span> <span class="o">++</span> <span class="nv">E</span>     .      <span class="o">|</span>
-<span class="o">|</span><span class="nv">o</span><span class="o">=</span><span class="nv">o</span><span class="o">*</span>             <span class="o">|</span>
-<span class="o">|+</span><span class="nv">BO</span>              <span class="o">|</span>
-<span class="o">+----</span>[<span class="nv">SHA256</span>]<span class="o">-----+</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/testuser/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/testuser/.ssh/id_rsa.
+Your public key has been saved in /home/testuser/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:tF8RPmpMcpwCeDMQ5nB2wTWSKDikK57mNrWGeu7mtFk testuser@dev
+The key's randomart image is:
++---[RSA 4096]----+
+|.o. **=+o   .    |
+|+ .*o.*o o o .   |
+|.. ... o+ = +    |
+| .     . B . o   |
+|o       S + .    |
+|o ..     o .     |
+| ++ E     .      |
+|o=o*             |
+|+BO              |
++----[SHA256]-----+</code></pre>
+
 
 <h2 id="_5">参考: 秘密鍵から公開鍵の作成</h2>
 <p>たまに公開鍵ファイルがなくなったり……</p>
@@ -1755,7 +1720,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

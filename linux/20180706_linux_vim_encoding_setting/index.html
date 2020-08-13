@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1072,7 +1072,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1390,6 +1390,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1535,15 +1547,11 @@
 <p>${line_code}は <strong>unix</strong> (LF) , <strong>dos</strong> (CRLF) , <strong>mac</strong> (CR) を指定できます。太字が指定できる改行コードで括弧内は対応する形式です。</p>
 <h2 id="_4">デフォルトを設定</h2>
 <p>.vimrcに指定したい項目を書き込みます。注意点としてはvimのコマンドモードではないので先頭の : は不要です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ss">&quot; 文字コードをUTF-8に指定</span>
-<span class="ss">set encoding=utf-8</span>
-<span class="ss">&quot;</span> <span class="err">改行コードを</span><span class="n">LFに指定</span>
-<span class="k">set</span> <span class="n">ff</span><span class="o">=</span><span class="n">unix</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">&quot; 文字コードをUTF-8に指定
+set encoding=utf-8
+&quot; 改行コードをLFに指定
+set ff=unix</code></pre>
+
 
 <p>設定できたらwindowsのgvimは再起動。linuxのvimは<code>source .vimrc</code>で設定ファイルを再読込すれば反映されます。</p>
                 
@@ -1634,7 +1642,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

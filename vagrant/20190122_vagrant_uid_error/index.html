@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1013,7 +1013,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1390,6 +1390,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1473,23 +1485,15 @@
 </ul>
 <h2 id="_3">概要</h2>
 <p>vagrant up 時に下記のようなエラーが表示されboxが起動できない場合がありました。初回にvmが作成された際のUUIDと今作成しようとしているUUIDに齟齬が出てしまっている状態です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">vagrant</span><span class="p">.</span><span class="n">exe</span> <span class="n">up</span>
-<span class="n">The</span> <span class="n">VirtualBox</span> <span class="n">VM</span> <span class="n">was</span> <span class="n">created</span> <span class="k">with</span> <span class="n">a</span> <span class="k">user</span> <span class="n">that</span> <span class="n">doesn</span><span class="err">&#39;</span><span class="n">t</span> <span class="k">match</span> <span class="n">the</span>
-<span class="k">current</span> <span class="k">user</span> <span class="n">running</span> <span class="n">Vagrant</span><span class="p">.</span> <span class="n">VirtualBox</span> <span class="n">requires</span> <span class="n">that</span> <span class="n">the</span> <span class="n">same</span> <span class="k">user</span>
-<span class="n">be</span> <span class="n">used</span> <span class="k">to</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">that</span> <span class="n">was</span> <span class="n">created</span><span class="p">.</span> <span class="n">Please</span> <span class="n">re</span><span class="o">-</span><span class="n">run</span> <span class="n">Vagrant</span> <span class="k">with</span>
-<span class="n">that</span> <span class="k">user</span><span class="p">.</span> <span class="n">This</span> <span class="k">is</span> <span class="k">not</span> <span class="n">a</span> <span class="n">Vagrant</span> <span class="n">issue</span><span class="p">.</span>
+<pre class="codehilite"><code class="linenums">$c vagrant.exe up
+The VirtualBox VM was created with a user that doesn't match the
+current user running Vagrant. VirtualBox requires that the same user
+be used to manage the VM that was created. Please re-run Vagrant with
+that user. This is not a Vagrant issue.
 
-<span class="n">The</span> <span class="n">UID</span> <span class="n">used</span> <span class="k">to</span> <span class="k">create</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">was</span><span class="p">:</span> <span class="mi">1000</span>
-<span class="n">Your</span> <span class="n">UID</span> <span class="k">is</span><span class="p">:</span> <span class="mi">0</span>
-</pre></div>
-</td></tr></table>
+The UID used to create the VM was: 1000
+Your UID is: 0</code></pre>
+
 
 <h2 id="_4">対処法</h2>
 <ul>
@@ -1517,7 +1521,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1585,7 +1589,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

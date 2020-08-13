@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1105,7 +1105,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1423,6 +1423,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1550,42 +1562,31 @@
 <h3 id="_4">調査結果の詳細</h3>
 <p>ビルド対象のファイルは日別作成されたmdファイルとなります。320ファイル程たまっており、１ファイルの文量は大したことありません。多くても7KBちょっとです。</p>
 <p>測定はtimeコマンドで実施しています。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">#r time mkdocs build</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">#r time mkdocs build</code></pre>
+
 
 <h4 id="a-320">パターンA: 320ファイルをビルド</h4>
 <p>通常時のビルド時間です。1分13秒かかっていることが分かります。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">real</span>    <span class="mi">1</span><span class="n">m13</span><span class="p">.</span><span class="mi">962</span><span class="n">s</span>
-<span class="k">user</span>    <span class="mi">0</span><span class="n">m59</span><span class="p">.</span><span class="mi">847</span><span class="n">s</span>
-<span class="n">sys</span>     <span class="mi">0</span><span class="n">m2</span><span class="p">.</span><span class="mi">493</span><span class="n">s</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">real    1m13.962s
+user    0m59.847s
+sys     0m2.493s</code></pre>
+
 
 <h4 id="b">パターンB: ファイル数を増やしての測定</h4>
 <p>320ファイルをコピーして倍の640ファイルでビルド時間を測定。
 ビルド時間は倍以上の3分47秒に増えてしまいました……</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">real</span>    <span class="mi">3</span><span class="n">m47</span><span class="p">.</span><span class="mi">805</span><span class="n">s</span>
-<span class="k">user</span>    <span class="mi">3</span><span class="n">m14</span><span class="p">.</span><span class="mi">666</span><span class="n">s</span>
-<span class="n">sys</span>     <span class="mi">0</span><span class="n">m8</span><span class="p">.</span><span class="mi">430</span><span class="n">s</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">real    3m47.805s
+user    3m14.666s
+sys     0m8.430s</code></pre>
+
 
 <h4 id="b_1">パターンB: ファイル数を減らしての測定</h4>
 <p>日次ファイルを結合して月次ファイルにしファイル数を12ファイルにしてビルド時間を測定。単純に結合しただけなので、ファイルの内容に差異はなく、１ファイルの容量は増えている。</p>
 <p><strong>1分13秒が17秒まで短縮された。</strong></p>
 <p>mkdocsがビルド時に複数ファイルを並列処理しているか分からないが、ビルド対象ファイル数でビルド時間は大幅に変わるようだ。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">real</span>    <span class="mi">0</span><span class="n">m17</span><span class="p">.</span><span class="mi">778</span><span class="n">s</span>
-<span class="k">user</span>    <span class="mi">0</span><span class="n">m12</span><span class="p">.</span><span class="mi">883</span><span class="n">s</span>
-<span class="n">sys</span>     <span class="mi">0</span><span class="n">m0</span><span class="p">.</span><span class="mi">884</span><span class="n">s</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">real    0m17.778s
+user    0m12.883s
+sys     0m0.884s</code></pre>
                 
                   
                 
@@ -1674,7 +1675,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

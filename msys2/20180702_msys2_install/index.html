@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1071,7 +1071,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1389,6 +1389,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1481,32 +1493,23 @@
 <br style="clear:left;"></p>
 <h3 id="_3">パッケージの更新</h3>
 <p>msys2はArch Linuxに採用されているPacmanが搭載されています。まず最初に下記コマンドでパッケージを最新の状態に更新しましょう。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">Pacman</span> <span class="o">-</span><span class="n">Su</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">Pacman -Su</code></pre>
+
 
 <p>一部のコアパッケージを更新する際に再起動が必要になります。下記のように警告が表示されたら×ボタンでターミナルを閉じます。更新が終了してないと思うのでもう1回ターミナルを起動し直し更新コマンド再び投下します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>警告: <span class="nv">terminate</span> <span class="nv">MSYS2</span> <span class="nv">without</span> <span class="nv">returning</span> <span class="nv">to</span> <span class="nv">shell</span> <span class="nv">and</span> <span class="nv">check</span> <span class="k">for</span> <span class="nv">updates</span> <span class="nv">again</span>
-警告: <span class="k">for</span> <span class="nv">example</span> <span class="nv">close</span> <span class="nv">your</span> <span class="nv">terminal</span> <span class="nv">window</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">calling</span> <span class="k">exit</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">警告: terminate MSYS2 without returning to shell and check for updates again
+警告: for example close your terminal window instead of calling exit</code></pre>
+
 
 <p>更新コマンドを投下しても下記の用に表示されれば全てのパッケージは更新完了です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">::</span> <span class="n">Starting</span> <span class="n">core</span> <span class="k">system</span> <span class="n">upgrade</span><span class="p">...</span>
- <span class="err">何も行うことがありません</span>
-<span class="p">::</span> <span class="err">システム全体の更新を開始</span><span class="p">...</span>
- <span class="err">何も行うことがありません</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-starting linenums">:: Starting core system upgrade...
+ 何も行うことがありません
+:: システム全体の更新を開始...
+ 何も行うことがありません</code></pre>
+
 
 <p>パッケージのインストールは下記のように<code>pacman -S ${pkg_name}</code>で実施します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">vim</span> <span class="n">git</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">pacman -S vim git</code></pre>
                 
                   
                 
@@ -1595,7 +1598,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

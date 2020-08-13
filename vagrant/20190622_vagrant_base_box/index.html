@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1013,7 +1013,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1403,6 +1403,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1509,25 +1521,12 @@
 </ol>
 <p>これで起動元はbaseboxになるためGuestAddtionsや初期構築を毎起動ごとにやらなくて済みます。</p>
 <h3 id="_5">コマンド詳細</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c vagrantfileがあるディレクトリで実行
+<pre class="codehilite"><code class="linenums">##c vagrantfileがあるディレクトリで実行
 #r os_name=&quot;centos7&quot;
-#r file_name=&quot;<span class="cp">${</span><span class="n">os_name</span><span class="cp">}</span>base&quot;
-#r box_name=&quot;<span class="cp">${</span><span class="n">os_name</span><span class="cp">}</span>base&quot;
-#r vagrant package --output <span class="cp">${</span><span class="n">file_name</span><span class="cp">}</span>.box
-#r vagrant box add --force <span class="cp">${</span><span class="n">box_name</span><span class="cp">}</span> <span class="cp">${</span><span class="n">file_name</span><span class="cp">}</span>.box
+#r file_name=&quot;${os_name}base&quot;
+#r box_name=&quot;${os_name}base&quot;
+#r vagrant package --output ${file_name}.box
+#r vagrant box add --force ${box_name} ${file_name}.box
 
 ##c 追加されたかの確認
 #r vagrant box list
@@ -1535,9 +1534,8 @@ centos7base        (virtualbox, 0)
 
 
 ##c 補足登録済みのboxの削除方法
-#r vagrant box remove <span class="cp">${</span><span class="n">box_name</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+#r vagrant box remove ${box_name}</code></pre>
+
 
 <p>baseboxはマシンパワーのあるデスクトップ機で作成しおけば、出先でモバイルノートしかない環境でもbaseboxから派生させて、すぐに仮想環境を立ち上げることが出来るので便利です。</p>
                 
@@ -1628,7 +1626,7 @@ centos7base        (virtualbox, 0)
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

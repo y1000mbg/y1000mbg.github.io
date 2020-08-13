@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1106,7 +1106,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1424,6 +1424,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1541,64 +1553,38 @@ OSをセットアップした際に使えるようになるまでの手順をま
 <h3 id="_4">ユーザー、メールアドレスの登録</h3>
 <p>ユーザー名とメールアドレスを登録しないとコミットできませんので登録しましょう。<br />
 実施するのはローカル環境です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>## ターミナルで操作
-<span class="nv">$c</span> username=hoge
-<span class="nv">$c</span> useremail=&quot;<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>@gmail.com&quot;
-<span class="nv">$c</span> git config --global user.name &quot;<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>&quot;
-<span class="nv">$c</span> git config --global user.email <span class="cp">${</span><span class="n">useremail</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">## ターミナルで操作
+$c username=hoge
+$c useremail=&quot;${username}@gmail.com&quot;
+$c git config --global user.name &quot;${username}&quot;
+$c git config --global user.email ${useremail}</code></pre>
+
 
 <h3 id="githubssh">githubにssh鍵を登録</h3>
 <p>sshでgithubに接続出来るよう鍵を登録します。<br />
 リモートリポジトリへのpushで使います。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">##c</span><span class="w"> </span><span class="n">ターミナルで操作</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">鍵を保存するユーザーディレクトリへ移動</span><span class="w"></span>
-<span class="err">$</span><span class="n">c</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">ssh</span><span class="w"></span>
+<pre class="codehilite"><code class="linenums">##c ターミナルで操作
+##c 鍵を保存するユーザーディレクトリへ移動
+$c cd ~/.ssh
 
-<span class="n">##c</span><span class="w"> </span><span class="n">鍵を作成</span><span class="w"></span>
-<span class="err">$</span><span class="n">c</span><span class="w"> </span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">rsa</span><span class="w"></span>
+##c 鍵を作成
+$c ssh-keygen -t rsa
 
-<span class="n">##c</span><span class="w"> </span><span class="n">鍵の内容をクリップボードへコピー</span><span class="w"></span>
-<span class="err">$</span><span class="n">c</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="n">id_rsa</span><span class="p">.</span><span class="n">pub</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">xsel</span><span class="w"> </span><span class="o">-</span><span class="n">ib</span><span class="w"></span>
+##c 鍵の内容をクリップボードへコピー
+$c cat id_rsa.pub | xsel -ib
 
-<span class="n">##c</span><span class="w"> </span><span class="n">ブラウザで自分のgithubへアクセス</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">右上のユーザーアイコンからSettingsを押下</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">SSH</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">GPG</span><span class="w"> </span><span class="n">Keysを押下</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="k">New</span><span class="w"> </span><span class="n">SSH</span><span class="w"> </span><span class="n">keyを押下</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">Title</span><span class="p">(</span><span class="n">一覧で表示される名前</span><span class="p">)</span><span class="n">とKeyの内容を全て貼り付ける</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">ブラウザの操作は終了</span><span class="w"></span>
+##c ブラウザで自分のgithubへアクセス
+##c 右上のユーザーアイコンからSettingsを押下
+##c SSH and GPG Keysを押下
+##c New SSH keyを押下
+##c Title(一覧で表示される名前)とKeyの内容を全て貼り付ける
+##c ブラウザの操作は終了
 
-<span class="n">##c</span><span class="w"> </span><span class="n">ターミナルで操作</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">sshで疎通できるか確認</span><span class="w"></span>
-<span class="n">##c</span><span class="w"> </span><span class="n">You</span><span class="err">&#39;</span><span class="n">ve</span><span class="w"> </span><span class="n">succsessfullyが表示されれば疎通OK</span><span class="w"></span>
-<span class="err">$</span><span class="n">c</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">T</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
-</pre></div>
-</td></tr></table>
+##c ターミナルで操作
+##c sshで疎通できるか確認
+##c You've succsessfullyが表示されれば疎通OK
+$c ssh -T git@github.com</code></pre>
+
 
 <h2 id="_5">ローカルリポジトリとリモートリポジトリ</h2>
 <p>gitの特有の概念としてローカルリポジトリとリモートリポジトリという考え方があります。</p>
@@ -1657,31 +1643,20 @@ OSをセットアップした際に使えるようになるまでの手順をま
 </table>
 <h2 id="sshclone">ssh形式でリモートリポジトリからclone</h2>
 <p>ssh形式でcloneするとpush時にユーザー名、パスワードが聞かれなくなるので便利。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c ターミナルで操作
-<span class="nv">$c</span> username=hoge
-<span class="nv">$c</span> git clone git@github.com:<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>/repositoryname.git
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">##c ターミナルで操作
+$c username=hoge
+$c git clone git@github.com:${username}/repositoryname.git</code></pre>
+
 
 <p>因みに私はssh形式のcloneの記載方法をよく忘れてしまうので下記のようなファンクションを.bashrcに登録してます。<br />
 ブラウザで自分のリポジトリページにアクセスしてアドレスを引数にファンクションを実行してあげると上記形式に整形してくれます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">function</span> h2s <span class="o">(){</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -ne <span class="m">1</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
-        <span class="nb">echo</span> <span class="s2">&quot;h2s エラー 必要引数:1 / 今回:</span><span class="nv">$#</span><span class="s2">&quot;</span>
-        <span class="k">return</span> <span class="m">1</span>
-    <span class="k">fi</span>
-    <span class="nb">echo</span> <span class="s2">&quot;git clone </span><span class="si">${</span><span class="nv">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> sed -e s#https://github.com/#git@github.com:# -e <span class="s2">&quot;s#\$#.git#&quot;</span>
-<span class="o">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">function h2s (){
+    if [ $# -ne 1 ] ; then
+        echo &quot;h2s エラー 必要引数:1 / 今回:$#&quot;
+        return 1
+    fi
+    echo &quot;git clone ${1}&quot; | sed -e s#https://github.com/#git@github.com:# -e &quot;s#\$#.git#&quot;
+}</code></pre>
                 
                   
                 
@@ -1770,7 +1745,7 @@ OSをセットアップした際に使えるようになるまでの手順をま
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

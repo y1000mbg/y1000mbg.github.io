@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1269,7 +1269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1587,6 +1587,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1862,51 +1874,37 @@
 <p>最近xubuntuのセットアップが多いので備忘録としてまとめました。
 xubuntuは軽快な動作なので気に入ってます。</p>
 <h2 id="_2">パッケージを最新版に更新</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">パッケージリストの更新</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="k">update</span>
+<pre class="codehilite"><code class="linenums">##c パッケージリストの更新
+$c sudo apt update
 
-<span class="o">##</span> <span class="err">パッケージの更新</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">upgrade</span>
-</pre></div>
-</td></tr></table>
+## パッケージの更新
+$c sudo apt -y upgrade</code></pre>
+
 
 <h3 id="_3">ディレクトリの英語に変更</h3>
 <p>下記コマンドでディレクトリを英語名に変更。
 ただし<strong>対象のディレクトリ空ではない場合は上手くいかないので注意</strong></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">LANG</span><span class="o">=</span><span class="k">C</span> <span class="n">xdg</span><span class="o">-</span><span class="k">user</span><span class="o">-</span><span class="n">dirs</span><span class="o">-</span><span class="k">update</span> <span class="c1">--force</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c LANG=C xdg-user-dirs-update --force</code></pre>
+
 
 <h4 id="_4">起動時エラーの対応</h4>
 <p>xubuntuの場合は次回ログイン時に「ダウンロード」ディレクトリが無いと下記エラーが出ます。
 dconf-editorを使い参照ディレクトリを変更が必要です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">Configured</span> <span class="nv">directory</span> <span class="k">for</span> <span class="nv">incoming</span> <span class="nv">files</span> <span class="nv">does</span> <span class="nv">not</span> <span class="nv">exist</span>
-<span class="nv">Please</span> <span class="nv">make</span> <span class="nv">sure</span> <span class="nv">that</span> <span class="nv">directory</span> <span class="s2">&quot;</span><span class="s">/home/${username}/ダウンロード</span><span class="s2">&quot;</span> <span class="nv">exists</span> <span class="nv">or</span> <span class="nv">configure</span> <span class="nv">it</span> <span class="nv">with</span> <span class="nv">blueman</span><span class="o">-</span><span class="nv">services</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">Configured directory for incoming files does not exist
+Please make sure that directory &quot;/home/${username}/ダウンロード&quot; exists or configure it with blueman-services</code></pre>
+
 
 <p>因みにdconf弄るのがめんどくさい場合はシンボリックリンク張るのも手です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">Downloads</span> <span class="o">~/</span><span class="err">ダウンロード</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c ln -s ~/Downloads ~/ダウンロード</code></pre>
+
 
 <p>dconfeditorインストール</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">インストール</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">dconf</span><span class="o">-</span><span class="n">editor</span>
+<pre class="codehilite"><code class="linenums">##c インストール
+$c sudo apt install -y dconf-editor
 
-<span class="o">##</span><span class="k">c</span> <span class="err">実行</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">dconf</span><span class="o">-</span><span class="n">editor</span>
-</pre></div>
-</td></tr></table>
+##c 実行
+$c dconf-editor</code></pre>
+
 
 <p>編集項目</p>
 <ul>
@@ -1914,21 +1912,16 @@ dconf-editorを使い参照ディレクトリを変更が必要です。</p>
 </ul>
 <h2 id="_5">ソフトウェアのインストール</h2>
 <h3 id="_6">一括</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span> <span class="n">vim</span> <span class="n">xsel</span> <span class="n">terminator</span> <span class="n">fdclone</span> <span class="n">remmina</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install openssh-server vim xsel terminator fdclone remmina</code></pre>
+
 
 <h3 id="sshserver">sshserverのインストール</h3>
 <p>sshdですね。xubuntuではデフォルトでは入っていないのでインストールします。因みにavahi-daemonがデフォルトでインストールされているので再起動後は<strong>${hotsname}.local</strong>でsshされる事ができます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">openssh</span><span class="o">-</span><span class="n">server</span>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install openssh-server
 
-<span class="o">##</span><span class="k">c</span> <span class="err">別マシンから操作するなら一旦再起動</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">shutdown</span> <span class="o">-</span><span class="n">r</span> <span class="n">now</span>
-</pre></div>
-</td></tr></table>
+##c 別マシンから操作するなら一旦再起動
+$c sudo shutdown -r now</code></pre>
+
 
 <h3 id="googlechrome">googlechromeのインストール</h3>
 <ol>
@@ -1938,9 +1931,8 @@ dconf-editorを使い参照ディレクトリを変更が必要です。</p>
 <p>※googleアカウントにログインしておくと設定が同期されて便利ですね</p>
 <h3 id="vim">vimのインストール</h3>
 <p>cui用のエディタです。無いと困っちゃいます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">vim</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install vim</code></pre>
+
 
 <h3 id="atom">atomのインストール</h3>
 <p>gui用のエディタです。WindowsやMacでも使えるので操作方法に慣れておくと重宝します。
@@ -1952,9 +1944,8 @@ aptにppa追加でも良いのですが公式からdebファイルをダウン�
 <h3 id="xsel">xselのインストール</h3>
 <p>ターミナル上でクリップボードへのコピーによく使います。
 bashでテキスト加工した結果をコピーなど便利です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">xsel</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install xsel</code></pre>
+
 
 <h3 id="dropbox">DropBoxのインストール</h3>
 <ol>
@@ -1964,41 +1955,26 @@ bashでテキスト加工した結果をコピーなど便利です。</p>
 <h3 id="rictydiminished">等倍フォント RictyDiminished のインストール</h3>
 <p>ターミナルやエディタに設定する為の等倍フォントです。<br />
 可読性も高く、気に入ってます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="n">gzファイルの取得</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">wget</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">edihbrandon</span><span class="o">/</span><span class="n">RictyDiminished</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+<pre class="codehilite"><code class="linenums">##c gzファイルの取得
+$c wget https://github.com/edihbrandon/RictyDiminished/archive/3.2.3.tar.gz
 
-<span class="o">##</span><span class="k">c</span> <span class="err">展開</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">tar</span> <span class="n">xfv</span> <span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+##c 展開
+$c tar xfv 3.2.3.tar.gz
 
-<span class="o">##</span><span class="k">c</span> <span class="err">ユーザ別のインストールディレクトリを作成</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">ls</span> <span class="o">-</span><span class="n">ld</span> <span class="o">~/</span><span class="p">.</span><span class="n">fonts</span> <span class="o">||</span> <span class="n">mkdir</span> <span class="o">~/</span><span class="p">.</span><span class="n">fonts</span>
+##c ユーザ別のインストールディレクトリを作成
+$c ls -ld ~/.fonts || mkdir ~/.fonts
 
-<span class="o">##</span><span class="k">c</span> <span class="err">フォントファイルを格納</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">cp</span> <span class="o">-</span><span class="n">p</span> <span class="n">RictyDiminished</span><span class="o">-</span><span class="mi">3</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">3</span><span class="cm">/* ~/.fonts/</span>
+##c フォントファイルを格納
+$c cp -p RictyDiminished-3.2.3/* ~/.fonts/
 
-<span class="cm">## フォントの反映</span>
-<span class="cm">$c fc-cache -fv</span>
-</pre></div>
-</td></tr></table>
+## フォントの反映
+$c fc-cache -fv</code></pre>
+
 
 <h3 id="terminator">terminatorのインストール</h3>
 <p>画面分割ができるターミナルエミュレータです。vimでシェルを書きながらlsするときなど便利ですね！</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">terminator</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install terminator</code></pre>
+
 
 <h4 id="terminator_1">terminatorの設定</h4>
 <p>端末を右クリックし「設定」を選択</p>
@@ -2029,43 +2005,35 @@ xubuntuの<strong>セッションと起動</strong>設定から実施します�
 </ol>
 <h3 id="fdclone">fdcloneのインストール</h3>
 <p>CUIファイラー</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">fdclone</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install fdclone</code></pre>
+
 
 <h3 id="ranger">rangerのインストール</h3>
 <p>CUIファイラーは軽快に動作するので非常に便利です。</p>
 <h4 id="pip">pipのインストール</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install python-pip</code></pre>
+
 
 <h4 id="ranger_1">rangerのインストール</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">ranger</span><span class="o">-</span><span class="n">fm</span>
-<span class="o">##</span> <span class="err">起動</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">ranger</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo pip install ranger-fm
+## 起動
+$c ranger</code></pre>
+
 
 <h3 id="remmina">remminaのインストール</h3>
 <p>remminaはRDPやVNC接続が出来るクライアントです。  xubuntuからwindowsにアクセスしたりする際は便利なので導入しておきます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">remmina</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt -y install remmina</code></pre>
+
 
 <h3 id="exfat">exfat関連のインストール</h3>
 <p>exfatでフォーマットされた外付けディスクなどのマウントに使用します。<br />
 exfatはWindos,Linux,Macでマウントできるので便利です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">exfat</span><span class="o">-</span><span class="n">fuse</span> <span class="n">exfat</span><span class="o">-</span><span class="n">utils</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt install exfat-fuse exfat-utils</code></pre>
+
 
 <h3 id="autokey">autokeyのインストール</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">autokey</span><span class="o">-</span><span class="n">gtk</span> 
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$c sudo apt install autokey-gtk </code></pre>
+
 
 <h2 id="_8">キーボードショートカット関係</h2>
 <h3 id="_9">キーボードの設定項目</h3>
@@ -2217,7 +2185,7 @@ exfatはWindos,Linux,Macでマウントできるので便利です。</p>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

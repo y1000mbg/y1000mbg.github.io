@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1092,7 +1092,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1410,6 +1410,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1520,37 +1532,23 @@
 <p>秘密鍵を用意するかsshdの設定でパスワード認証を有効にする必要があります。今回は<strong>後者のパスワード認証を有効化する方法を採用</strong>しました。なおローカルの突発的に建てる検証環境なので<strong>セキュリティは加味してません</strong>。</p>
 <h3 id="_5">設定の変更</h3>
 <p><code>/etc/ssh/sshd_config</code>の<code>PasswordAuthentication no</code>をyesに変更します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">##c sedで該当箇所を書き換える(変更前は.bakで保存)</span>
-<span class="c1">#r sed -i.bak s/&quot;^PasswordAuthentication no&quot;/&quot;PasswordAuthentication yes&quot;/ /etc/ssh/sshd_config</span>
+<pre class="codehilite"><code class="language-bash linenums">##c sedで該当箇所を書き換える(変更前は.bakで保存)
+#r sed -i.bak s/&quot;^PasswordAuthentication no&quot;/&quot;PasswordAuthentication yes&quot;/ /etc/ssh/sshd_config
 
-<span class="c1">##c 変更箇所をdiff比較</span>
-<span class="c1">#r diff /etc/ssh/sshd_config.bak /etc/ssh/sshd_config</span>
+##c 変更箇所をdiff比較
+#r diff /etc/ssh/sshd_config.bak /etc/ssh/sshd_config
 65c65
 &lt; PasswordAuthentication no
 ---
 &gt; PasswordAuthentication yes
 
-<span class="c1">##c sshdを再起動</span>
-<span class="c1">#r systemctl restart sshd</span>
-</pre></div>
-</td></tr></table>
+##c sshdを再起動
+#r systemctl restart sshd</code></pre>
+
 
 <h2 id="_6">接続の確認</h2>
 <p>ほかクライアントからsshでログインできれば設定完了です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh vagrant@<span class="cp">${</span><span class="n">ip_addr</span><span class="cp">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">ssh vagrant@${ip_addr}</code></pre>
                 
                   
                 
@@ -1586,7 +1584,7 @@
           </a>
         
         
-          <a href="../20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1639,7 +1637,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

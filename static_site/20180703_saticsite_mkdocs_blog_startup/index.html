@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1126,7 +1126,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1444,6 +1444,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1589,69 +1601,45 @@
 </ol>
 <h3 id="1-python">1. Pythonのインストール</h3>
 <p>インストールされていなければインストールします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="err">バージョン確認</span>
-<span class="err">$</span> <span class="n">python</span> <span class="c1">--version</span>
-<span class="n">Python</span> <span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">15</span><span class="n">rc1</span>
+<pre class="codehilite"><code class="linenums">## バージョン確認
+$ python --version
+Python 2.7.15rc1
 
-<span class="o">##</span> <span class="err">未導入の場合はインストール</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python</span>
-</pre></div>
-</td></tr></table>
+## 未導入の場合はインストール
+$ sudo apt install python</code></pre>
+
 
 <h3 id="2-pip">2. pipのインストール</h3>
 <p>こちらもインストールされていなければインストールしてください。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo apt install python-pip
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">$ sudo apt install python-pip</code></pre>
+
 
 <h3 id="3-mkdocs">3. mkdocsのインストール</h3>
 <p>pipを使いmkdocsをインストールします。
 sudoをつけたのは非特権ユーザーで<code>pip install</code>を実施すると<code>~/local/bin</code>にインストールされて煩わしい為です。
 rootでインストールするとpathの通っている<code>/usr/local/bin/</code>にインストールされて便利です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span> <span class="err">インストール</span>
-<span class="err">$</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span>
+<pre class="codehilite"><code class="linenums">## インストール
+$ sudo pip install mkdocs
 
-<span class="o">##</span> <span class="err">コマンドの確認</span>
-<span class="err">$</span> <span class="n">which</span> <span class="n">mkdocs</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mkdocs</span>
-</pre></div>
-</td></tr></table>
+## コマンドの確認
+$ which mkdocs
+/usr/local/bin/mkdocs</code></pre>
+
 
 <h3 id="4-mkdocs">4. mkdocsでプロジェクトディレクトリの作成</h3>
 <p><code>mkdocs new ${project_dir_name}</code>で最低限の必要ファイルを作成します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdocs new testblog
+<pre class="codehilite"><code class="linenums">$ mkdocs new testblog
 INFO    -  Creating project directory: testblog
 INFO    -  Writing config file: testblog/mkdocs.yml
 INFO    -  Writing initial docs: testblog/docs/index.md
 $
 
-<span class="c1">## 作成された中身の確認</span>
-$ <span class="nb">cd</span> testblog/ <span class="o">&amp;&amp;</span> ls -l
-合計 <span class="m">4</span>
-drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">16</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 docs
--rw-rw-r-- <span class="m">1</span> iuser iuser <span class="m">19</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 mkdocs.yml
-</pre></div>
-</td></tr></table>
+## 作成された中身の確認
+$ cd testblog/ &amp;&amp; ls -l
+合計 4
+drwxrwxr-x 1 iuser iuser 16  7月  3 04:00 docs
+-rw-rw-r-- 1 iuser iuser 19  7月  3 04:00 mkdocs.yml</code></pre>
+
 
 <ul>
 <li>docsディレクトリ は*.md形式でファイルを格納します。実際のページに変換されます。</li>
@@ -1659,37 +1647,24 @@ drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">16</span>  7月 
 </ul>
 <h4 id="_4">静的ファイルの作成</h4>
 <p><code>mkdocs build</code>コマンドで静的ファイルを作成します。作成されたsiteディレクトリが静的ファイルに変換された一式です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mkdocs build
+<pre class="codehilite"><code class="linenums">$ mkdocs build
 INFO    -  Cleaning site directory
 INFO    -  Building documentation to directory: /home/hoge/Documents/testblog/site
 $
 
-<span class="c1">## 作成された中身の確認 (siteディレクトリが追加されている)</span>
+## 作成された中身の確認 (siteディレクトリが追加されている)
 $ ls -l
-合計 <span class="m">4</span>
-drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">16</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 docs
--rw-rw-r-- <span class="m">1</span> iuser iuser <span class="m">19</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 mkdocs.yml
-drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">96</span>  7月  <span class="m">3</span> <span class="m">04</span>:04 site
-</pre></div>
-</td></tr></table>
+合計 4
+drwxrwxr-x 1 iuser iuser 16  7月  3 04:00 docs
+-rw-rw-r-- 1 iuser iuser 19  7月  3 04:00 mkdocs.yml
+drwxrwxr-x 1 iuser iuser 96  7月  3 04:04 site</code></pre>
+
 
 <h4 id="_5">内容の確認</h4>
 <p><code>mkdocs serve</code>コマンドでローカルでサーバーが立ち上がり記事の内容が確認できます。変更をリアルタイムで追随するので確認しながら修正が簡単にできます。<code>--dev-addr</code>オプションでip指定すると別マシンからもアクセスできます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ipaddr=xxx.xxx.xxx.xxx
-mkdocs serve --dev-addr=<span class="cp">${</span><span class="n">ipaddr</span><span class="cp">}</span>:8000
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">ipaddr=xxx.xxx.xxx.xxx
+mkdocs serve --dev-addr=${ipaddr}:8000</code></pre>
+
 
 <p><img src="https://github.com/y1000mbg/blog_pic/blob/master/2018/07/03/001.png?raw=true"></p>
 <p>画面としてはこのような表示になります。</p>
@@ -1784,7 +1759,7 @@ mkdocs serve --dev-addr=<span class="cp">${</span><span class="n">ipaddr</span><
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1072,7 +1072,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1390,6 +1390,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1473,9 +1485,8 @@
 </ul>
 <h2 id="or">設定方法 or 対応方法</h2>
 <p>原因としてはminttyは対話形式のコマンドをうまく扱えない仕様があるようです。winコマンドに関してはwinptyというコマンドでラップしてあげると正常動作になりますのでaliasに登録してあげましょう。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">alias</span> <span class="n">vagran</span><span class="s1">&#39;=&#39;</span><span class="n">winpty</span> <span class="n">vagrant</span><span class="err">&#39;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">alias vagran'='winpty vagrant'</code></pre>
+
 
 <p>.bashrcに登録してあげるとラップを意識しせずに使えるので便利です。</p>
 <h2 id="_3">備考</h2>
@@ -1570,7 +1581,7 @@
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

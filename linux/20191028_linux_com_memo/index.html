@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1192,7 +1192,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1510,6 +1510,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1706,27 +1718,21 @@
 <h2 id="cat">cat</h2>
 <p>リダイレクトと合わせて、追記するパターンをよく使います。</p>
 <p>終了文字列をシングルクォートで囲むことで、変数が展開されない <strong>(入力通りに追記される)</strong> テクニックがあります。シェルスクリプト内でconfigに自動追記したりするパターンでは便利です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat <span class="s">&lt;&lt; &#39;FIN&#39; &gt;&gt; ${output_file}</span>
-<span class="s">hogehoge</span>
-<span class="s">${piyo}</span>
-<span class="s">FIN</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">cat &lt;&lt; 'FIN' &gt;&gt; ${output_file}
+hogehoge
+${piyo}
+FIN</code></pre>
+
 
 <h2 id="date">dateコマンド</h2>
 <h3 id="_2">表示フォーマットの指定</h3>
 <h4 id="yyyymmdd">YYYY/MM/DD形式</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date +<span class="s2">&quot;%Y/%m/%d&quot;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date +&quot;%Y/%m/%d&quot;</code></pre>
+
 
 <h4 id="yyyy-mm-dd">YYYY-MM-DD形式</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date +<span class="s2">&quot;%F&quot;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date +&quot;%F&quot;</code></pre>
+
 
 <h4 id="_3">よく使うフォーマット</h4>
 <table>
@@ -1797,41 +1803,33 @@
 </table>
 <h3 id="_4">基準日を指定フォーマットで表示</h3>
 <h4 id="2019101yyyymmdd">2019年10月1日をYYYY/MM/DD形式で表示</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
-date -d <span class="s2">&quot;2019-10-01&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date -d &quot;20191001&quot; +&quot;%Y/%m/%d&quot;
+date -d &quot;2019-10-01&quot; +&quot;%Y/%m/%d&quot;</code></pre>
+
 
 <h3 id="_5">基準日からの加算・減算</h3>
 <h4 id="20191013">2019年10月1日を基準日とし3日後を表示</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days&quot;</span> 
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date -d &quot;20191001 3 days&quot; </code></pre>
+
 
 <p>指定フォーマットで表示もできる。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date -d &quot;20191001 3 days&quot; +&quot;%Y/%m/%d&quot;</code></pre>
+
 
 <h4 id="20191013_1">2019年10月1日を基準日とし3日前を表示</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days ago&quot;</span> 
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date -d &quot;20191001 3 days ago&quot; </code></pre>
+
 
 <p>指定フォーマットで表示もできる。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>date -d <span class="s2">&quot;20191001 3 days ago&quot;</span> +<span class="s2">&quot;%Y/%m/%d&quot;</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">date -d &quot;20191001 3 days ago&quot; +&quot;%Y/%m/%d&quot;</code></pre>
+
 
 <h2 id="sed">sed</h2>
 <h3 id="_6">セパレーター</h3>
 <p>セパレーターになっている文字が置換文字列に含まれていると、セパレーターと区別できずにエラーになります。セパレーターは通常はスラッシュ<code>/</code>を使いますが<code>@</code>なども使用できるので置換文字列に含まれない記号を使用するとエラーが回避できます。</p>
 <h3 id="_7">行削除</h3>
 <h4 id="1">先頭1行を削る</h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sed <span class="s1">&#39;1d&#39;</span> <span class="si">${</span><span class="nv">file_name</span><span class="si">}</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="language-bash linenums">sed '1d' ${file_name}</code></pre>
                 
                   
                 
@@ -1920,7 +1918,7 @@ date -d <span class="s2">&quot;2019-10-01&quot;</span> +<span class="s2">&quot;%
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

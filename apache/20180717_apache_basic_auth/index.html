@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1112,7 +1112,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1430,6 +1430,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1561,94 +1573,56 @@
 <h3 id="1-apache">1. apacheのインストール</h3>
 <p>Apacheがインストールされていない場合はインストールします。
 Centosではパッケージ名はhttpdですので注意してください。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="n">rpmパッケージを検索</span><span class="p">(</span><span class="n">httpdがなければapacheは未インストール</span><span class="err">）</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">qa</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">httpd</span>
+<pre class="codehilite"><code class="linenums">##c rpmパッケージを検索(httpdがなければapacheは未インストール）
+$c rpm -qa | grep httpd
 
-<span class="o">##</span><span class="k">c</span> <span class="err">インストール</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">yum</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">httpd</span>
+##c インストール
+$c sudo yum install -y httpd
 
-<span class="o">##</span><span class="k">c</span> <span class="err">インストールされたか確認</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">rpm</span> <span class="o">-</span><span class="n">qa</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">httpd</span>
-<span class="n">httpd</span><span class="o">-</span><span class="n">tools</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">6</span><span class="o">-</span><span class="mi">80</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">centos</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="n">x86_64</span>
-<span class="n">httpd</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">6</span><span class="o">-</span><span class="mi">80</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">centos</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="n">x86_64</span>
-</pre></div>
-</td></tr></table>
+##c インストールされたか確認
+$c rpm -qa | grep httpd
+httpd-tools-2.4.6-80.el7.centos.1.x86_64
+httpd-2.4.6-80.el7.centos.1.x86_64</code></pre>
+
 
 <h3 id="2-htpasswd">2. .htpasswdファイルの作成</h3>
 <p>.htpasswdファイルは認証時に入力するユーザー名とパスワード情報を記載するファイルです。
 なおCentOSのユーザーとは<strong>関係ない</strong>ので注意してください。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##<span class="nv">c</span> 「<span class="nv">Adding</span> <span class="nv">password</span> <span class="k">for</span> <span class="nv">user</span> <span class="nv">hoge</span>」が表示されれば<span class="nv">OK</span>
-##<span class="nv">c</span> 凡例: <span class="nv">htpasswd</span> <span class="o">-</span><span class="nv">b</span> <span class="o">-</span><span class="nv">m</span> <span class="o">-</span><span class="nv">c</span> ${<span class="nv">file_name</span>} ${<span class="nv">user_name</span>} ${<span class="nv">password</span>}
-<span class="mh">$c</span> <span class="nv">sudo</span> <span class="nv">htpasswd</span> <span class="o">-</span><span class="nv">b</span> <span class="o">-</span><span class="nv">m</span> <span class="o">-</span><span class="nv">c</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">httpd</span><span class="o">/</span><span class="nv">conf</span><span class="o">/</span>.<span class="nv">htpasswd</span> <span class="nv">hoge</span> <span class="nv">hogepass</span>
+<pre class="codehilite"><code class="linenums">##c 「Adding password for user hoge」が表示されればOK
+##c 凡例: htpasswd -b -m -c ${file_name} ${user_name} ${password}
+$c sudo htpasswd -b -m -c /etc/httpd/conf/.htpasswd hoge hogepass
 
-##<span class="nv">c</span> 内容の確認 
-<span class="mh">$c</span> <span class="nv">cat</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">httpd</span><span class="o">/</span><span class="nv">conf</span><span class="o">/</span>.<span class="nv">htpasswd</span>
-<span class="nv">hoge</span>:<span class="mh">$a</span><span class="nv">pr1</span>$<span class="nv">mLUNDdu1</span>$<span class="nv">HrlMx</span>.<span class="nv">YlmHXNmsqnSSj4o0</span>
-</pre></div>
-</td></tr></table>
+##c 内容の確認 
+$c cat /etc/httpd/conf/.htpasswd
+hoge:$apr1$mLUNDdu1$HrlMx.YlmHXNmsqnSSj4o0</code></pre>
+
 
 <h3 id="3-apache">3. apacheの設定</h3>
 <p>ポイントとしては<code>Require all granted</code>は全てのアクセスを許可する設定なので書き換えます。
 diff結果の157,161c156の内容（Basic認証関係）は<strong>必ず<code>&lt;Directory "/var/www/html"&gt;</code>から<code>&lt;/Directory&gt;</code>の範囲内に</strong>加えます。</p>
 <p>分かりづらい場合は<a href="./#httpdconf">備考:編集後のhttpd.confの全内容</a>を確認。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">##</span><span class="k">c</span> <span class="err">バックアップをとる</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">cp</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">bak</span>
+<pre class="codehilite"><code class="linenums">##c バックアップをとる
+$c sudo cp -p /etc/httpd/conf/httpd.conf  /etc/httpd/conf/httpd.conf.bak
 
-<span class="o">##</span><span class="k">c</span> <span class="err">編集する</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">vim</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span> 
+##c 編集する
+$c sudo vim /etc/httpd/conf/httpd.conf 
 
-<span class="o">##</span><span class="k">c</span> <span class="err">編集前後で比較</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">diff</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">httpd</span><span class="p">.</span><span class="n">conf</span><span class="p">.</span><span class="n">bak</span>
-<span class="mi">44</span><span class="n">d43</span>
-<span class="o">&lt;</span> <span class="n">ServerName</span> <span class="n">testserver</span><span class="p">:</span><span class="mi">80</span>
-<span class="mi">157</span><span class="p">,</span><span class="mi">161</span><span class="n">c156</span>
-<span class="o">&lt;</span>     <span class="n">AuthUserFile</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">httpd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="p">.</span><span class="n">htpasswd</span>
-<span class="o">&lt;</span>     <span class="n">AuthGroupFile</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="k">null</span>
-<span class="o">&lt;</span>     <span class="n">AuthName</span> <span class="ss">&quot;input your id and passwd&quot;</span>
-<span class="o">&lt;</span>     <span class="n">AuthType</span> <span class="n">Basic</span>
-<span class="o">&lt;</span>     <span class="n">require</span> <span class="k">valid</span><span class="o">-</span><span class="k">user</span>
-<span class="c1">---</span>
-<span class="o">&gt;</span>     <span class="n">Require</span> <span class="k">all</span> <span class="k">granted</span>
+##c 編集前後で比較
+$c diff /etc/httpd/conf/httpd.conf  /etc/httpd/conf/httpd.conf.bak
+44d43
+&lt; ServerName testserver:80
+157,161c156
+&lt;     AuthUserFile /etc/httpd/conf/.htpasswd
+&lt;     AuthGroupFile /dev/null
+&lt;     AuthName &quot;input your id and passwd&quot;
+&lt;     AuthType Basic
+&lt;     require valid-user
+---
+&gt;     Require all granted
 
-<span class="o">##</span><span class="k">c</span> <span class="n">httpdの起動</span>
-<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">systemctl</span> <span class="k">start</span> <span class="n">httpd</span>
-</pre></div>
-</td></tr></table>
+##c httpdの起動
+$c sudo systemctl start httpd</code></pre>
+
 
 <p>ブラウザでページにアクセスした際にユーザー、パスワードの入力が求められれば設定完了です。</p>
 <h2 id="_4">備考</h2>
@@ -1659,203 +1633,104 @@ diff結果の157,161c156の内容（Basic認証関係）は<strong>必ず<code>&
 <li>サーバー名<strong>追加</strong>: 5行目</li>
 <li>Basic認証<strong>追加</strong>: 33-37行目</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">ServerRoot</span> <span class="s2">&quot;</span><span class="s">/etc/httpd</span><span class="s2">&quot;</span>
+<pre class="codehilite"><code class="linenums">ServerRoot &quot;/etc/httpd&quot;
 
-<span class="nv">Listen</span> <span class="mi">80</span>
+Listen 80
 
-<span class="nv">ServerName</span> <span class="nv">testserver</span>:<span class="mi">80</span>
-<span class="k">Include</span> <span class="nv">conf</span>.<span class="nv">modules</span>.<span class="nv">d</span><span class="cm">/*.conf</span>
+ServerName testserver:80
+Include conf.modules.d/*.conf
 
-<span class="cm">User apache</span>
-<span class="cm">Group apache</span>
+User apache
+Group apache
 
 
-<span class="cm">ServerAdmin root@localhost</span>
+ServerAdmin root@localhost
 
 
-<span class="cm">&lt;Directory /&gt;</span>
-<span class="cm">    AllowOverride none</span>
-<span class="cm">    Require all denied</span>
-<span class="cm">&lt;/Directory&gt;</span>
+&lt;Directory /&gt;
+    AllowOverride none
+    Require all denied
+&lt;/Directory&gt;
 
 
-<span class="cm">DocumentRoot &quot;/var/www/html&quot;</span>
+DocumentRoot &quot;/var/www/html&quot;
 
-<span class="cm">&lt;Directory &quot;/var/www&quot;&gt;</span>
-<span class="cm">    AllowOverride None</span>
-<span class="cm">    Require all granted</span>
-<span class="cm">&lt;/Directory&gt;</span>
+&lt;Directory &quot;/var/www&quot;&gt;
+    AllowOverride None
+    Require all granted
+&lt;/Directory&gt;
 
-<span class="cm">&lt;Directory &quot;/var/www/html&quot;&gt;</span>
-<span class="cm">    Options Indexes FollowSymLinks</span>
+&lt;Directory &quot;/var/www/html&quot;&gt;
+    Options Indexes FollowSymLinks
 
-<span class="cm">    AllowOverride None</span>
+    AllowOverride None
 
-<span class="cm">    AuthUserFile /etc/httpd/conf/.htpasswd</span>
-<span class="cm">    AuthGroupFile /dev/null</span>
-<span class="cm">    AuthName &quot;input your id and passwd&quot;</span>
-<span class="cm">    AuthType Basic</span>
-<span class="cm">    require valid-user</span>
-<span class="cm">&lt;/Directory&gt;</span>
+    AuthUserFile /etc/httpd/conf/.htpasswd
+    AuthGroupFile /dev/null
+    AuthName &quot;input your id and passwd&quot;
+    AuthType Basic
+    require valid-user
+&lt;/Directory&gt;
 
-<span class="cm">&lt;IfModule dir_module&gt;</span>
-<span class="cm">    DirectoryIndex index.html</span>
-<span class="cm">&lt;/IfModule&gt;</span>
+&lt;IfModule dir_module&gt;
+    DirectoryIndex index.html
+&lt;/IfModule&gt;
 
-<span class="cm">&lt;Files &quot;.ht*&quot;&gt;</span>
-<span class="cm">    Require all denied</span>
-<span class="cm">&lt;/Files&gt;</span>
+&lt;Files &quot;.ht*&quot;&gt;
+    Require all denied
+&lt;/Files&gt;
 
-<span class="cm">ErrorLog &quot;logs/error_log&quot;</span>
+ErrorLog &quot;logs/error_log&quot;
 
-<span class="cm">LogLevel warn</span>
+LogLevel warn
 
-<span class="cm">&lt;IfModule log_config_module&gt;</span>
-<span class="cm">    LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined</span>
-<span class="cm">    LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b&quot; common</span>
+&lt;IfModule log_config_module&gt;
+    LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot;&quot; combined
+    LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b&quot; common
 
-<span class="cm">    &lt;IfModule logio_module&gt;</span>
-<span class="cm">      LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot; %I %O&quot; combinedio</span>
-<span class="cm">    &lt;/IfModule&gt;</span>
-
-
-<span class="cm">    CustomLog &quot;logs/access_log&quot; combined</span>
-<span class="cm">&lt;/IfModule&gt;</span>
-
-<span class="cm">&lt;IfModule alias_module&gt;</span>
+    &lt;IfModule logio_module&gt;
+      LogFormat &quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b \&quot;%{Referer}i\&quot; \&quot;%{User-Agent}i\&quot; %I %O&quot; combinedio
+    &lt;/IfModule&gt;
 
 
-<span class="cm">    ScriptAlias /cgi-bin/ &quot;/var/www/cgi-bin/&quot;</span>
+    CustomLog &quot;logs/access_log&quot; combined
+&lt;/IfModule&gt;
 
-<span class="cm">&lt;/IfModule&gt;</span>
+&lt;IfModule alias_module&gt;
 
-<span class="cm">&lt;Directory &quot;/var/www/cgi-bin&quot;&gt;</span>
-<span class="cm">    AllowOverride None</span>
-<span class="cm">    Options None</span>
-<span class="cm">    Require all granted</span>
-<span class="cm">&lt;/Directory&gt;</span>
 
-<span class="cm">&lt;IfModule mime_module&gt;</span>
-<span class="cm">    TypesConfig /etc/mime.types</span>
+    ScriptAlias /cgi-bin/ &quot;/var/www/cgi-bin/&quot;
 
-<span class="cm">    AddType application/x-compress .Z</span>
-<span class="cm">    AddType application/x-gzip .gz .tgz</span>
+&lt;/IfModule&gt;
+
+&lt;Directory &quot;/var/www/cgi-bin&quot;&gt;
+    AllowOverride None
+    Options None
+    Require all granted
+&lt;/Directory&gt;
+
+&lt;IfModule mime_module&gt;
+    TypesConfig /etc/mime.types
+
+    AddType application/x-compress .Z
+    AddType application/x-gzip .gz .tgz
 
 
 
-<span class="cm">    AddType text/html .shtml</span>
-<span class="cm">    AddOutputFilter INCLUDES .shtml</span>
-<span class="cm">&lt;/IfModule&gt;</span>
+    AddType text/html .shtml
+    AddOutputFilter INCLUDES .shtml
+&lt;/IfModule&gt;
 
-<span class="cm">AddDefaultCharset UTF-8</span>
+AddDefaultCharset UTF-8
 
-<span class="cm">&lt;IfModule mime_magic_module&gt;</span>
-<span class="cm">    MIMEMagicFile conf/magic</span>
-<span class="cm">&lt;/IfModule&gt;</span>
+&lt;IfModule mime_magic_module&gt;
+    MIMEMagicFile conf/magic
+&lt;/IfModule&gt;
 
 
-<span class="cm">EnableSendfile on</span>
+EnableSendfile on
 
-<span class="cm">IncludeOptional conf.d/*.conf</span>
-</pre></div>
-</td></tr></table>
+IncludeOptional conf.d/*.conf</code></pre>
                 
                   
                 
@@ -1944,7 +1819,7 @@ diff結果の157,161c156の内容（Basic認証関係）は<strong>必ず<code>&
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

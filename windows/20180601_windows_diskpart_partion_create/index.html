@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1011,7 +1011,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1424,6 +1424,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1577,60 +1589,38 @@
 <li>ファイルシステムの作成とフォーマット</li>
 </ol>
 <h3 id="1">1. コマンドプロンプトを管理者権限で起動</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">myuser</span><span class="o">&gt;</span><span class="n">diskpart</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">C:\Users\myuser&gt;diskpart</code></pre>
+
 
 <h3 id="2">2. 接続ディスクの確認</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">list</span> <span class="n">disk</span>
+<pre class="codehilite"><code class="linenums">DISKPART&gt; list disk
 
-  <span class="err">ディスク</span>      <span class="err">状態</span>           <span class="err">サイズ</span>   <span class="err">空き</span>   <span class="err">ダイナ</span> <span class="n">GPT</span>
-  <span class="o">###</span>                                          <span class="err">ミック</span>
-  <span class="c1">------------  -------------  -------  -------  ---  ---</span>
-  <span class="err">ディスク</span> <span class="mi">0</span>    <span class="err">オンライン</span>           <span class="mi">256</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>
-  <span class="err">ディスク</span> <span class="mi">1</span>    <span class="err">オンライン</span>          <span class="mi">2794</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>        <span class="o">*</span>
-  <span class="err">ディスク</span> <span class="mi">2</span>    <span class="err">オンライン</span>          <span class="mi">1024</span> <span class="n">MB</span>  <span class="mi">1024</span> <span class="n">KB</span>
-  <span class="err">ディスク</span> <span class="mi">3</span>    <span class="err">オンライン</span>          <span class="mi">2794</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>        <span class="o">*</span>
-  <span class="err">ディスク</span> <span class="mi">4</span>    <span class="err">オンライン</span>            <span class="mi">29</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>
-</pre></div>
-</td></tr></table>
+  ディスク      状態           サイズ   空き   ダイナ GPT
+  ###                                          ミック
+  ------------  -------------  -------  -------  ---  ---
+  ディスク 0    オンライン           256 GB      0 B
+  ディスク 1    オンライン          2794 GB      0 B        *
+  ディスク 2    オンライン          1024 MB  1024 KB
+  ディスク 3    オンライン          2794 GB      0 B        *
+  ディスク 4    オンライン            29 GB      0 B</code></pre>
+
 
 <h3 id="3">3. ディスクの選択</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">disk</span> <span class="mi">4</span>
+<pre class="codehilite"><code class="linenums">DISKPART&gt; select disk 4
 
-<span class="err">ディスク</span> <span class="mi">4</span> <span class="err">が選択されました。</span>
-</pre></div>
-</td></tr></table>
+ディスク 4 が選択されました。</code></pre>
+
 
 <h3 id="4">4. パーティション情報の削除</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">clean</span>
+<pre class="codehilite"><code class="linenums">DISKPART&gt; clean
 
-<span class="n">DiskPart</span> <span class="err">はディスクを正常にクリーンな状態にしました。</span>
-<span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">list</span> <span class="n">partition</span>
+DiskPart はディスクを正常にクリーンな状態にしました。
+DISKPART&gt; list partition
 
-<span class="err">このディスクには表示するパーティションがありません。</span>
+このディスクには表示するパーティションがありません。
 
-<span class="n">DISKPART</span><span class="o">&gt;</span>
-</pre></div>
-</td></tr></table>
+DISKPART&gt;</code></pre>
+
 
 <h3 id="5">5. パーティションの作成</h3>
 <p>````
@@ -1642,9 +1632,8 @@ DISKPART&gt; create partition primary</p>
 <ul>
 <li>Partition 1    プライマリ               29 GB  1024 KB</li>
 </ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">###</span> <span class="mi">6</span><span class="p">.</span> <span class="err">ファイルシステムの作成とフォーマット</span>
-</pre></div>
-</td></tr></table>
+<pre class="codehilite"><code class="linenums">### 6. ファイルシステムの作成とフォーマット</code></pre>
+
 
 <p>DISKPART&gt; format fs=ntfs quick</p>
 <p>100% 完了しました
@@ -1737,7 +1726,7 @@ DISKPART&gt; create partition primary</p>
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       

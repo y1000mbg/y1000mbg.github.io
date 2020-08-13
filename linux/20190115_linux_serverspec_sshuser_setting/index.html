@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-4.4.3">
     
     
       
@@ -1078,7 +1078,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../vagrant/20190105_msys+vagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
+    <a href="../../vagrant/20190105_msys%2Bvagrant/" title="2019-01-05_MSYS2とVagrantを使う際の注意点" class="md-nav__link">
       2019-01-05_MSYS2とVagrantを使う際の注意点
     </a>
   </li>
@@ -1396,6 +1396,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../windows/20200813_cmd_proxy_setting/" title="2020-08-13_コマンドプロンプトでプロキシを通過する" class="md-nav__link">
+      2020-08-13_コマンドプロンプトでプロキシを通過する
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1484,24 +1496,11 @@ serverspecでssh接続するユーザーをansibleと共通化しようとして
 <p>結論として <code>~/.ssh/config</code> に接続情報(User)を設定すれば対応できます。</p>
 <h3 id="_4">詳細手順</h3>
 <p><code>vim ~/.ssh/config</code>で接続情報を記載します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>##c 凡例
-##c <span class="cp">${</span><span class="n">target_hostname</span><span class="cp">}</span> = 対象のホスト名 / <span class="cp">${</span><span class="n">target_host_ipaddr</span><span class="cp">}</span> = 対象IP / <span class="cp">${</span><span class="n">ssh_user</span><span class="cp">}</span> = ssh接続に使用するユーザー
-Host <span class="cp">${</span><span class="n">target_hostname</span><span class="cp">}</span>
-  HostName <span class="cp">${</span><span class="n">target_host_ipaddr</span><span class="cp">}</span>
-  User <span class="cp">${</span><span class="n">ssh_user</span><span class="cp">}</span>
+<pre class="codehilite"><code class="linenums">##c 凡例
+##c ${target_hostname} = 対象のホスト名 / ${target_host_ipaddr} = 対象IP / ${ssh_user} = ssh接続に使用するユーザー
+Host ${target_hostname}
+  HostName ${target_host_ipaddr}
+  User ${ssh_user}
   Port 22
   IdentityFile ~/.ssh/id_rsa
 
@@ -1510,9 +1509,8 @@ Host ansible-guest
   HostName 192.168.55.94
   User ansible
   Port 22
-  IdentityFile ~/.ssh/id_rsa
-</pre></div>
-</td></tr></table>
+  IdentityFile ~/.ssh/id_rsa</code></pre>
+
 
 <p>初回設定の際にHostにIPアドレス、HostNameにサーバー名を入れてしまい、まったく設定が通らなくハマりました。</p>
                 
@@ -1603,7 +1601,7 @@ Host ansible-guest
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.1.2",url:{base:"../.."}})</script>
       
         <script src="../../search/main.js"></script>
       
