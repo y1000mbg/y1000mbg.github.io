@@ -899,6 +899,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#stat" class="md-nav__link">
+    stat
+  </a>
+  
+</li>
+      
       
       
       
@@ -907,6 +914,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../20200901_dir_ikkatu_create/" title="2020-09-01_ディレクトリを権限とオーナー情報を指定して一括作成したい" class="md-nav__link">
+      2020-09-01_ディレクトリを権限とオーナー情報を指定して一括作成したい
+    </a>
   </li>
 
         
@@ -1695,6 +1714,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#stat" class="md-nav__link">
+    stat
+  </a>
+  
+</li>
+      
       
       
       
@@ -1830,6 +1856,12 @@ date -d &quot;2019-10-01&quot; +&quot;%Y/%m/%d&quot;</code></pre>
 <h3 id="_7">行削除</h3>
 <h4 id="1">先頭1行を削る</h4>
 <pre class="codehilite"><code class="language-bash linenums">sed '1d' ${file_name}</code></pre>
+
+
+<h2 id="stat">stat</h2>
+<p>権限を数値で取得する方法。</p>
+<pre class="codehilite"><code class="language-bash linenums"># 権限(数値) ユーザー名 グループ名 ディレクトリorファイル名
+stat --format='%a %U %G %n' ${target_dir} or ${target_file}</code></pre>
                 
                   
                 
@@ -1865,13 +1897,13 @@ date -d &quot;2019-10-01&quot; +&quot;%Y/%m/%d&quot;</code></pre>
           </a>
         
         
-          <a href="../../msys2/20180702_msys2_install/" title="2018-07-02_Windows10にmsys2の導入" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../20200901_dir_ikkatu_create/" title="2020-09-01_ディレクトリを権限とオーナー情報を指定して一括作成したい" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                2018-07-02_Windows10にmsys2の導入
+                2020-09-01_ディレクトリを権限とオーナー情報を指定して一括作成したい
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
