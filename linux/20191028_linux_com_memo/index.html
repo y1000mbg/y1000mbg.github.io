@@ -904,6 +904,46 @@
     stat
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    権限を数値で取得する方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    testコマンドのオプションとか条件とか
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ファイル・ディレクトリ系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    数値比較系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1719,6 +1759,46 @@
     stat
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    権限を数値で取得する方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    testコマンドのオプションとか条件とか
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    ファイル・ディレクトリ系
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    数値比較系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -1859,9 +1939,83 @@ date -d &quot;2019-10-01&quot; +&quot;%Y/%m/%d&quot;</code></pre>
 
 
 <h2 id="stat">stat</h2>
-<p>権限を数値で取得する方法。</p>
+<h3 id="_8">権限を数値で取得する方法</h3>
 <pre class="codehilite"><code class="language-bash linenums"># 権限(数値) ユーザー名 グループ名 ディレクトリorファイル名
-stat --format='%a %U %G %n' ${target_dir} or ${target_file}</code></pre>
+stat --format='%a %U %G %n' ${target}</code></pre>
+
+
+<h2 id="test">testコマンドのオプションとか条件とか</h2>
+<p>ifでよく使うけど忘れるので。</p>
+<h3 id="_9">ファイル・ディレクトリ系</h3>
+<table>
+<thead>
+<tr>
+<th>オプション</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-e ${taget}</td>
+<td>対象が存在</td>
+</tr>
+<tr>
+<td>-f ${taget}</td>
+<td>対象が通常のファイル</td>
+</tr>
+<tr>
+<td>-d ${taget}</td>
+<td>対象がディレクトリ</td>
+</tr>
+<tr>
+<td>-s ${taget}</td>
+<td>空ファイルでない</td>
+</tr>
+<tr>
+<td>-L ${taget}</td>
+<td>対象がシンボリックリンク</td>
+</tr>
+<tr>
+<td>${taget1} -ef ${taget2}</td>
+<td>対象1が対象2のハードリンク</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_10">数値比較系</h3>
+<table>
+<thead>
+<tr>
+<th>式</th>
+<th>真の条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>${num1} -eq ${num2}</td>
+<td>値1と値2が等しいとき（=）</td>
+</tr>
+<tr>
+<td>${num1} -ne ${num2}</td>
+<td>値1と値2が等しくないとき（!=）</td>
+</tr>
+<tr>
+<td>${num1} -gt ${num2}</td>
+<td>値1が値2より大きいとき（&lt;）</td>
+</tr>
+<tr>
+<td>${num1} -ge ${num2}</td>
+<td>値1が値2より大きいか等しいとき（&lt;=）</td>
+</tr>
+<tr>
+<td>${num1} -lt ${num2}</td>
+<td>値1が値2より小さいとき（&gt;）</td>
+</tr>
+<tr>
+<td>${num1} -le ${num2}</td>
+<td>値1が値2より小さいか等しいとき（&gt;=）</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 

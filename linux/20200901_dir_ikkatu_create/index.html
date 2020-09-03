@@ -1608,28 +1608,28 @@
 </ul>
 <h2 id="_3">流れだけコマンドでさっくり読みたい</h2>
 <p>ザックリとまとめ。詳細解説は別項。</p>
-<pre class="codehilite"><code class="linenums">#作成するリストファイルのベース名
-#移行対象のルートディレクトリ
-list_name='/tmp/dir-list'
-target_dir='/etc/'
+<pre class="codehilite"><code class="linenums">## #作成するリストファイルのベース名
+## #移行対象のルートディレクトリ
+#r list_name='/tmp/dir-list'
+#r target_dir='/etc/'
 
-#移行元ディレクトリリスト作成
-find ${target_dir} -type d | xargs -I{} stat --format='%a %U %G %n' {} | tee -a ${list_name}-origin
+## #移行元ディレクトリリスト作成
+#r find ${target_dir} -type d | xargs -I{} stat --format='%a %U %G %n' {} | tee -a ${list_name}-origin
 
-#同マシンの別ディレクトリに移行するために加工
-cat ${list_name}-origin | sed -e &quot;s@ ${target_dir}@ /tmp/testdir${target_dir}@&quot; | tee ${list_name}-create
+## #同マシンの別ディレクトリに移行するために加工
+#r cat ${list_name}-origin | sed -e &quot;s@ ${target_dir}@ /tmp/testdir${target_dir}@&quot; | tee ${list_name}-create
 
-#加工後のリストをgawkでコマンド化(コマンド内容確認確認)
-cat ${list_name}-create | gawk '{print &quot;install -v -m &quot;$1&quot; -o &quot;$2&quot; -g &quot;$3&quot; -d &quot;$4}' | tee ${list_name}-create-command
+## #加工後のリストをgawkでコマンド化(コマンド内容確認確認)
+#r cat ${list_name}-create | gawk '{print &quot;install -v -m &quot;$1&quot; -o &quot;$2&quot; -g &quot;$3&quot; -d &quot;$4}' | tee ${list_name}-create-command
 
-#作成したコマンドを実行
-cat ${list_name}-create-command | bash -ex
+## #作成したコマンドを実行
+#r cat ${list_name}-create-command | bash -ex
 
-#作成したディレクトリと元ディレクトリを比較用リストを作成
-cat ${list_name}-create | gawk '{print $4}' | xargs -I{} stat --format='%a %U %G %n' {} | sed -e 's@ /tmp/testdir/etc/@ /etc/@' | tee ${list_name}-create-after
+## #作成したディレクトリと元ディレクトリを比較用リストを作成
+#r cat ${list_name}-create | gawk '{print $4}' | xargs -I{} stat --format='%a %U %G %n' {} | sed -e 's@ /tmp/testdir/etc/@ /etc/@' | tee ${list_name}-create-after
 
-#作成したディレクトリと元ディレクトリを比較(差異なしでOK)
-diff -u0 ${list_name}-origin ${list_name}-create-after</code></pre>
+## #作成したディレクトリと元ディレクトリを比較(差異なしでOK)
+#r diff -u0 ${list_name}-origin ${list_name}-create-after</code></pre>
 
 
 <h2 id="_4">詳細について</h2>
@@ -1660,7 +1660,7 @@ diff -u0 ${list_name}-origin ${list_name}-create-after</code></pre>
 
 <h3 id="stat">statコマンドについて</h3>
 <p>次に対象ディレクトリの権限、オーナー情報を取得します。ポイントとしては<code>ls -l</code>コマンドではなく<code>stat</code>コマンドを使用して権限を数値で取得します。後工程のディレクトリ作成で使用する<code>install</code>コマンドの権限指定が数値であるためです。更にコマンド生成に使用するgawkのデフォルト区切り文字である半角スペースでstatコマンドのフォーマットを指定します。
-※<code>chomd</code>や<code>mkdir -m</code>も数値していなのでinstallコマンドを使用しなくても <strong>数値取得のほうが勝手が良いです。 </strong></p>
+※<code>chomd</code>や<code>mkdir -m</code>も数値しているのでinstallコマンドを使用しなくても <strong>数値取得のほうが勝手が良いです。 </strong></p>
 <pre class="codehilite"><code class="linenums">## #凡例
 #r stat --format='%a %U %G %n' ${target_dir} or ${target_file}</code></pre>
 
@@ -1707,7 +1707,7 @@ diff -u0 ${list_name}-origin ${list_name}-create-after</code></pre>
 755 root root /tmp/testdir/etc/pkgconfig/personality.d</code></pre>
 
 
-<p>sedの置換対象の前に半角スペースを入れているのは<code>root /etc/</code>の部分にヒットけるためです。/etc/だけではディレクトリ階層の途中に同じキーワードが存在した場合にヒットしてしまう為。</p>
+<p>sedの置換対象の前に半角スペースを入れているのは<code>root /etc/</code>の部分にヒットさせるためです。/etc/だけではディレクトリ階層の途中に同じキーワードが存在した場合にヒットしてしまいます。</p>
 <h3 id="_8">ディレクトリ作成コマンドリストの作成と実行</h3>
 <p>次にディレクトリ作成用のコマンドリストをgawkで生成します。今回はmkdirではなく <strong>installコマンド </strong>で権限・オーナー情報を一括設定してディレクトリを作成します。
 以下のコマンドでディレクトリ作成コマンドリストを生成し、bashにリダイレクトすることでコマンドを実行します。<code>bash -e</code>でエラー時に停止します。bashの実行を負いたい場合は<code>-x</code>オプションを追加しましょう。</p>
@@ -1723,7 +1723,7 @@ install: creating directory '/tmp/testdir/etc/pkgconfig'
 
 <h3 id="_9">元ディレクトリの比較用リストの作成と比較</h3>
 <p>無事に作成できましたので権限・オーナー情報が元ディレクトリと合致するかを突き合わせます。比較元は<code>/tmp/dir-list(元ディレクトリリスト)</code>と作成したディレクトリリストになります。<code>/tmp/dir-list-create</code>を加工しても良いですが念のためにstatで情報取得し直して付け加えていた<code>/tmp/testdir/</code>を削り今回作成したディレクトリの権限・オーナが合致するかを確認します。
-※dir-list-createで十分かもしれませんが、最新の情報で取得し直したほうがより正確と思ったので態々取得し直しています。</p>
+※dir-list-createで十分かもしれませんが最新の情報で取得し直したほうが、より正確と思ったので態々取得し直しています。</p>
 <pre class="codehilite"><code class="linenums">## #diff比較用リスト作成
 #r cat /tmp/dir-list-creat | gawk '{print $4}' | xargs -I{} stat --format='%a %U %G %n' {} | sed -e 's@ /tmp/testdir/etc/@ /etc/@' | tee /tmp/dir-list-creat-after
 ## #比較実施(差異なしでOK)
@@ -1733,7 +1733,7 @@ install: creating directory '/tmp/testdir/etc/pkgconfig'
 <p>手順は以上になります。</p>
 <h2 id="_10">余談</h2>
 <p>tarballで展開してファイルだけ消せばと思ったりもしますが、意図せぬ巻き込みも怖いので作成する方式を取りました。作成より消込のほうが早かったりした場合は一考するのもアリかと思います。</p>
-<p>久々にOSレイヤーの構築作業やっていて半自動化手順にしたいなぁと思いまとめてみました。多分使いどこrは多いはず……たぶん……きっと。</p>
+<p>久々にOSレイヤーの構築作業やっていて半自動化手順にしたいなぁと思いまとめてみました。多分使いどころは多いはず……たぶん……きっと。</p>
                 
                   
                 
