@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1581,14 +1593,19 @@
 <h2 id="_2">詳細情報</h2>
 <h3 id="_3">コマンドプロンプトのみプロキシ設定する場合</h3>
 <p>http_proxy変数とhttps_proxy変数をsetしてあげればOKです。</p>
-<pre class="codehilite"><code class="linenums">set http_proxy=http://${username}:${password}@${proxyhost}:${port}
-set https_proxy=http://${username}:${password}@${proxyhost}:${port}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>set http_proxy=http://<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>:<span class="cp">${</span><span class="n">password</span><span class="cp">}</span>@<span class="cp">${</span><span class="n">proxyhost</span><span class="cp">}</span>:<span class="cp">${</span><span class="n">port</span><span class="cp">}</span>
+set https_proxy=http://<span class="cp">${</span><span class="n">username</span><span class="cp">}</span>:<span class="cp">${</span><span class="n">password</span><span class="cp">}</span>@<span class="cp">${</span><span class="n">proxyhost</span><span class="cp">}</span>:<span class="cp">${</span><span class="n">port</span><span class="cp">}</span>
 
 #確認
 echo %http_proxy%
-echo %https_proxy%</code></pre>
-
-
+echo %https_proxy%
+</code></pre></div>
+</td></tr></table>
 <h3 id="windows">Windows全体でプロキシ設定する場合</h3>
 <p>環境変数にhttp_proxyとhttps_proxyを登録します。内容は「コマンドプロンプトのみ」と同じです。</p>
 <p>なおvscodeなど一部のアプリケーションは上記の設定をしても環境変数からは参照されないようなのでアプリケーション独自のプロキシ設定が別途必要となります。</p>

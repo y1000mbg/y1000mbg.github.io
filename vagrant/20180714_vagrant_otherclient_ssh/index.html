@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1617,23 +1629,36 @@
 <p>秘密鍵を用意するかsshdの設定でパスワード認証を有効にする必要があります。今回は<strong>後者のパスワード認証を有効化する方法を採用</strong>しました。なおローカルの突発的に建てる検証環境なので<strong>セキュリティは加味してません</strong>。</p>
 <h3 id="_5">設定の変更</h3>
 <p><code>/etc/ssh/sshd_config</code>の<code>PasswordAuthentication no</code>をyesに変更します。</p>
-<pre class="codehilite"><code class="language-bash linenums">##c sedで該当箇所を書き換える(変更前は.bakで保存)
-#r sed -i.bak s/&quot;^PasswordAuthentication no&quot;/&quot;PasswordAuthentication yes&quot;/ /etc/ssh/sshd_config
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">##c sedで該当箇所を書き換える(変更前は.bakで保存)</span>
+<span class="c1">#r sed -i.bak s/&quot;^PasswordAuthentication no&quot;/&quot;PasswordAuthentication yes&quot;/ /etc/ssh/sshd_config</span>
 
-##c 変更箇所をdiff比較
-#r diff /etc/ssh/sshd_config.bak /etc/ssh/sshd_config
+<span class="c1">##c 変更箇所をdiff比較</span>
+<span class="c1">#r diff /etc/ssh/sshd_config.bak /etc/ssh/sshd_config</span>
 65c65
 &lt; PasswordAuthentication no
 ---
 &gt; PasswordAuthentication yes
 
-##c sshdを再起動
-#r systemctl restart sshd</code></pre>
-
-
+<span class="c1">##c sshdを再起動</span>
+<span class="c1">#r systemctl restart sshd</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="_6">接続の確認</h2>
 <p>ほかクライアントからsshでログインできれば設定完了です。</p>
-<pre class="codehilite"><code class="linenums">ssh vagrant@${ip_addr}</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>ssh vagrant@<span class="cp">${</span><span class="n">ip_addr</span><span class="cp">}</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

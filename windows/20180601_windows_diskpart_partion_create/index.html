@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1674,39 +1686,57 @@
 <li>ファイルシステムの作成とフォーマット</li>
 </ol>
 <h3 id="1">1. コマンドプロンプトを管理者権限で起動</h3>
-<pre class="codehilite"><code class="linenums">C:\Users\myuser&gt;diskpart</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">C:\Users\myuser&gt;diskpart</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="2">2. 接続ディスクの確認</h3>
-<pre class="codehilite"><code class="linenums">DISKPART&gt; list disk
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">list</span> <span class="n">disk</span>
 
-  ディスク      状態           サイズ   空き   ダイナ GPT
-  ###                                          ミック
-  ------------  -------------  -------  -------  ---  ---
-  ディスク 0    オンライン           256 GB      0 B
-  ディスク 1    オンライン          2794 GB      0 B        *
-  ディスク 2    オンライン          1024 MB  1024 KB
-  ディスク 3    オンライン          2794 GB      0 B        *
-  ディスク 4    オンライン            29 GB      0 B</code></pre>
-
-
+  <span class="err">ディスク</span>      <span class="err">状態</span>           <span class="err">サイズ</span>   <span class="err">空き</span>   <span class="err">ダイナ</span> <span class="n">GPT</span>
+  <span class="o">###</span>                                          <span class="err">ミック</span>
+  <span class="c1">------------  -------------  -------  -------  ---  ---</span>
+  <span class="err">ディスク</span> <span class="mi">0</span>    <span class="err">オンライン</span>           <span class="mi">256</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>
+  <span class="err">ディスク</span> <span class="mi">1</span>    <span class="err">オンライン</span>          <span class="mi">2794</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>        <span class="o">*</span>
+  <span class="err">ディスク</span> <span class="mi">2</span>    <span class="err">オンライン</span>          <span class="mi">1024</span> <span class="n">MB</span>  <span class="mi">1024</span> <span class="n">KB</span>
+  <span class="err">ディスク</span> <span class="mi">3</span>    <span class="err">オンライン</span>          <span class="mi">2794</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>        <span class="o">*</span>
+  <span class="err">ディスク</span> <span class="mi">4</span>    <span class="err">オンライン</span>            <span class="mi">29</span> <span class="n">GB</span>      <span class="mi">0</span> <span class="n">B</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="3">3. ディスクの選択</h3>
-<pre class="codehilite"><code class="linenums">DISKPART&gt; select disk 4
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">disk</span> <span class="mi">4</span>
 
-ディスク 4 が選択されました。</code></pre>
-
-
+<span class="err">ディスク</span> <span class="mi">4</span> <span class="err">が選択されました。</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="4">4. パーティション情報の削除</h3>
-<pre class="codehilite"><code class="linenums">DISKPART&gt; clean
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">clean</span>
 
-DiskPart はディスクを正常にクリーンな状態にしました。
-DISKPART&gt; list partition
+<span class="n">DiskPart</span> <span class="err">はディスクを正常にクリーンな状態にしました。</span>
+<span class="n">DISKPART</span><span class="o">&gt;</span> <span class="n">list</span> <span class="n">partition</span>
 
-このディスクには表示するパーティションがありません。
+<span class="err">このディスクには表示するパーティションがありません。</span>
 
-DISKPART&gt;</code></pre>
-
-
+<span class="n">DISKPART</span><span class="o">&gt;</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="5">5. パーティションの作成</h3>
 <p>````
 DISKPART&gt; create partition primary</p>
@@ -1717,9 +1747,9 @@ DISKPART&gt; create partition primary</p>
 <ul>
 <li>Partition 1    プライマリ               29 GB  1024 KB</li>
 </ul>
-<pre class="codehilite"><code class="linenums">### 6. ファイルシステムの作成とフォーマット</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">### 6. ファイルシステムの作成とフォーマット</span>
+</code></pre></div>
+</td></tr></table>
 <p>DISKPART&gt; format fs=ntfs quick</p>
 <p>100% 完了しました
 ```</p>

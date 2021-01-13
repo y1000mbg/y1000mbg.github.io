@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1570,16 +1582,23 @@
 </ul>
 <h2 id="_3">概要</h2>
 <p>vagrant up 時に下記のようなエラーが表示されboxが起動できない場合がありました。初回にvmが作成された際のUUIDと今作成しようとしているUUIDに齟齬が出てしまっている状態です。</p>
-<pre class="codehilite"><code class="linenums">$c vagrant.exe up
-The VirtualBox VM was created with a user that doesn't match the
-current user running Vagrant. VirtualBox requires that the same user
-be used to manage the VM that was created. Please re-run Vagrant with
-that user. This is not a Vagrant issue.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">$</span><span class="k">c</span> <span class="n">vagrant</span><span class="p">.</span><span class="n">exe</span> <span class="n">up</span>
+<span class="n">The</span> <span class="n">VirtualBox</span> <span class="n">VM</span> <span class="n">was</span> <span class="n">created</span> <span class="k">with</span> <span class="n">a</span> <span class="k">user</span> <span class="n">that</span> <span class="n">doesn</span><span class="err">&#39;</span><span class="n">t</span> <span class="k">match</span> <span class="n">the</span>
+<span class="k">current</span> <span class="k">user</span> <span class="n">running</span> <span class="n">Vagrant</span><span class="p">.</span> <span class="n">VirtualBox</span> <span class="n">requires</span> <span class="n">that</span> <span class="n">the</span> <span class="n">same</span> <span class="k">user</span>
+<span class="n">be</span> <span class="n">used</span> <span class="k">to</span> <span class="n">manage</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">that</span> <span class="n">was</span> <span class="n">created</span><span class="p">.</span> <span class="n">Please</span> <span class="n">re</span><span class="o">-</span><span class="n">run</span> <span class="n">Vagrant</span> <span class="k">with</span>
+<span class="n">that</span> <span class="k">user</span><span class="p">.</span> <span class="n">This</span> <span class="k">is</span> <span class="k">not</span> <span class="n">a</span> <span class="n">Vagrant</span> <span class="n">issue</span><span class="p">.</span>
 
-The UID used to create the VM was: 1000
-Your UID is: 0</code></pre>
-
-
+<span class="n">The</span> <span class="n">UID</span> <span class="n">used</span> <span class="k">to</span> <span class="k">create</span> <span class="n">the</span> <span class="n">VM</span> <span class="n">was</span><span class="p">:</span> <span class="mi">1000</span>
+<span class="n">Your</span> <span class="n">UID</span> <span class="k">is</span><span class="p">:</span> <span class="mi">0</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="_4">対処法</h2>
 <ul>
 <li>.vagrantフォルダを削除</li>

@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1562,14 +1574,15 @@
 <p>Windowsでyumやaptのようにコマンドベースでアプリケーションをインストールできます。VirtualBoxやgitやVSCodeなどプログラム開発で使用するアプリケーションが提供されています。</p>
 <h2 id="chocolatey">Chocolateyのインストール</h2>
 <p>PowerShellを管理者権限で起動し下記のコマンドでインストールします。</p>
-<pre class="codehilite"><code class="linenums">#r Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">#r Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="_2">パッケージをインストール</h2>
-<pre class="codehilite"><code class="linenums">#r pkg_name=virtualbox
-#r choco install -y ${pkg_name}</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#r pkg_name=virtualbox
+#r choco install -y <span class="cp">${</span><span class="n">pkg_name</span><span class="cp">}</span>
+</code></pre></div>
+</td></tr></table>
 <p>インストールしたパッケージ</p>
 <ul>
 <li>virtualbox</li>
@@ -1582,7 +1595,9 @@
 <p>※msys2インストール時は文字コードをutf8にしないとインストール時のログが文字化けします。
 インストール後は問題なし。</p>
 <h2 id="_3">パッケージをアップグレード</h2>
-<pre class="codehilite"><code class="linenums">#r chocolatey upgrade ${pkg_name}</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>#r chocolatey upgrade <span class="cp">${</span><span class="n">pkg_name</span><span class="cp">}</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

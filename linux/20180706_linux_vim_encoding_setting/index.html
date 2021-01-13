@@ -983,6 +983,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1632,12 +1644,15 @@
 <p>${line_code}は <strong>unix</strong> (LF) , <strong>dos</strong> (CRLF) , <strong>mac</strong> (CR) を指定できます。太字が指定できる改行コードで括弧内は対応する形式です。</p>
 <h2 id="_4">デフォルトを設定</h2>
 <p>.vimrcに指定したい項目を書き込みます。注意点としてはvimのコマンドモードではないので先頭の : は不要です。</p>
-<pre class="codehilite"><code class="linenums">&quot; 文字コードをUTF-8に指定
-set encoding=utf-8
-&quot; 改行コードをLFに指定
-set ff=unix</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">&quot; 文字コードをUTF-8に指定</span>
+<span class="err">set encoding=utf-8</span>
+<span class="err">&quot; 改行コードをLFに指定</span>
+<span class="err">set ff=unix</span>
+</code></pre></div>
+</td></tr></table>
 <p>設定できたらwindowsのgvimは再起動。linuxのvimは<code>source .vimrc</code>で設定ファイルを再読込すれば反映されます。</p>
                 
                   

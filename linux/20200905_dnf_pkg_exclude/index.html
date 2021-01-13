@@ -1009,6 +1009,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1627,39 +1639,59 @@
 <p><code>--exclude=${pkg_name}</code>オプションを使用します。</p>
 <p>以下のようなにオプションを指定するとdnfの検索対象から除外されます。また、半角スペースで区切ることで複数パッケージを除外対象にできたり、正規表現が使えたりします。</p>
 <p><code>--exclude='httpd kernel*'</code></p>
-<pre class="codehilite"><code class="linenums">## #オプションを指定
-## #パッケージが見つからない=除外されている。
-#r dnf install --exclude='httpd' httpd
-エラー: 一致するものが見つかりません: httpd
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">##</span> <span class="o">#</span><span class="err">オプションを指定</span>
+<span class="o">##</span> <span class="o">#</span><span class="err">パッケージが見つからない</span><span class="o">=</span><span class="err">除外されている。</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">dnf</span> <span class="n">install</span> <span class="c1">--exclude=&#39;httpd&#39; httpd</span>
+<span class="err">エラー</span><span class="p">:</span> <span class="err">一致するものが見つかりません</span><span class="p">:</span> <span class="n">httpd</span>
 
-## #通常時の挙動(問題なくインストール可能)
-#r dnf install httpd
-依存関係が解決しました。
-=========================================================================================
- Package                    Architecture   Version                 Repository       Size
-=========================================================================================
-インストール:
- httpd 
-...以下省略...</code></pre>
-
-
+<span class="o">##</span> <span class="o">#</span><span class="err">通常時の挙動</span><span class="p">(</span><span class="err">問題なくインストール可能</span><span class="p">)</span>
+<span class="o">#</span><span class="n">r</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">httpd</span>
+<span class="err">依存関係が解決しました。</span>
+<span class="o">=========================================================================================</span>
+ <span class="n">Package</span>                    <span class="n">Architecture</span>   <span class="k">Version</span>                 <span class="n">Repository</span>       <span class="k">Size</span>
+<span class="o">=========================================================================================</span>
+<span class="err">インストール</span><span class="p">:</span>
+ <span class="n">httpd</span> 
+<span class="p">...</span><span class="err">以下省略</span><span class="p">...</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="_4">設定ファイルを使用する</h3>
 <p>コマンドに毎回オプションを付けるのは大変なのでdnf.confで設定するとオプションを付けなくても、除外設定が有効になります。</p>
 <ul>
 <li>対象ファイル: /etc/dnf/dnf.conf</li>
 </ul>
 <p>記述する内容は<code>excludepkgs=${pkg_name}</code>となります。オプション指定同様に複数パッケージや正規表現も使用できます。</p>
-<pre class="codehilite"><code class="linenums">## #記載の参考(diff結果)
-#r diff -u0 /etc/dnf/dnf.conf.org /etc/dnf/dnf.conf
---- /etc/dnf/dnf.conf.org       2020-02-04 20:25:57.000000000 +0900
-+++ /etc/dnf/dnf.conf   2020-09-04 18:54:36.590613200 +0900
-@@ -4,0 +5 @@
-+excludepkgs='httpd'</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">## #記載の参考(diff結果)</span>
+<span class="err">#r diff -u0 /etc/dnf/dnf.conf.org /etc/dnf/dnf.conf</span>
+<span class="err">--- /etc/dnf/dnf.conf.org       2020-02-04 20:25:57.000000000 +0900</span>
+<span class="err">+++ /etc/dnf/dnf.conf   2020-09-04 18:54:36.590613200 +0900</span>
+<span class="err">@@ -4,0 +5 @@</span>
+<span class="err">+excludepkgs=&#39;httpd&#39;</span>
+</code></pre></div>
+</td></tr></table>
 <h4 id="_5">設定済みの除外設定を一時的に無効にしてコマンド実行</h4>
 <p>設定済みの除外設定を一時的に無効にしたいタイミングがあると思います。confファイル書き換えなくても<code>--disableexcludes=all</code>オプションを指定することで除外設定がコマンド実行のタイミングのみ無効化されます。</p>
-<pre class="codehilite"><code class="linenums">dnf install httpd --disableexcludes=all</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">dnf install httpd --disableexcludes=all</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

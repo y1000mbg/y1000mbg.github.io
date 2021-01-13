@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1553,17 +1565,29 @@
 <li>OS: fedora31(WSL)</li>
 </ul>
 <h2 id="_3">詳細</h2>
-<pre class="codehilite"><code class="language-bash linenums">## #langpackをインストール
-#r dnf install glibc-langpack-ja
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">## #langpackをインストール</span>
+<span class="c1">#r dnf install glibc-langpack-ja</span>
 
-## #環境変数を設定
-#r cp -p /etc/profile /etc/profile.org
-#r cat &lt;&lt; 'EOF' &gt;&gt; /etc/profile
+<span class="c1">## #環境変数を設定</span>
+<span class="c1">#r cp -p /etc/profile /etc/profile.org</span>
+<span class="c1">#r cat &lt;&lt; &#39;EOF&#39; &gt;&gt; /etc/profile</span>
 
-export LANG=ja_JP.UTF-8
+<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>ja_JP.UTF-8
 EOF
 
-#r diff -u0 /etc/profile.org /etc/profile</code></pre>
+<span class="c1">#r diff -u0 /etc/profile.org /etc/profile</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

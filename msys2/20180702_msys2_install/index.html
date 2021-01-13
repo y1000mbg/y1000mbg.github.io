@@ -982,6 +982,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1578,23 +1590,29 @@
 <br style="clear:left;"></p>
 <h3 id="_3">パッケージの更新</h3>
 <p>msys2はArch Linuxに採用されているPacmanが搭載されています。まず最初に下記コマンドでパッケージを最新の状態に更新しましょう。</p>
-<pre class="codehilite"><code class="linenums">Pacman -Su</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">Pacman -Su</span>
+</code></pre></div>
+</td></tr></table>
 <p>一部のコアパッケージを更新する際に再起動が必要になります。下記のように警告が表示されたら×ボタンでターミナルを閉じます。更新が終了してないと思うのでもう1回ターミナルを起動し直し更新コマンド再び投下します。</p>
-<pre class="codehilite"><code class="linenums">警告: terminate MSYS2 without returning to shell and check for updates again
-警告: for example close your terminal window instead of calling exit</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">警告</span><span class="o">:</span> <span class="n">terminate</span> <span class="n">MSYS2</span> <span class="n">without</span> <span class="n">returning</span> <span class="n">to</span> <span class="n">shell</span> <span class="n">and</span> <span class="n">check</span> <span class="k">for</span> <span class="n">updates</span> <span class="n">again</span>
+<span class="err">警告</span><span class="o">:</span> <span class="k">for</span> <span class="n">example</span> <span class="n">close</span> <span class="n">your</span> <span class="n">terminal</span> <span class="n">window</span> <span class="n">instead</span> <span class="n">of</span> <span class="n">calling</span> <span class="n">exit</span>
+</code></pre></div>
+</td></tr></table>
 <p>更新コマンドを投下しても下記の用に表示されれば全てのパッケージは更新完了です。</p>
-<pre class="codehilite"><code class="language-starting linenums">:: Starting core system upgrade...
- 何も行うことがありません
-:: システム全体の更新を開始...
- 何も行うことがありません</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">:: Starting core system upgrade...</span>
+<span class="err"> 何も行うことがありません</span>
+<span class="err">:: システム全体の更新を開始...</span>
+<span class="err"> 何も行うことがありません</span>
+</code></pre></div>
+</td></tr></table>
 <p>パッケージのインストールは下記のように<code>pacman -S ${pkg_name}</code>で実施します。</p>
-<pre class="codehilite"><code class="linenums">pacman -S vim git</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">pacman -S vim git</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

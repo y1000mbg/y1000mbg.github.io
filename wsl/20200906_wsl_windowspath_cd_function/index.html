@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1582,35 +1594,45 @@ WSL上でWindowsのディレクトリパスをLinux表記に変換して移動�
 </ul>
 <h2 id="function">functionの内容</h2>
 <p>手っ取り早くfunctionは以下のとおりです。</p>
-<pre class="codehilite"><code class="language-bash linenums">function wcd (){
-    read -rp &quot;Type WindowsDir&gt;&quot; wd
-    cd &quot;$(wslpath &quot;$wd&quot;)&quot;
-    echo &quot;pwd&gt; `pwd`&quot;
-}</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="k">function</span> wcd <span class="o">(){</span>
+    <span class="nb">read</span> -rp <span class="s2">&quot;Type WindowsDir&gt;&quot;</span> wd
+    <span class="nb">cd</span> <span class="s2">&quot;</span><span class="k">$(</span>wslpath <span class="s2">&quot;</span><span class="nv">$wd</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;pwd&gt; `pwd`&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="_3">詳細の説明</h3>
 <p>WSLではWindowsパスを変換するコマンドにwslpathコマンドが用意されています。
 例えば以下のようWindowsパスを渡してあげるとWSL上のパスに変換してくれます。</p>
-<pre class="codehilite"><code class="language-bash linenums">#r wslpath &quot;C:\Users\winu\Desktop&quot;
-   /mnt/c/Users/winu/Desktop</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">#r wslpath &quot;C:\Users\winu\Desktop&quot;</span>
+   /mnt/c/Users/winu/Desktop
+</code></pre></div>
+</td></tr></table>
 <p>で、毎回wslpathで変換してcdで移動するのめんどくさいなと思い上記のfunctionを書くわけですが
 躓きポイントが結構ありました。</p>
 <p>まず次の様なコマンドを組み立てます。</p>
-<pre class="codehilite"><code class="language-bash linenums">windows_dir=&quot;C:\Users\winu\Desktop&quot;
-cd $(wslpath &quot;${windows_dir}&quot;)</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">windows_dir</span><span class="o">=</span><span class="s2">&quot;C:\Users\winu\Desktop&quot;</span>
+<span class="nb">cd</span> <span class="k">$(</span>wslpath <span class="s2">&quot;</span><span class="si">${</span><span class="nv">windows_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+</code></pre></div>
+</td></tr></table>
 <p>このコマンドはうまいこと動作してくれますが、問題はWindowsパスに半角スペースが入った場合。例えば次のようなパターン。</p>
-<pre class="codehilite"><code class="language-bash linenums">windows_dir=&quot;C:\Program Files&quot;
-cd $(wslpath &quot;${windows_dir}&quot;)
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nv">windows_dir</span><span class="o">=</span><span class="s2">&quot;C:\Program Files&quot;</span>
+<span class="nb">cd</span> <span class="k">$(</span>wslpath <span class="s2">&quot;</span><span class="si">${</span><span class="nv">windows_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
 
-## 実行結果
--bash: cd: too many arguments</code></pre>
-
-
+<span class="c1">## 実行結果</span>
+-bash: cd: too many arguments
+</code></pre></div>
+</td></tr></table>
 <p>cdの引数が複数あるよと怒られてしまいます。wslpathの変換結果が<code>/mnt/c/Program△Files</code>（※△は半角スペースを明示的に表記）となっておりProgramとFilesの間に半角スペースが含まれておりcdの引数が２つになってしまいました。</p>
 <p>この場合はダブルクォートやシングルクォートで囲んであげれば良いのですが既にwslpathの引数でダブルクォートで囲っており結構悩みました。シングルクォートで囲むと変数が展開されないのでダブルクォートで更に囲んであげる必要があります。</p>
 <p>試行錯誤の結果<code>cd "$(wslpath "$wd")"</code>となりました。wslpathで変換された/mnt/c/Program△Filesがcdの引数に渡る際に更にダブルクォートで囲われている為、半角スペースが入っていても一つの引数として認識されます。</p>

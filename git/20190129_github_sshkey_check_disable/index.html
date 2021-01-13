@@ -976,6 +976,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1550,9 +1562,9 @@
 </ul>
 <p>githubへ初回接続時にssh鍵の確認が行われ下記のように応答を求められます。
 シェルなどで自動化している場合は応答できないため確認自体を無効化する方法をまとめました。</p>
-<pre class="codehilite"><code class="linenums">Are you sure you want to continue connecting (yes/no)?</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">Are you sure you want to continue connecting (yes/no)?</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="_2">環境</h2>
 <ul>
 <li>OS: Ubuntu 16.04</li>
@@ -1560,7 +1572,9 @@
 </ul>
 <h2 id="_3">設定方法</h2>
 <p>sshのconfig設定に書きを追加すれば応答はなくなります。</p>
-<pre class="codehilite"><code class="language-bash linenums">echo -e &quot;Host github.com\n\tStrictHostKeyChecking no\n&quot; &gt;&gt; ~/.ssh/config</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">echo</span> -e <span class="s2">&quot;Host github.com\n\tStrictHostKeyChecking no\n&quot;</span> &gt;&gt; ~/.ssh/config
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

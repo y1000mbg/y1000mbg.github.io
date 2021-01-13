@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1647,31 +1659,39 @@
 <h3 id="_4">調査結果の詳細</h3>
 <p>ビルド対象のファイルは日別作成されたmdファイルとなります。320ファイル程たまっており、１ファイルの文量は大したことありません。多くても7KBちょっとです。</p>
 <p>測定はtimeコマンドで実施しています。</p>
-<pre class="codehilite"><code class="language-bash linenums">#r time mkdocs build</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">#r time mkdocs build</span>
+</code></pre></div>
+</td></tr></table>
 <h4 id="a-320">パターンA: 320ファイルをビルド</h4>
 <p>通常時のビルド時間です。1分13秒かかっていることが分かります。</p>
-<pre class="codehilite"><code class="linenums">real    1m13.962s
-user    0m59.847s
-sys     0m2.493s</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">real    1m13.962s</span>
+<span class="err">user    0m59.847s</span>
+<span class="err">sys     0m2.493s</span>
+</code></pre></div>
+</td></tr></table>
 <h4 id="b">パターンB: ファイル数を増やしての測定</h4>
 <p>320ファイルをコピーして倍の640ファイルでビルド時間を測定。
 ビルド時間は倍以上の3分47秒に増えてしまいました……</p>
-<pre class="codehilite"><code class="linenums">real    3m47.805s
-user    3m14.666s
-sys     0m8.430s</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">real    3m47.805s</span>
+<span class="err">user    3m14.666s</span>
+<span class="err">sys     0m8.430s</span>
+</code></pre></div>
+</td></tr></table>
 <h4 id="b_1">パターンB: ファイル数を減らしての測定</h4>
 <p>日次ファイルを結合して月次ファイルにしファイル数を12ファイルにしてビルド時間を測定。単純に結合しただけなので、ファイルの内容に差異はなく、１ファイルの容量は増えている。</p>
 <p><strong>1分13秒が17秒まで短縮された。</strong></p>
 <p>mkdocsがビルド時に複数ファイルを並列処理しているか分からないが、ビルド対象ファイル数でビルド時間は大幅に変わるようだ。</p>
-<pre class="codehilite"><code class="linenums">real    0m17.778s
-user    0m12.883s
-sys     0m0.884s</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">real    0m17.778s</span>
+<span class="err">user    0m12.883s</span>
+<span class="err">sys     0m0.884s</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

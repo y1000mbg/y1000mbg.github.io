@@ -989,6 +989,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1585,15 +1597,25 @@
 </ol>
 <h2 id="_3">備考</h2>
 <h3 id="_4">書き換え時のコマンド</h3>
-<pre class="codehilite"><code class="linenums">##c 該当箇所の書き換え
-$ sed -i.bak s/'rem set MSYS=winsymlinks:nativestrict'/'set MSYS=winsymlinks:nativestrict'/ /c/msys64/msys2_shell.cmd
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">##</span><span class="k">c</span> <span class="err">該当箇所の書き換え</span>
+<span class="err">$</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span><span class="p">.</span><span class="n">bak</span> <span class="n">s</span><span class="o">/</span><span class="s1">&#39;rem set MSYS=winsymlinks:nativestrict&#39;</span><span class="o">/</span><span class="s1">&#39;set MSYS=winsymlinks:nativestrict&#39;</span><span class="o">/</span> <span class="o">/</span><span class="k">c</span><span class="o">/</span><span class="n">msys64</span><span class="o">/</span><span class="n">msys2_shell</span><span class="p">.</span><span class="n">cmd</span>
 
-##c 比較
-$ diff /c/msys64/msys2_shell.cmd /c/msys64/msys2_shell.cmd.bak
-9c9
-&lt; set MSYS=winsymlinks:nativestrict
----
-&gt; rem set MSYS=winsymlinks:nativestrict</code></pre>
+<span class="o">##</span><span class="k">c</span> <span class="err">比較</span>
+<span class="err">$</span> <span class="n">diff</span> <span class="o">/</span><span class="k">c</span><span class="o">/</span><span class="n">msys64</span><span class="o">/</span><span class="n">msys2_shell</span><span class="p">.</span><span class="n">cmd</span> <span class="o">/</span><span class="k">c</span><span class="o">/</span><span class="n">msys64</span><span class="o">/</span><span class="n">msys2_shell</span><span class="p">.</span><span class="n">cmd</span><span class="p">.</span><span class="n">bak</span>
+<span class="mi">9</span><span class="n">c9</span>
+<span class="o">&lt;</span> <span class="k">set</span> <span class="n">MSYS</span><span class="o">=</span><span class="n">winsymlinks</span><span class="p">:</span><span class="n">nativestrict</span>
+<span class="c1">---</span>
+<span class="o">&gt;</span> <span class="n">rem</span> <span class="k">set</span> <span class="n">MSYS</span><span class="o">=</span><span class="n">winsymlinks</span><span class="p">:</span><span class="n">nativestrict</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

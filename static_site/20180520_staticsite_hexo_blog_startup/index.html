@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1706,65 +1718,92 @@
 </ul>
 <h2 id="nodejs">node.jsのインストール</h2>
 <p><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Installing Node.js via package manager | Node.js</a></p>
-<pre class="codehilite"><code class="linenums">$c curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-$c sudo apt-get install -y nodejs</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">$c curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -</span>
+<span class="err">$c sudo apt-get install -y nodejs</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="hexo">hexoのインストール</h2>
-<pre class="codehilite"><code class="linenums">$c sudo npm install -g hexo</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">$c sudo npm install -g hexo</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="_3">ブログの作成</h2>
 <h3 id="_4">雛形の生成</h3>
-<pre class="codehilite"><code class="linenums">##c 凡例
-##c hexo init ${blog名}
-$c hexo init testblog</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>##c 凡例
+##c hexo init <span class="cp">${</span><span class="n">blog名</span><span class="cp">}</span>
+<span class="nv">$c</span> hexo init testblog
+</code></pre></div>
+</td></tr></table>
 <h3 id="_5">ローカル環境での確認</h3>
 <p>下記コマンドでhttp://localhost:4000でサーバーが起動します。</p>
-<pre class="codehilite"><code class="linenums">$c hexo server</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">$c hexo server</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="github-pages">github pagesに公開</h2>
 <h3 id="github-pages_1">github pages用リポジトリーを作成</h3>
 <p>リポジトリー名を下記の形式で作成します。</p>
-<pre class="codehilite"><code class="linenums">${username}.github.io</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="cp">${</span><span class="n">username</span><span class="cp">}</span>.github.io
+</code></pre></div>
+</td></tr></table>
 <h3 id="hexo_1">hexoのブログ設定の変更</h3>
 <p>hexoで作成したディレクトリ直下にconfig.ymlファイルがあり設定情報を記載します。下記は変更点のdiff比較です。</p>
-<pre class="codehilite"><code class="linenums">$c git diff -U0 -no-index config.yml.org cnfig.yml
-diff --git a/_config.yml.org b/_config.yml
-index b6bbdf4..6e0f0fe 100644
---- a/_config.yml.org
-+++ b/_config.yml
-@@ -6 +6 @@
--title: Hexo
-+title: testblog
-@@ -11,2 +11,2 @@ author: John Doe
--language:
--timezone:
-+language: ja
-+timezone: Asia/Tokyo
-@@ -16 +16 @@ timezone:
--url: http://yoursite.com
-+url: http://y1000mbg.github.io.git
-@@ -81 +81,3 @@ deploy:
--  type:
-+  type: git
-+  repo: git@github.com:y1000mbg/y1000mbg.github.io.git
-+  branch : master</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">$c git diff -U0 -no-index config.yml.org cnfig.yml</span>
+<span class="err">diff --git a/_config.yml.org b/_config.yml</span>
+<span class="err">index b6bbdf4..6e0f0fe 100644</span>
+<span class="err">--- a/_config.yml.org</span>
+<span class="err">+++ b/_config.yml</span>
+<span class="err">@@ -6 +6 @@</span>
+<span class="c">-title: Hexo</span>
+<span class="err">+title: testblog</span>
+<span class="err">@@ -11,2 +11,2 @@ author: John Doe</span>
+<span class="c">-language:</span>
+<span class="c">-timezone:</span>
+<span class="err">+language: ja</span>
+<span class="err">+timezone: Asia/Tokyo</span>
+<span class="err">@@ -16 +16 @@ timezone:</span>
+<span class="c">-url: http://yoursite.com</span>
+<span class="err">+url: http://y1000mbg.github.io.git</span>
+<span class="err">@@ -81 +81,3 @@ deploy:</span>
+<span class="err">-  type:</span>
+<span class="err">+  type: git</span>
+<span class="err">+  repo: git@github.com:y1000mbg/y1000mbg.github.io.git</span>
+<span class="err">+  branch : master</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="github">githubへデプロイ</h3>
-<pre class="codehilite"><code class="linenums">## デプロイツールをインストール
-$c sudo npm install hexo-deployer-git --save
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">##</span> <span class="err">デプロイツールをインストール</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="n">hexo</span><span class="o">-</span><span class="n">deployer</span><span class="o">-</span><span class="n">git</span> <span class="c1">--save</span>
 
-## デプロイ
-$c hexo deploy -g</code></pre>
-
-
+<span class="o">##</span> <span class="err">デプロイ</span>
+<span class="err">$</span><span class="k">c</span> <span class="n">hexo</span> <span class="n">deploy</span> <span class="o">-</span><span class="k">g</span>
+</code></pre></div>
+</td></tr></table>
 <h2 id="_6">複数の環境で作業する際</h2>
 <p>githubのリポジトリからcloneすれば、複数環境でお手軽に編集できるのではと考えていましたが<strong><em>間違いです。</em></strong><br />
 githubにデプロイされるのは、あくまで静的ファイル（html）なのでcloneしても当然ながらhexoではデプロイできません。</p>
@@ -1789,7 +1828,7 @@ githubにデプロイされるのは、あくまで静的ファイル（html）�
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../other/20191118_mobilephone_apn/" title="2019-11-19_使っているモバイル回線のAPNまとめ（自分用）" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1798,7 +1837,7 @@ githubにデプロイされるのは、あくまで静的ファイル（html）�
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                2019-11-19_使っているモバイル回線のAPNまとめ（自分用）
+                過去の小ネタメモ
               </span>
             </div>
           </a>

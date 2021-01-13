@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1597,46 +1609,78 @@
 <h2 id="_3">対応方法</h2>
 <h3 id="powershell">PowerShellを使う方法</h3>
 <p>最近のWindowsに標準搭載されているPowerShellには便利なことにポート確認できるコマンドが搭載されています。</p>
-<pre class="codehilite"><code class="language-powershell linenums">Test-NetConnection ${Target} -Port ${port}</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="nb">Test-NetConnection</span> <span class="p">${</span><span class="n">Target</span><span class="p">}</span> <span class="n">-Port</span> <span class="p">${</span><span class="n">port</span><span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
 <p>TcpTestSucceededが<strong>Trueの場合はPortが開いて</strong>います。テスト環境で立ち上げたVagrantで構築しているfedoraに向けて実行してみました。</p>
-<pre class="codehilite"><code class="language-powershell linenums">##c 疎通確認
-PS C:\WINDOWS\system32&gt; ping  fedora30
-fedora30.local [fe80::a00:27ff:fe82:6c5%18]に ping を送信しています 32 バイトのデータ:
-fe80::a00:27ff:fe82:6c5%18 からの応答: 時間 &lt;1ms
-fe80::a00:27ff:fe82:6c5%18 からの応答: 時間 &lt;1ms
-fe80::a00:27ff:fe82:6c5%18 からの応答: 時間 &lt;1ms
-fe80::a00:27ff:fe82:6c5%18 からの応答: 時間 &lt;1ms
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c">##c 疎通確認</span>
+<span class="nb">PS </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="n">ping</span>  <span class="n">fedora30</span>
+<span class="n">fedora30</span><span class="p">.</span><span class="n">local</span> <span class="p">[</span><span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span><span class="p">]</span><span class="n">に</span> <span class="n">ping</span> <span class="n">を送信しています</span> <span class="n">32</span> <span class="n">バイトのデータ</span><span class="err">:</span>
+<span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span> <span class="n">からの応答</span><span class="err">:</span> <span class="n">時間</span> <span class="p">&lt;</span><span class="n">1ms</span>
+<span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span> <span class="n">からの応答</span><span class="err">:</span> <span class="n">時間</span> <span class="p">&lt;</span><span class="n">1ms</span>
+<span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span> <span class="n">からの応答</span><span class="err">:</span> <span class="n">時間</span> <span class="p">&lt;</span><span class="n">1ms</span>
+<span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span> <span class="n">からの応答</span><span class="err">:</span> <span class="n">時間</span> <span class="p">&lt;</span><span class="n">1ms</span>
 
-fe80::a00:27ff:fe82:6c5%18 の ping 統計:
-    パケット数: 送信 = 4、受信 = 4、損失 = 0 (0% の損失)、
-ラウンド トリップの概算時間 (ミリ秒):
-    最小 = 0ms、最大 = 0ms、平均 = 0ms
-PS C:\WINDOWS\system32&gt;
+<span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span> <span class="n">の</span> <span class="n">ping</span> <span class="n">統計</span><span class="err">:</span>
+    <span class="n">パケット数</span><span class="err">:</span> <span class="n">送信</span> <span class="p">=</span> <span class="n">4</span><span class="err">、</span><span class="n">受信</span> <span class="p">=</span> <span class="n">4</span><span class="err">、</span><span class="n">損失</span> <span class="p">=</span> <span class="n">0</span> <span class="p">(</span><span class="n">0</span><span class="p">%</span> <span class="n">の損失</span><span class="p">)</span><span class="err">、</span>
+<span class="n">ラウンド</span> <span class="n">トリップの概算時間</span> <span class="p">(</span><span class="n">ミリ秒</span><span class="p">)</span><span class="err">:</span>
+    <span class="n">最小</span> <span class="p">=</span> <span class="n">0ms</span><span class="err">、</span><span class="n">最大</span> <span class="p">=</span> <span class="n">0ms</span><span class="err">、</span><span class="n">平均</span> <span class="p">=</span> <span class="n">0ms</span>
+<span class="nb">PS </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span>
 
 
-##c ポートが空いているかの確認
-PS C:\WINDOWS\system32&gt; Test-NetConnection fedora30 -Port 22
-ComputerName     : fedora30
-RemoteAddress    : fe80::a00:27ff:fe82:6c5%18
-RemotePort       : 22
-InterfaceAlias   : eth1
-SourceAddress    : fe80::441c:d73:2803:94e2%18
-TcpTestSucceeded : True
-PS C:\WINDOWS\system32&gt;</code></pre>
-
-
+<span class="c">##c ポートが空いているかの確認</span>
+<span class="nb">PS </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span> <span class="nb">Test-NetConnection</span> <span class="n">fedora30</span> <span class="n">-Port</span> <span class="n">22</span>
+<span class="n">ComputerName</span>     <span class="err">:</span> <span class="n">fedora30</span>
+<span class="n">RemoteAddress</span>    <span class="err">:</span> <span class="n">fe80</span><span class="p">::</span><span class="n">a00</span><span class="err">:</span><span class="n">27ff</span><span class="err">:</span><span class="n">fe82</span><span class="err">:</span><span class="n">6c5</span><span class="k">%</span><span class="n">18</span>
+<span class="n">RemotePort</span>       <span class="err">:</span> <span class="n">22</span>
+<span class="n">InterfaceAlias</span>   <span class="err">:</span> <span class="n">eth1</span>
+<span class="n">SourceAddress</span>    <span class="err">:</span> <span class="n">fe80</span><span class="p">::</span><span class="n">441c</span><span class="err">:</span><span class="n">d73</span><span class="err">:</span><span class="n">2803</span><span class="err">:</span><span class="n">94e2</span><span class="k">%</span><span class="n">18</span>
+<span class="n">TcpTestSucceeded</span> <span class="err">:</span> <span class="n">True</span>
+<span class="nb">PS </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">WINDOWS</span><span class="p">\</span><span class="n">system32</span><span class="p">&gt;</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="ftp">ftpコマンドを使う</h3>
 <p>ftpコマンドはWindows標準で使用できます。</p>
-<pre class="codehilite"><code class="linenums">PS C:\WINDOWS\system32&gt; ftp
-ftp&gt; open fedora30 22
-fedora30.local に接続しました。
-SSH-2.0-OpenSSH_7.9
-アクティブなすべてのデータ接続を中止しています... ##c Ctrl+cで抜けてます。
-接続がリモート ホストによって閉じられました。
-ftp&gt; quit
-PS C:\WINDOWS\system32&gt;</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">PS C:\WINDOWS\system32&gt; ftp</span>
+<span class="err">ftp&gt; open fedora30 22</span>
+<span class="err">fedora30.local に接続しました。</span>
+<span class="err">SSH-2.0-OpenSSH_7.9</span>
+<span class="err">アクティブなすべてのデータ接続を中止しています... ##c Ctrl+cで抜けてます。</span>
+<span class="err">接続がリモート ホストによって閉じられました。</span>
+<span class="err">ftp&gt; quit</span>
+<span class="err">PS C:\WINDOWS\system32&gt;</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

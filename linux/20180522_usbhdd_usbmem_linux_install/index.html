@@ -1045,6 +1045,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1723,19 +1735,23 @@
 <h3 id="1">1. インストール先メディアを接続</h3>
 <p>Ubuntuは外部メディアが接続されると自動でマウントされます。
 fidiskコマンドなどを使用しデバイス名を特定します。</p>
-<pre class="codehilite"><code class="linenums">$c sudo fdisk -l</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">$c sudo fdisk -l</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="2-virtualboxhddvdi">2. VirtualBoxから実HDD（インストール先メディア）を扱う為のVDIを作成</h3>
 <p>VirtualBoxでは実ディスクをそのまま取り扱えません。<br />
 実ディスクと紐付けるvdiファイルを作成し、vdiファイル経由で実ディスクにアクセスします。</p>
-<pre class="codehilite"><code class="linenums">##c 凡例
-##c VBoxManage internalcommands createrawvmdk -filename ${作成するvdiファイル名} -rawdisk ${外付けデバイス名}
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>##c 凡例
+##c VBoxManage internalcommands createrawvmdk -filename <span class="cp">${</span><span class="n">作成するvdiファイル名</span><span class="cp">}</span> -rawdisk <span class="cp">${</span><span class="n">外付けデバイス名</span><span class="cp">}</span>
 
 ##c rootで作業
-#r VBoxManage internalcommands createrawvmdk -filename /root/hdd1.vdi -rawdisk /dev/sdb</code></pre>
-
-
+#r VBoxManage internalcommands createrawvmdk -filename /root/hdd1.vdi -rawdisk /dev/sdb
+</code></pre></div>
+</td></tr></table>
 <h3 id="3-virtualbox">3. VirtualBoxで仮想環境を作成</h3>
 <p>通常通りGUIから仮想マシンを作成し起動</p>
 <h3 id="4-linux">4. Linuxのインストール</h3>

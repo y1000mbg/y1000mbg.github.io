@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1619,40 +1631,63 @@
 </ul>
 <h2 id="_3">対応方法</h2>
 <h3 id="githubclone">差新板をgithubからclone</h3>
-<pre class="codehilite"><code class="linenums">##c githubから最新のテーマをcloneする
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>##c githubから最新のテーマをcloneする
 ##c ※なお、mkdocsのプロジェクトディレクトリ直下でcloneするとmkdocs.ymlなどが上書きされてしまうので注意。
 ##c 必要なファイルはmaterialディレクトリだけなので、tmpディレクトリあたりでcloneしてコピーすればOK
-#r  REPO_URL='https://github.com/squidfunk/mkdocs-material.git'
-#r  git clone ${REPO_URL}
-#r  cp -pr mkdocs-material/material ${mkdocs-project-dir}</code></pre>
-
-
+#r  REPO_URL=&#39;https://github.com/squidfunk/mkdocs-material.git&#39;
+#r  git clone <span class="cp">${</span><span class="n">REPO_URL</span><span class="cp">}</span>
+#r  cp -pr mkdocs-material/material <span class="cp">${</span><span class="n">mkdocs</span><span class="o">-</span><span class="n">project</span><span class="o">-</span><span class="nb">dir</span><span class="cp">}</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="_4">カスタムテーマの設定を反映</h3>
 <p>mkdocs.ymlに以下の内容を書き込みます。</p>
 <p><strong>※ 既にテーマの設定が入っている場合は適宜書き換えてください。</strong></p>
 <p>yamlフォーマットなのでスペースの数に注意してください。</p>
-<pre class="codehilite"><code class="language-yml linenums">theme:
-  name: null
-  custom_dir: 'mkdocs-material/material'
-  language: 'ja'
-  palette:
-    primary: 'indigo'
-    accent: 'indigo'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
-  logo:
-    icon: 'cloud'
-  feature:
-    tabs: true</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="n">theme</span><span class="o">:</span>
+  <span class="n">name</span><span class="o">:</span> <span class="kc">null</span>
+  <span class="n">custom_dir</span><span class="o">:</span> <span class="s1">&#39;mkdocs-material/material&#39;</span>
+  <span class="n">language</span><span class="o">:</span> <span class="s1">&#39;ja&#39;</span>
+  <span class="n">palette</span><span class="o">:</span>
+    <span class="n">primary</span><span class="o">:</span> <span class="s1">&#39;indigo&#39;</span>
+    <span class="n">accent</span><span class="o">:</span> <span class="s1">&#39;indigo&#39;</span>
+  <span class="n">font</span><span class="o">:</span>
+    <span class="n">text</span><span class="o">:</span> <span class="s1">&#39;Roboto&#39;</span>
+    <span class="n">code</span><span class="o">:</span> <span class="s1">&#39;Roboto Mono&#39;</span>
+  <span class="n">logo</span><span class="o">:</span>
+    <span class="n">icon</span><span class="o">:</span> <span class="s1">&#39;cloud&#39;</span>
+  <span class="n">feature</span><span class="o">:</span>
+    <span class="n">tabs</span><span class="o">:</span> <span class="kc">true</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="_5">動作確認の実施</h3>
 <p>サーバを立ち上げるかビルドコマンドを実施しエラーがなくサーバ起動 or ビルドが実施出来れば対応完了です。</p>
-<pre class="codehilite"><code class="language-bash linenums">#r  cd ${mkdocs-project-dir}
-#r  mkdocs build
-##c または
-#r  mkdocs serve</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">#r  cd ${mkdocs-project-dir}</span>
+<span class="c1">#r  mkdocs build</span>
+<span class="c1">##c または</span>
+<span class="c1">#r  mkdocs serve</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1686,71 +1698,102 @@
 </ol>
 <h3 id="1-python">1. Pythonのインストール</h3>
 <p>インストールされていなければインストールします。</p>
-<pre class="codehilite"><code class="linenums">## バージョン確認
-$ python --version
-Python 2.7.15rc1
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">##</span> <span class="err">バージョン確認</span>
+<span class="err">$</span> <span class="n">python</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">15</span><span class="n">rc1</span>
 
-## 未導入の場合はインストール
-$ sudo apt install python</code></pre>
-
-
+<span class="o">##</span> <span class="err">未導入の場合はインストール</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">python</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="2-pip">2. pipのインストール</h3>
 <p>こちらもインストールされていなければインストールしてください。</p>
-<pre class="codehilite"><code class="linenums">$ sudo apt install python-pip</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ sudo apt install python-pip
+</code></pre></div>
+</td></tr></table>
 <h3 id="3-mkdocs">3. mkdocsのインストール</h3>
 <p>pipを使いmkdocsをインストールします。
 sudoをつけたのは非特権ユーザーで<code>pip install</code>を実施すると<code>~/local/bin</code>にインストールされて煩わしい為です。
 rootでインストールするとpathの通っている<code>/usr/local/bin/</code>にインストールされて便利です。</p>
-<pre class="codehilite"><code class="linenums">## インストール
-$ sudo pip install mkdocs
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">##</span> <span class="err">インストール</span>
+<span class="err">$</span> <span class="n">sudo</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">mkdocs</span>
 
-## コマンドの確認
-$ which mkdocs
-/usr/local/bin/mkdocs</code></pre>
-
-
+<span class="o">##</span> <span class="err">コマンドの確認</span>
+<span class="err">$</span> <span class="n">which</span> <span class="n">mkdocs</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">mkdocs</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="4-mkdocs">4. mkdocsでプロジェクトディレクトリの作成</h3>
 <p><code>mkdocs new ${project_dir_name}</code>で最低限の必要ファイルを作成します。</p>
-<pre class="codehilite"><code class="linenums">$ mkdocs new testblog
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ mkdocs new testblog
 INFO    -  Creating project directory: testblog
 INFO    -  Writing config file: testblog/mkdocs.yml
 INFO    -  Writing initial docs: testblog/docs/index.md
 $
 
-## 作成された中身の確認
-$ cd testblog/ &amp;&amp; ls -l
-合計 4
-drwxrwxr-x 1 iuser iuser 16  7月  3 04:00 docs
--rw-rw-r-- 1 iuser iuser 19  7月  3 04:00 mkdocs.yml</code></pre>
-
-
+<span class="c1">## 作成された中身の確認</span>
+$ <span class="nb">cd</span> testblog/ <span class="o">&amp;&amp;</span> ls -l
+合計 <span class="m">4</span>
+drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">16</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 docs
+-rw-rw-r-- <span class="m">1</span> iuser iuser <span class="m">19</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 mkdocs.yml
+</code></pre></div>
+</td></tr></table>
 <ul>
 <li>docsディレクトリ は*.md形式でファイルを格納します。実際のページに変換されます。</li>
 <li>mkdocs.yml はサイトの設定を記載します。</li>
 </ul>
 <h4 id="_4">静的ファイルの作成</h4>
 <p><code>mkdocs build</code>コマンドで静的ファイルを作成します。作成されたsiteディレクトリが静的ファイルに変換された一式です。</p>
-<pre class="codehilite"><code class="linenums">$ mkdocs build
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>$ mkdocs build
 INFO    -  Cleaning site directory
 INFO    -  Building documentation to directory: /home/hoge/Documents/testblog/site
 $
 
-## 作成された中身の確認 (siteディレクトリが追加されている)
+<span class="c1">## 作成された中身の確認 (siteディレクトリが追加されている)</span>
 $ ls -l
-合計 4
-drwxrwxr-x 1 iuser iuser 16  7月  3 04:00 docs
--rw-rw-r-- 1 iuser iuser 19  7月  3 04:00 mkdocs.yml
-drwxrwxr-x 1 iuser iuser 96  7月  3 04:04 site</code></pre>
-
-
+合計 <span class="m">4</span>
+drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">16</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 docs
+-rw-rw-r-- <span class="m">1</span> iuser iuser <span class="m">19</span>  7月  <span class="m">3</span> <span class="m">04</span>:00 mkdocs.yml
+drwxrwxr-x <span class="m">1</span> iuser iuser <span class="m">96</span>  7月  <span class="m">3</span> <span class="m">04</span>:04 site
+</code></pre></div>
+</td></tr></table>
 <h4 id="_5">内容の確認</h4>
 <p><code>mkdocs serve</code>コマンドでローカルでサーバーが立ち上がり記事の内容が確認できます。変更をリアルタイムで追随するので確認しながら修正が簡単にできます。<code>--dev-addr</code>オプションでip指定すると別マシンからもアクセスできます。</p>
-<pre class="codehilite"><code class="linenums">ipaddr=xxx.xxx.xxx.xxx
-mkdocs serve --dev-addr=${ipaddr}:8000</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>ipaddr=xxx.xxx.xxx.xxx
+mkdocs serve --dev-addr=<span class="cp">${</span><span class="n">ipaddr</span><span class="cp">}</span>:8000
+</code></pre></div>
+</td></tr></table>
 <p><img src="https://github.com/y1000mbg/blog_pic/blob/master/2018/07/03/001.png?raw=true"></p>
 <p>画面としてはこのような表示になります。</p>
 <h2 id="5-github">5. githubにデプロイ</h2>

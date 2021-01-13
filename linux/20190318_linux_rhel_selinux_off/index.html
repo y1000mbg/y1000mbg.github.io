@@ -1003,6 +1003,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1609,20 +1621,25 @@
 </ul>
 <h2 id="_3">設定方法</h2>
 <h3 id="_4">現状の設定状況の確認</h3>
-<pre class="codehilite"><code class="language-bash linenums">##c Enforcing=有効 / Disabled=無効 / Permissive=一時的に無効
-#r  getenforce
-Enforcing</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">##c Enforcing=有効 / Disabled=無効 / Permissive=一時的に無効</span>
+<span class="c1">#r  getenforce</span>
+Enforcing
+</code></pre></div>
+</td></tr></table>
 <h3 id="_5">一時的に無効化</h3>
 <p>再起動すると<strong>Enforcing</strong>に戻ります。</p>
-<pre class="codehilite"><code class="language-bash linenums">##c 0=Permissive / 1=Enforcing
-#r setenforce 0</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">##c 0=Permissive / 1=Enforcing</span>
+<span class="c1">#r setenforce 0</span>
+</code></pre></div>
+</td></tr></table>
 <h3 id="_6">永続的に無効化</h3>
 <p>設定ファイルを編集する必要があります。sedでバシッと書き換えちゃいましょう！</p>
-<pre class="codehilite"><code class="language-bash linenums">#r sed -i_org s/'SELINUX=enforcing'/'SELINUX=disabled'/ /etc/selinux/config</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="c1">#r sed -i_org s/&#39;SELINUX=enforcing&#39;/&#39;SELINUX=disabled&#39;/ /etc/selinux/config</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

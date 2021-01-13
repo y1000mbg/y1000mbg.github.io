@@ -983,6 +983,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1570,9 +1582,9 @@
 </ul>
 <h2 id="or">設定方法 or 対応方法</h2>
 <p>原因としてはminttyは対話形式のコマンドをうまく扱えない仕様があるようです。winコマンドに関してはwinptyというコマンドでラップしてあげると正常動作になりますのでaliasに登録してあげましょう。</p>
-<pre class="codehilite"><code class="linenums">alias vagran'='winpty vagrant'</code></pre>
-
-
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="err">alias vagran&#39;=&#39;winpty vagrant&#39;</span>
+</code></pre></div>
+</td></tr></table>
 <p>.bashrcに登録してあげるとラップを意識しせずに使えるので便利です。</p>
 <h2 id="_3">備考</h2>
 <p>Ruby on Railsなども同じ現象に見舞われて<code>rails s</code>でサーバー起動後、Ctrl+cで停止できなのでその場合はkillコマンドでプロセスを終了させるしかなさそうです。</p>

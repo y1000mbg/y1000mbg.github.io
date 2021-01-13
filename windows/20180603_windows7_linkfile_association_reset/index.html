@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1575,37 +1587,69 @@
 <li><a href="http://wintips.blog117.fc2.com/blog-entry-16.html">Windowsのメモ書き Windows Vistaでexeやlnkをアプリケーションに関連付けてしまった</a></li>
 </ul>
 <p>下記レジストリを.regファイルとして保存し実行。_<strong>実行後再起動する</strong>_ことで、アイコンも含めもとに戻りました。</p>
-<pre class="codehilite"><code class="linenums">Windows Registry Editor Version 5.00
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code>Windows Registry Editor Version 5.00
 
-[HKEY_CLASSES_ROOT\.lnk]
-@=&quot;lnkfile&quot;
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;lnkfile&quot;</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellEx]
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellEx]</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellEx\{000214EE-0000-0000-C000-000000000046}]
-@=&quot;{00021401-0000-0000-C000-000000000046}&quot;
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellEx\{000214EE-0000-0000-C000-000000000046}]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;{00021401-0000-0000-C000-000000000046}&quot;</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellEx\{000214F9-0000-0000-C000-000000000046}]
-@=&quot;{00021401-0000-0000-C000-000000000046}&quot;
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellEx\{000214F9-0000-0000-C000-000000000046}]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;{00021401-0000-0000-C000-000000000046}&quot;</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellEx\{00021500-0000-0000-C000-000000000046}]
-@=&quot;{00021401-0000-0000-C000-000000000046}&quot;
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellEx\{00021500-0000-0000-C000-000000000046}]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;{00021401-0000-0000-C000-000000000046}&quot;</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellEx\{BB2E617C-0920-11d1-9A0B-00C04FC2D6C1}]
-@=&quot;{00021401-0000-0000-C000-000000000046}&quot;
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellEx\{BB2E617C-0920-11d1-9A0B-00C04FC2D6C1}]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;{00021401-0000-0000-C000-000000000046}&quot;</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellNew]
-&quot;Handler&quot;=&quot;{ceefea1b-3e29-4ef1-b34c-fec79c4f70af}&quot;
-&quot;IconPath&quot;=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,\
-74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,73,\
-00,68,00,65,00,6c,00,6c,00,33,00,32,00,2e,00,64,00,6c,00,6c,00,2c,00,2d,00,\
-31,00,36,00,37,00,36,00,39,00,00,00
-&quot;ItemName&quot;=&quot;@shell32.dll,-30397&quot;
-&quot;MenuText&quot;=&quot;@shell32.dll,-30318&quot;
-&quot;NullFile&quot;=&quot;&quot;
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellNew]</span>
+<span class="na">&quot;Handler&quot;</span><span class="o">=</span><span class="s">&quot;{ceefea1b-3e29-4ef1-b34c-fec79c4f70af}&quot;</span>
+<span class="na">&quot;IconPath&quot;</span><span class="o">=</span><span class="nv">hex(2)</span><span class="p">:</span><span class="m">25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,</span><span class="err">\</span>
+<span class="err">74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,73,\</span>
+<span class="err">00,68,00,65,00,6c,00,6c,00,33,00,32,00,2e,00,64,00,6c,00,6c,00,2c,00,2d,00,\</span>
+<span class="err">31,00,36,00,37,00,36,00,39,00,00,00</span>
+<span class="na">&quot;ItemName&quot;</span><span class="o">=</span><span class="s">&quot;@shell32.dll,-30397&quot;</span>
+<span class="na">&quot;MenuText&quot;</span><span class="o">=</span><span class="s">&quot;@shell32.dll,-30318&quot;</span>
+<span class="na">&quot;NullFile&quot;</span><span class="o">=</span><span class="s">&quot;&quot;</span>
 
-[HKEY_CLASSES_ROOT\.lnk\ShellNew\Config]
-&quot;DontRename&quot;=&quot;&quot;</code></pre>
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\.lnk\ShellNew\Config]</span>
+<span class="na">&quot;DontRename&quot;</span><span class="o">=</span><span class="s">&quot;&quot;</span>
+</code></pre></div>
+</td></tr></table>
                 
                   
                 

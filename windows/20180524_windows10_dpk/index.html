@@ -922,6 +922,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../other/20200113_komakai_memo/" title="過去の小ネタメモ" class="md-nav__link">
+      過去の小ネタメモ
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1598,19 +1610,29 @@
 </table>
 <h2 id="windws10">windws10のライセンス認証の削除と再登録</h2>
 <p>Windowsでコマンドプロンプトを管理者権限で実行します。</p>
-<pre class="codehilite"><code class="linenums">##c プロダクトキーの削除
-##c ※入力後ダイアログで『プロダクトキーを正常にアンインストールしました』の表示
-slmgr /upk
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">##</span><span class="k">c</span> <span class="err">プロダクトキーの削除</span>
+<span class="o">##</span><span class="k">c</span> <span class="err">※入力後ダイアログで『プロダクトキーを正常にアンインストールしました』の表示</span>
+<span class="n">slmgr</span> <span class="o">/</span><span class="n">upk</span>
 
-##c 新しいプロダクトキーの登録（上記のエディションを参照）
-##c ※入力後ダイアログで『正常にインストールされた』の表示
-slmgr /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+<span class="o">##</span><span class="k">c</span> <span class="err">新しいプロダクトキーの登録（上記のエディションを参照）</span>
+<span class="o">##</span><span class="k">c</span> <span class="err">※入力後ダイアログで『正常にインストールされた』の表示</span>
+<span class="n">slmgr</span> <span class="o">/</span><span class="n">ipk</span> <span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span><span class="o">-</span><span class="n">XXXXX</span>
 
-##c 入力したプロダクトキーの認証
-##c ※入力後ダイアログで『製品は正常にライセンス認証されました』の表示
-slmgr /ato</code></pre>
-
-
+<span class="o">##</span><span class="k">c</span> <span class="err">入力したプロダクトキーの認証</span>
+<span class="o">##</span><span class="k">c</span> <span class="err">※入力後ダイアログで『製品は正常にライセンス認証されました』の表示</span>
+<span class="n">slmgr</span> <span class="o">/</span><span class="n">ato</span>
+</code></pre></div>
+</td></tr></table>
 <p>対応後に「コントロールパネル」 &gt; 「システム」から認証状態であることを確認します。認証済みになっていればDPKを使った認証は成功です。</p>
                 
                   
